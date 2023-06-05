@@ -53,7 +53,7 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="active" href="/">Home</a>
+                                    <a class="{{ (request()->is('/')) ? 'active' : '' }}" href="/">Home</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a class="active" href="index.html">Home 01</a></li>
                                         <li><a href="index-2.html">Home 02</a></li>
@@ -62,7 +62,7 @@
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/about">About Us</a>
+                                    <a class="{{ (request()->is('about')) ? 'active' : '' }}" href="/about">About Us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#">Pages</a>
@@ -74,14 +74,14 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/courses">Courses</a>
+                                    <a class="{{ (request()->is('courses')) ? 'active' : '' }}" href="/courses">Courses</a>
                                     <ul class="sub-menu">
                                         <li><a href="courses.html">Courses</a></li>
                                         <li><a href="courses-single.html">Course Single</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/events">Events</a>
+                                    <a class="{{ (request()->is('events')) ? 'active' : '' }}" href="/events">Events</a>
                                     <ul class="sub-menu">
                                         <li><a href="events.html">Events List 1</a></li>
                                         <li><a href="events-2.html">Events List 2</a></li>
@@ -89,7 +89,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/teachers">Teachers</a>
+                                    <a class="{{ (request()->is('teachers*')) ? 'active' : '' }}" href="/teachers">Teachers</a>
                                     <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-2.html">teachers 2</a></li>
@@ -111,7 +111,7 @@
                                     </ul>
                                 </li> --}}
                                 <li class="nav-item">
-                                    <a href="/contact">Contact</a>
+                                    <a class="{{ (request()->is('contact')) ? 'active' : '' }}" href="/contact">Contact</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="contact.html">Contact Us</a></li>
                                         <li><a href="contact-2.html">Contact Us 2</a></li>

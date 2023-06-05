@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/contact', function () {
-    return view('windows.contact.index');
+    return view('windows.contact.index', ['name' => 'Contact']);
 });
 
 Route::get('/about', function () {
-    return view('windows.about.index');
+    return view('windows.about.index', ['name' => 'About Us']);
 });
