@@ -21,7 +21,7 @@
                                 <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                {{-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> --}}
                             </ul>
                         </div> <!-- social -->
                         <div class="login-register">
@@ -53,13 +53,13 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="active" href="index.html">Home</a>
-                                    <ul class="sub-menu">
+                                    <a class="active" href="/">Home</a>
+                                    {{-- <ul class="sub-menu">
                                         <li><a class="active" href="index.html">Home 01</a></li>
                                         <li><a href="index-2.html">Home 02</a></li>
                                         <li><a href="index-3.html">Home 03</a></li>
                                         <li><a href="index-4.html">Home 04</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
                                 <li class="nav-item">
                                     <a href="#">Pages</a>
@@ -93,7 +93,7 @@
                                         <li><a href="teachers-single.html">teacher Single</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="blog.html">Blog</a>
                                     <ul class="sub-menu">
                                         <li><a href="blog.html">Blog</a></li>
@@ -106,7 +106,7 @@
                                         <li><a href="shop.html">Shop</a></li>
                                         <li><a href="shop-single.html">Shop Single</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
                                     <a href="contact.html">Contact</a>
                                     <ul class="sub-menu">

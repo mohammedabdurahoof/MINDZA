@@ -95,12 +95,12 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright text-md-left text-center pt-15">
-                        <p>&copy; Copyrights 2020 Edubin All rights reserved. </p>
+                        <p>&copy; Copyrights 2023 Mindza All rights reserved. </p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="copyright text-md-right text-center pt-15">
-                        <p>Designed by <span>Ubuciko</span> </p>
+                        <p>Designed by <span><a href="https://ubuciko.online/" style="color: #ffc600"> Ubuciko</a> </span> </p>
                     </div>
                 </div>
             </div> <!-- row -->
