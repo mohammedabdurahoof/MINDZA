@@ -32,3 +32,11 @@ Route::get('/teachers', function () {
 Route::get('/teachers/{id}', function () {
     return view('windows.teachers.single', ['name' => 'Teachers']);
 });
+
+Route::get('/courses', function () {
+    return view('windows.courses.index', ['name' => 'Courses']);
+});
+
+Route::get('/courses/{id}', function () {
+    return view('windows.courses.single', ['name' => 'Courses']);
+});
