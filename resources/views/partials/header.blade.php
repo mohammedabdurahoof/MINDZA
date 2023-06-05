@@ -116,12 +116,12 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="right-icon text-right">
+                        {{-- <div class="right-icon text-right">
                             <ul>
                                 <li><a href="javascript:void(0)" id="search"><i class="fa fa-search"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-bag"></i><span>0</span></a></li>
                             </ul>
-                        </div> <!-- right icon -->
+                        </div> <!-- right icon --> --}}
                     </nav> <!-- nav -->
                 </div>
             </div> <!-- row -->
