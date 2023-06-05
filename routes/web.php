@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('windows.contact.index');
 });
+
+Route::get('/about', function () {
+    return view('windows.about.index');
+});

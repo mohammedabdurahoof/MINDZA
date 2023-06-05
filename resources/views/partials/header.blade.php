@@ -62,6 +62,9 @@
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
+                                    <a href="/about">About Us</a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="#">Pages</a>
                                     <ul class="sub-menu">
                                         <li><a href="about.html">About Us</a></li>
@@ -71,14 +74,14 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="courses.html">Courses</a>
+                                    <a href="/courses">Courses</a>
                                     <ul class="sub-menu">
                                         <li><a href="courses.html">Courses</a></li>
                                         <li><a href="courses-single.html">Course Single</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="events.html">Events</a>
+                                    <a href="/events">Events</a>
                                     <ul class="sub-menu">
                                         <li><a href="events.html">Events List 1</a></li>
                                         <li><a href="events-2.html">Events List 2</a></li>
@@ -86,7 +89,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="teachers.html">Teachers</a>
+                                    <a href="/teachers">Teachers</a>
                                     <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-2.html">teachers 2</a></li>
@@ -108,11 +111,11 @@
                                     </ul>
                                 </li> --}}
                                 <li class="nav-item">
-                                    <a href="contact.html">Contact</a>
-                                    <ul class="sub-menu">
+                                    <a href="/contact">Contact</a>
+                                    {{-- <ul class="sub-menu">
                                         <li><a href="contact.html">Contact Us</a></li>
                                         <li><a href="contact-2.html">Contact Us 2</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
                             </ul>
                         </div>
