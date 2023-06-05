@@ -7,7 +7,10 @@
                     <h2>Welcome to Mindza </h2>
                 </div> <!-- section title -->
                 <div class="about-cont">
-                    <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt  mauris. <br> </p>
+                    <p>Mindza is dedicated to promoting mental well-being and empowering individuals to overcome
+                        challenges, enhance their resilience, and lead more fulfilling lives. By blending convenience,
+                        expertise, and compassion, Mindza continues to make a positive impact in the realm of online
+                        mental health services.<br> </p>
                     <a href="#" class="main-btn mt-55">Learn More</a>
                 </div>
             </div> <!-- about cont -->
