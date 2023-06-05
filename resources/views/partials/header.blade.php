@@ -26,8 +26,8 @@
                         </div> <!-- social -->
                         <div class="login-register">
                             <ul>
-                                <li><a href="register.html">Login</a></li>
-                                <li><a href="register.html">Register</a></li>
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/register">Register</a></li>
                             </ul>
                         </div>
                     </div> <!-- header right -->

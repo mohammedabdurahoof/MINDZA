@@ -60,3 +60,11 @@ Route::get('/policy', function () {
 Route::get('/faq', function () {
     return view('windows.faq.index', ['name' => 'FAQ']);
 });
+
+Route::get('/login', function () {
+    return view('windows.login.index', ['name' => 'Login']);
+});
+
+Route::get('/register', function () {
+    return view('windows.register.index', ['name' => 'Register']);
+});
