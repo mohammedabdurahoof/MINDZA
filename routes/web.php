@@ -24,3 +24,11 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('windows.about.index', ['name' => 'About Us']);
 });
+
+Route::get('/teachers', function () {
+    return view('windows.teachers.index', ['name' => 'Teachers']);
+});
+
+Route::get('/teachers/{id}', function () {
+    return view('windows.teachers.single', ['name' => 'Teachers']);
+});

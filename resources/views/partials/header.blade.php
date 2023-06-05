@@ -90,11 +90,11 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="{{ (request()->is('teachers*')) ? 'active' : '' }}" href="/teachers">Teachers</a>
-                                    <ul class="sub-menu">
+                                    {{-- <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-2.html">teachers 2</a></li>
                                         <li><a href="teachers-single.html">teacher Single</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
                                 {{-- <li class="nav-item">
                                     <a href="blog.html">Blog</a>
