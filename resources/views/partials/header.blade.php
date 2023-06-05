@@ -61,18 +61,7 @@
                                         <li><a href="index-4.html">Home 04</a></li>
                                     </ul> --}}
                                 </li>
-                                <li class="nav-item">
-                                    <a class="{{ (request()->is('about')) ? 'active' : '' }}" href="/about">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#">Pages</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="policy.html">Privacy Policy</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                    </ul>
-                                </li>
+                                
                                 <li class="nav-item">
                                     <a class="{{ (request()->is('courses')) ? 'active' : '' }}" href="/courses">Courses</a>
                                     {{-- <ul class="sub-menu">
@@ -95,6 +84,18 @@
                                         <li><a href="teachers-2.html">teachers 2</a></li>
                                         <li><a href="teachers-single.html">teacher Single</a></li>
                                     </ul> --}}
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="{{ (request()->is('gallery','policy','faq')) ? 'active' : '' }}" href="#">Pages</a>
+                                    <ul class="sub-menu">
+                                        <li><a class="{{ (request()->is('gallery')) ? 'active' : '' }}" href="/gallery">Gallery</a></li>
+                                        <li><a class="{{ (request()->is('policy')) ? 'active' : '' }}" href="/policy">Privacy Policy</a></li>
+                                        <li><a class="{{ (request()->is('faq')) ? 'active' : '' }}" href="/faq">FAQ</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="{{ (request()->is('about')) ? 'active' : '' }}" href="/about">About Us</a>
                                 </li>
                                 {{-- <li class="nav-item">
                                     <a href="blog.html">Blog</a>

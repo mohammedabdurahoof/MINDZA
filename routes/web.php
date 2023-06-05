@@ -48,3 +48,15 @@ Route::get('/events', function () {
 Route::get('/events/{id}', function () {
     return view('windows.events.single', ['name' => 'Events']);
 });
+
+Route::get('/gallery', function () {
+    return view('windows.gallery.index', ['name' => 'Gallery']);
+});
+
+Route::get('/policy', function () {
+    return view('windows.policy.index', ['name' => 'Privacy Policy']);
+});
+
+Route::get('/faq', function () {
+    return view('windows.faq.index', ['name' => 'FAQ']);
+});
