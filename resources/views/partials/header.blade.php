@@ -75,18 +75,18 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="{{ (request()->is('courses')) ? 'active' : '' }}" href="/courses">Courses</a>
-                                    <ul class="sub-menu">
+                                    {{-- <ul class="sub-menu">
                                         <li><a href="courses.html">Courses</a></li>
                                         <li><a href="courses-single.html">Course Single</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
                                 <li class="nav-item">
                                     <a class="{{ (request()->is('events')) ? 'active' : '' }}" href="/events">Events</a>
-                                    <ul class="sub-menu">
+                                    {{-- <ul class="sub-menu">
                                         <li><a href="events.html">Events List 1</a></li>
                                         <li><a href="events-2.html">Events List 2</a></li>
                                         <li><a href="events-single.html">Event Single</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
                                 <li class="nav-item">
                                     <a class="{{ (request()->is('teachers*')) ? 'active' : '' }}" href="/teachers">Teachers</a>

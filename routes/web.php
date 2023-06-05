@@ -40,3 +40,11 @@ Route::get('/courses', function () {
 Route::get('/courses/{id}', function () {
     return view('windows.courses.single', ['name' => 'Courses']);
 });
+
+Route::get('/events', function () {
+    return view('windows.events.index', ['name' => 'Events']);
+});
+
+Route::get('/events/{id}', function () {
+    return view('windows.events.single', ['name' => 'Events']);
+});
