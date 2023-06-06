@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('guest')->group(function () {
+
     Route::get('/', function () {
         return view('windows.home.index');
         return view('welcome');
@@ -66,7 +66,4 @@ Route::middleware('guest')->group(function () {
     Route::get('/register', function () {
         return view('windows.register.index', ['name' => 'Register']);
     });
-});
 
-Route::middleware('auth')->group(function () {
-});
