@@ -16,6 +16,13 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
-        return view('admin.layout.index');
+        return view('admin.windows.dashboard.index');
     })->name('dashboard');
+
+    Route::get('admin/courses', function () {
+        return view('admin.windows.courses.index');
+    })->name('dashboard');
+    Route::get('admin/add-course', function () {
+        return view('admin.windows.courses.add-course');
+    });
 });
