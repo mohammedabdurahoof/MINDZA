@@ -63,7 +63,7 @@ use Illuminate\Support\Facades\Route;
     //     return view('windows.login.index', ['name' => 'Login']);
     // });
 
-    Route::get('/register', function () {
-        return view('windows.register.index', ['name' => 'Register']);
-    });
+    // Route::get('/register', function () {
+    //     return view('windows.register.index', ['name' => 'Register']);
+    // });
 
