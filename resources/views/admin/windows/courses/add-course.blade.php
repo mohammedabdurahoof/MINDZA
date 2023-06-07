@@ -15,6 +15,22 @@
                         <div class="card-body">
                             <form>
                                 <div class="row">
+                                    <div class="avatar-upload">
+                                        <div class="avatar-edit">
+                                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                            <label for="imageUpload"></label>
+                                        </div>
+                                        <div class="avatar-download">
+                                            <a download="course-preview.jpg" href="{{ asset('assets/admin/img/preview/course.jpg') }}" title="ImageName"></a>
+                                        </div>
+                                        <div class="avatar-preview">
+                                            <div id="imagePreview"
+                                                style="background-image: url({{ asset('assets/admin/img/preview/course.jpg') }});">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label" for="courseName">Course Name</label>
                                         <input type="text" class="form-control" id="courseName"
