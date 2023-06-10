@@ -13,93 +13,90 @@
                             <div class="d-flex justify-content-between">
 
                                 <h5 class="card-title">All Courses</h5>
-                                <a href="/admin/add-course" class="btn btn-primary btn-lg"><i class="align-middle" data-feather="plus"></i>Add Course</a>
+                                <a href="{{ route('courses.create') }}" class="btn btn-primary btn-lg"><i
+                                        class="align-middle" data-feather="plus"></i>Add Course</a>
                             </div>
                             {{-- <h6 class="card-subtitle text-muted">Add <code>.table-hover</code> to enable a hover state on
                                 table rows within a
                                 <code>&lt;tbody&gt;</code>.
                             </h6> --}}
+                            @if ($message = Session::get('success'))
+                                <div class="alert alert-success">
+                                    <p class="text-success">{{ $message }}</p>
+                                </div>
+                            @endif
                         </div>
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Phone Number</th>
-                                    <th>Date of Birth</th>
-                                    <th>Actions</th>
+                                    <th>Category</th>
+                                    <th>Teacher</th>
+                                    <th>Duaration</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="img/avatars/avatar-5.jpg" width="48" height="48"
-                                            class="rounded-circle me-2" alt="Avatar"> Vanessa
-                                        Tucker
-                                    </td>
-                                    <td>864-348-0485</td>
-                                    <td>June 21, 1961</td>
-                                    <td class="table-action">
-                                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-edit-2 align-middle">
-                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-                                            </svg></a>
-                                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-trash align-middle">
-                                                <polyline points="3 6 5 6 21 6"></polyline>
-                                                <path
-                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                </path>
-                                            </svg></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/avatars/avatar-2.jpg" width="48" height="48"
-                                            class="rounded-circle me-2" alt="Avatar"> William
-                                        Harris
-                                    </td>
-                                    <td>914-939-2458</td>
-                                    <td>May 15, 1948</td>
-                                    <td class="table-action">
-                                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-edit-2 align-middle">
-                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-                                            </svg></a>
-                                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-trash align-middle">
-                                                <polyline points="3 6 5 6 21 6"></polyline>
-                                                <path
-                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                </path>
-                                            </svg></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/avatars/avatar-3.jpg" width="48" height="48"
-                                            class="rounded-circle me-2" alt="Avatar"> Sharon
-                                        Lessman
-                                    </td>
-                                    <td>704-993-5435</td>
-                                    <td>September 14, 1965</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/avatars/avatar-4.jpg" width="48" height="48"
-                                            class="rounded-circle me-2" alt="Avatar"> Christina
-                                        Mason
-                                    </td>
-                                    <td>765-382-8195</td>
-                                    <td>April 2, 1971</td>
-                                </tr>
+                                @foreach ($courses as $course)
+                                    <tr>
+                                        <td>
+                                            <img src="{{asset('images/course').'/'.$course->image}}" width="48"
+                                                height="48" class="rounded-circle me-2" alt="image">
+                                            {{ $course->courseName }}
+                                        </td>
+                                        <td>{{ $course->category }}</td>
+                                        <td>{{ $course->teacherId }}</td>
+                                        <td>{{ $course->duration }}</td>
+                                        <td>{{ $course->price }}</td>
+                                        <td class="table-action">
+                                            <form action="{{ route('courses.destroy', $course->id) }}" method="POST">
+
+                                                <a class="btn btn-primary" href="{{ route('courses.edit', $course->id) }}"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-edit-2 align-middle">
+                                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+                                                        </path>
+                                                    </svg></a>
+                                                {{-- <a href="#"></a>
+                                                <a class="btn btn-info"
+                                                    href="{{ route('products.show', $course->id) }}">Show</a>
+                                                <a class="btn btn-primary"
+                                                    href="{{ route('products.edit', $course->id) }}">Edit</a> --}}
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-trash align-middle">
+                                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                                        <path
+                                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                        </path>
+                                                    </svg></button>
+                                            </form>
+                                        </td>
+                                        {{-- <td>{{ ++$i }}</td> --}}
+                                        {{-- <td>{{ $course->courseName }}</td>
+                                        <td>{{ $course->detail }}</td>
+                                        <td>
+                                            <form action="{{ route('products.destroy', $course->id) }}" method="POST">
+                                                <a class="btn btn-info"
+                                                    href="{{ route('products.show', $course->id) }}">Show</a>
+                                                <a class="btn btn-primary"
+                                                    href="{{ route('products.edit', $course->id) }}">Edit</a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td> --}}
+                                    </tr>
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>

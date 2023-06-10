@@ -15,18 +15,20 @@ Route::middleware('guest')->group(function () {
     
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.windows.dashboard.index');
     })->name('dashboard');
 
-    Route::get('admin/courses', function () {
-        return view('admin.windows.courses.index');
-    })->name('dashboard');
+    // Route::get('courses', function () {
+    //     return view('admin.windows.courses.index');
+    // })->name('dashboard');
 
-    Route::get('admin/add-course', function () {
-        return view('admin.windows.courses.add-course');
-    })->name('course');
+    // Route::get('add-course', function () {
+    //     return view('admin.windows.courses.add-course');
+    // })->name('course');
     
-    Route::post('admin/add-course', [CoursesController::class, 'AddCourse'])->name('add-course');
+    // Route::post('add-course', [CoursesController::class, 'AddCourse'])->name('add-course');
+
+    Route::resource('courses', CoursesController::class);
 });
