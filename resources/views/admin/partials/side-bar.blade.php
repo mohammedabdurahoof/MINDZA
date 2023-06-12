@@ -22,7 +22,7 @@
             </li>
 
             <li class="sidebar-item {{ request()->segment(2) == 'teachers' ? 'active' : '' }}">
-                <a class="sidebar-link" href="{{ route('courses.index') }}">
+                <a class="sidebar-link" href="{{ route('teachers.index') }}">
                     <i class="align-middle" data-feather="user"></i> <span class="align-middle">Teachers</span>
                 </a>
             </li>
