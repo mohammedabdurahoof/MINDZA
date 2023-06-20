@@ -159,6 +159,7 @@
    
     
     @include('windows.home.partials.teachers')
+    @include('windows.home.partials.shop')
     @include('windows.home.partials.upcoming')
    
    

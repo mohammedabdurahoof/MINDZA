@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index-4.html">
+                        <a class="navbar-brand" href="/">
                             <img src="{{ asset('assets/images/logo.png') }}" alt="Logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,6 +79,15 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="{{ (request()->is('teachers*')) ? 'active' : '' }}" href="/teachers">Teachers</a>
+                                    {{-- <ul class="sub-menu">
+                                        <li><a href="teachers.html">teachers</a></li>
+                                        <li><a href="teachers-2.html">teachers 2</a></li>
+                                        <li><a href="teachers-single.html">teacher Single</a></li>
+                                    </ul> --}}
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="{{ (request()->is('shop*')) ? 'active' : '' }}" href="/shop">Shop</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-2.html">teachers 2</a></li>

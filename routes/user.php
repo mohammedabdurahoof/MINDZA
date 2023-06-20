@@ -48,6 +48,14 @@ use Illuminate\Support\Facades\Route;
         return view('windows.events.single', ['name' => 'Events']);
     });
 
+    Route::get('/shop', function () {
+        return view('windows.shop.index', ['name' => 'Shop']);
+    });
+
+    Route::get('/shop/{id}', function () {
+        return view('windows.shop.single', ['name' => 'Shop']);
+    });
+
     Route::get('/gallery', function () {
         return view('windows.gallery.index', ['name' => 'Gallery']);
     });
@@ -59,11 +67,5 @@ use Illuminate\Support\Facades\Route;
     Route::get('/faq', function () {
         return view('windows.faq.index', ['name' => 'FAQ']);
     });
-    // Route::get('/login', function () {
-    //     return view('windows.login.index', ['name' => 'Login']);
-    // });
-
-    // Route::get('/register', function () {
-    //     return view('windows.register.index', ['name' => 'Register']);
-    // });
+  
 
