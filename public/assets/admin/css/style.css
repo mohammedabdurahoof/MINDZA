@@ -29,9 +29,9 @@ h1 small {
   .avatar-upload .avatar-edit {
     position: absolute;
     /* right: 12px; */
-    left: 335px;
+    left: 2.5rem;
     z-index: 1;
-    top: 230px;
+    /* top: 230px; */
   }
   .avatar-upload .avatar-edit input {
     display: none;
@@ -68,9 +68,9 @@ h1 small {
   .avatar-upload .avatar-download {
     position: absolute;
     /* right: 12px; */
-    left: 295px;
+    /* left: 295px; */
     z-index: 1;
-    top: 230px;
+    /* top: 230px; */
   }
   .avatar-upload .avatar-download a {
     display: inline-block;
@@ -102,8 +102,8 @@ h1 small {
   }
   
   .avatar-upload .avatar-preview {
-    width: 369px;
-    height: 251px;
+    width: 100%;
+    height: auto;
     position: relative;
     /* border-radius: 100%; */
     border: 6px solid #F8F8F8;
@@ -118,3 +118,6 @@ h1 small {
     background-position: center;
   }
   
+  .scroll{
+    overflow: scroll;
+  }

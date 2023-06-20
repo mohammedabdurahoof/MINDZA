@@ -25,21 +25,26 @@
                             <form method="POST" action="{{ route('events.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class="avatar-upload">
-                                        <div class="avatar-edit">
-                                            <input name="image" type='file' id="imageUpload" accept=".png, .jpg, .jpeg"
-                                                required />
-                                            <label for="imageUpload"></label>
-                                        </div>
-                                        <div class="avatar-download">
-                                            <a download="event-preview.jpg"
-                                                href="{{ asset('assets/admin/img/preview/event-preview.jpg') }}"
-                                                title="ImageName"></a>
-                                        </div>
-                                        <div class="avatar-preview">
+                                    <div class="col-12 col-md-6">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input name="image" type='file' id="imageUpload"
+                                                    accept=".png, .jpg, .jpeg" required />
+                                                <label for="imageUpload"></label>
+                                            </div>
+                                            <div class="avatar-download">
+                                                <a download="event-preview.jpg"
+                                                    href="{{ asset('assets/admin/img/preview/event-preview.jpg') }}"
+                                                    title="ImageName"></a>
+                                            </div>
+                                            <img id="imagePreview" class="avatar-preview"
+                                                src="{{ asset('assets/admin/img/preview/event-preview.jpg') }}"
+                                                alt="">
+                                            {{-- <div class="avatar-preview">
                                             <div id="imagePreview"
                                                 style="background-image: url({{ asset('assets/admin/img/preview/event-preview.jpg') }});">
                                             </div>
+                                        </div> --}}
                                         </div>
                                     </div>
                                 </div>

@@ -26,62 +26,66 @@
                                 </div>
                             @endif
                         </div>
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    {{-- <th>Teacher</th>
+                        <div class="scroll">
+
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        {{-- <th>Teacher</th>
                                     <th>Duaration</th>
                                     <th>Price</th> --}}
-                                    <th>Action</th>
-                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($teachers as $teacher)
-                                    <tr>
-                                        <td>
-                                            <img src="{{asset('images/teacher').'/'.$teacher->image}}" width="48"
-                                                height="48" class="rounded-circle me-2" alt="image">
-                                            {{ $teacher->name }}
-                                        </td>
-                                        <td>{{ $teacher->position }}</td>
-                                        {{-- <td>{{ $teacher->teacherId }}</td>
+                                        <th>Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($teachers as $teacher)
+                                        <tr>
+                                            <td>
+                                                <img src="{{ asset('images/teacher') . '/' . $teacher->image }}" width="48"
+                                                    height="48" class="rounded-circle me-2" alt="image">
+                                                {{ $teacher->name }}
+                                            </td>
+                                            <td>{{ $teacher->position }}</td>
+                                            {{-- <td>{{ $teacher->teacherId }}</td>
                                         <td>{{ $teacher->duration }}</td>
                                         <td>{{ $teacher->price }}</td> --}}
-                                        <td class="table-action">
-                                            <form action="{{ route('teachers.destroy', $teacher->id) }}" method="POST">
+                                            <td class="table-action">
+                                                <form action="{{ route('teachers.destroy', $teacher->id) }}" method="POST">
 
-                                                <a class="btn btn-primary" href="{{ route('teachers.edit', $teacher->id) }}"><svg
-                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                        class="feather feather-edit-2 align-middle">
-                                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
-                                                        </path>
-                                                    </svg></a>
-                                                {{-- <a href="#"></a>
+                                                    <a class="btn btn-primary"
+                                                        href="{{ route('teachers.edit', $teacher->id) }}"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                            class="feather feather-edit-2 align-middle">
+                                                            <path
+                                                                d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+                                                            </path>
+                                                        </svg></a>
+                                                    {{-- <a href="#"></a>
                                                 <a class="btn btn-info"
                                                     href="{{ route('products.show', $course->id) }}">Show</a>
                                                 <a class="btn btn-primary"
                                                     href="{{ route('products.edit', $course->id) }}">Edit</a> --}}
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger"><svg
-                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                        class="feather feather-trash align-middle">
-                                                        <polyline points="3 6 5 6 21 6"></polyline>
-                                                        <path
-                                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                        </path>
-                                                    </svg></button>
-                                            </form>
-                                        </td>
-                                        {{-- <td>{{ ++$i }}</td> --}}
-                                        {{-- <td>{{ $course->courseName }}</td>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                            class="feather feather-trash align-middle">
+                                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                                            <path
+                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                            </path>
+                                                        </svg></button>
+                                                </form>
+                                            </td>
+                                            {{-- <td>{{ ++$i }}</td> --}}
+                                            {{-- <td>{{ $course->courseName }}</td>
                                         <td>{{ $course->detail }}</td>
                                         <td>
                                             <form action="{{ route('products.destroy', $course->id) }}" method="POST">
@@ -94,11 +98,12 @@
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
                                         </td> --}}
-                                    </tr>
-                                @endforeach
+                                        </tr>
+                                    @endforeach
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
