@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,5 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('teachers', TeacherController::class);
     Route::resource('events', EventController::class);
     Route::resource('gallery', GalleryController::class);
+    Route::resource('shop', ShopController::class);
 });

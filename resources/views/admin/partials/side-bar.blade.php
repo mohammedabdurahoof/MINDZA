@@ -32,6 +32,11 @@
                     <i class="align-middle" data-feather="list"></i> <span class="align-middle">Events</span>
                 </a>
             </li>
+            <li class="sidebar-item {{ request()->segment(2) == 'shop' ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('shop.index') }}">
+                    <i class="align-middle" data-feather="shopping-cart"></i> <span class="align-middle">Shop</span>
+                </a>
+            </li>
             <li class="sidebar-item {{ request()->segment(2) == 'gallery' ? 'active' : '' }}">
                 <a class="sidebar-link" href="{{ route('gallery.index') }}">
                     <i class="align-middle" data-feather="image"></i> <span class="align-middle">Gallery</span>
