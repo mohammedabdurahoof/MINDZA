@@ -63,7 +63,9 @@ class EventController extends Controller
             # code...
             request()->image->move(public_path('images/events'), $imageName);
         }
-        $event->update($request->all() + ['image' => $imageName]);
+        $data = $request->all();
+        $data['image'] = $imageName;
+        $event->update($data);
         return redirect()->route('events.index')
             ->with('success', 'Event updated successfully');
     }

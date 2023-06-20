@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Courses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; 
 
 class CoursesController extends Controller
 {
@@ -28,7 +29,6 @@ class CoursesController extends Controller
             'requirements' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
-        // dd($request->post());
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
         request()->image->move(public_path('images/course'), $imageName);
         Courses::create($request->post() + ['image' => $imageName]);
@@ -59,7 +59,9 @@ class CoursesController extends Controller
             # code...
             request()->image->move(public_path('images/course'), $imageName);
         }
-        $course->update($request->all() + ['image' => $imageName]);
+        $data = $request->all();
+        $data['image'] = $imageName;
+        $course->update($data);
         return redirect()->route('courses.index')
             ->with('success', 'Course updated successfully');
     }

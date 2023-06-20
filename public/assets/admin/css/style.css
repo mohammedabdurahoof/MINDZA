@@ -119,5 +119,5 @@ h1 small {
   }
   
   .scroll{
-    overflow: scroll;
+    overflow-x: scroll;
   }

@@ -61,7 +61,9 @@ class TeacherController extends Controller
             # code...
             request()->image->move(public_path('images/teachers'), $imageName);
         }
-        $teacher->update($request->all() + ['image' => $imageName]);
+        $data = $request->all();
+        $data['image'] = $imageName;
+        $teacher->update($data);
         return redirect()->route('teachers.index')
             ->with('success', 'Teacher updated successfully');
     }
