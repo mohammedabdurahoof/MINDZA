@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class GalleryController extends Controller
 {
@@ -63,6 +64,7 @@ class GalleryController extends Controller
     }
     public function destroy(Gallery $gallery)
     {
+        File::delete(public_path('images/gallery/' . $gallery->name));
         $gallery->delete();
         return redirect()->route('gallery.index')
             ->with('success', 'Image deleted successfully');

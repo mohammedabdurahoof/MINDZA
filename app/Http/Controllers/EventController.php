@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class EventController extends Controller
 {
@@ -58,19 +59,20 @@ class EventController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         // dd(request()->image);
-        $imageName = $event->image;
-        if (request()->image) {
-            # code...
-            request()->image->move(public_path('images/events'), $imageName);
-        }
         $data = $request->all();
-        $data['image'] = $imageName;
+        if (request()->image) {
+            $imageName = time() . '.' . request()->image->getClientOriginalExtension();
+            File::delete(public_path('images/events/' . $event->image));
+            request()->image->move(public_path('images/events'), $imageName);
+            $data['image'] = $imageName;
+        }
         $event->update($data);
         return redirect()->route('events.index')
             ->with('success', 'Event updated successfully');
     }
     public function destroy(Event $event)
     {
+        File::delete(public_path('images/events/' . $event->image));
         $event->delete();
         return redirect()->route('events.index')
             ->with('success', 'Event deleted successfully');

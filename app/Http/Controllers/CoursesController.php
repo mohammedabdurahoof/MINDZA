@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Courses;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File; 
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\URL;
 
 class CoursesController extends Controller
 {
@@ -54,22 +55,22 @@ class CoursesController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         // dd(request()->image);
-        $imageName = $course->image;
-        if (request()->image) {
-            # code...
-            request()->image->move(public_path('images/course'), $imageName);
-        }
         $data = $request->all();
-        $data['image'] = $imageName;
+        if (request()->image) {
+            $imageName = time() . '.' . request()->image->getClientOriginalExtension();
+            File::delete(public_path('images/course/' . $course->image));
+            request()->image->move(public_path('images/course'), $imageName);
+            $data['image'] = $imageName;
+        }
         $course->update($data);
         return redirect()->route('courses.index')
             ->with('success', 'Course updated successfully');
     }
-    public function destroy(Courses $Course)
+    public function destroy(Courses $course)
     {
-        $Course->delete();
+        File::delete(public_path('images/course/' . $course->image));
+        $course->delete();
         return redirect()->route('courses.index')
             ->with('success', 'Course deleted successfully');
     }
-
 }

@@ -36,7 +36,7 @@
                                             </div>
                                             <div class="avatar-download">
                                                 <a download="course-preview.jpg"
-                                                    href="{{ asset('assets/admin/img/preview/course.jpg') }}"
+                                                    href="{{ asset('assets/admin/img/preview/course-preview.jpg') }}"
                                                     title="ImageName"></a>
                                             </div>
                                             <img id="imagePreview" class="avatar-preview"

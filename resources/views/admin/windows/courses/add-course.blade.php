@@ -34,11 +34,11 @@
                                             </div>
                                             <div class="avatar-download">
                                                 <a download="course-preview.jpg"
-                                                    href="{{ asset('assets/admin/img/preview/course.jpg') }}"
+                                                    href="{{ asset('assets/admin/img/preview/course-preview.jpg') }}"
                                                     title="ImageName"></a>
                                             </div>
                                             <img id="imagePreview" class="avatar-preview"
-                                                src="{{ asset('assets/admin/img/preview/course.jpg') }}" alt="">
+                                                src="{{ asset('assets/admin/img/preview/course-preview.jpg') }}" alt="">
                                             {{-- <div class="avatar-preview">
                                                 <div id="imagePreview"
                                                     style="background-image: url({{ asset('assets/admin/img/preview/course.jpg') }});">

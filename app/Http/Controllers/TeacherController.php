@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class TeacherController extends Controller
 {
@@ -56,19 +57,20 @@ class TeacherController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         // dd(request()->image);
-        $imageName = $teacher->image;
-        if (request()->image) {
-            # code...
-            request()->image->move(public_path('images/teachers'), $imageName);
-        }
         $data = $request->all();
-        $data['image'] = $imageName;
+        if (request()->image) {
+            $imageName = time() . '.' . request()->image->getClientOriginalExtension();
+            File::delete(public_path('images/teacher/' . $teacher->image));
+            request()->image->move(public_path('images/teacher'), $imageName);
+            $data['image'] = $imageName;
+        }
         $teacher->update($data);
         return redirect()->route('teachers.index')
             ->with('success', 'Teacher updated successfully');
     }
     public function destroy(Teacher $teacher)
     {
+        File::delete(public_path('images/teacher/' . $teacher->image));
         $teacher->delete();
         return redirect()->route('teachers.index')
             ->with('success', 'Teacher deleted successfully');
