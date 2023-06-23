@@ -165,6 +165,8 @@ return [
         /*
          * Package Service Providers...
          */
+        
+         Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -174,7 +176,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
 
     ],
 

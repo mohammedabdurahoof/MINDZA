@@ -63,6 +63,7 @@ class TeacherController extends Controller
             File::delete(public_path('images/teacher/' . $teacher->image));
             request()->image->move(public_path('images/teacher'), $imageName);
             $data['image'] = $imageName;
+            
         }
         $teacher->update($data);
         return redirect()->route('teachers.index')
