@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Courses;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
@@ -17,7 +18,8 @@ class CoursesController extends Controller
 
     public function create()
     {
-        return view('admin.windows.courses.add-course');
+        $teachers = Teacher::all();
+        return view('admin.windows.courses.add-course',compact('teachers'));
     }
 
     public function store(Request $request)
@@ -42,7 +44,8 @@ class CoursesController extends Controller
 
     public function edit(Courses $course)
     {
-        return view('admin.windows.courses.edit-course', compact('course'));
+        $teachers = Teacher::all();
+        return view('admin.windows.courses.edit-course', compact('course','teachers'));
     }
     public function update(Request $request, Courses $course)
     {

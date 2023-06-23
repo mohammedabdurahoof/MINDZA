@@ -59,7 +59,10 @@
                                         <label class="form-label" for="inputTeacher">Teacher</label>
                                         <select id="inputTeacher" name="teacherId" class="form-control">
                                             <option selected="" value="null">Choose...</option>
-                                            <option>...</option>
+                                            @foreach ($teachers as $teacher)
+                                                <option {{ $course->teacherId ? ($teacher->id = 'selected') : '' }}
+                                                    value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 

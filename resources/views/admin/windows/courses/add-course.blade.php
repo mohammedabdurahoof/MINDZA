@@ -38,7 +38,8 @@
                                                     title="ImageName"></a>
                                             </div>
                                             <img id="imagePreview" class="avatar-preview"
-                                                src="{{ asset('assets/admin/img/preview/course-preview.jpg') }}" alt="">
+                                                src="{{ asset('assets/admin/img/preview/course-preview.jpg') }}"
+                                                alt="">
                                             {{-- <div class="avatar-preview">
                                                 <div id="imagePreview"
                                                     style="background-image: url({{ asset('assets/admin/img/preview/course.jpg') }});">
@@ -57,7 +58,9 @@
                                         <label class="form-label" for="inputTeacher">Teacher</label>
                                         <select id="inputTeacher" name="teacherId" class="form-control">
                                             <option selected="" value="null">Choose...</option>
-                                            <option>...</option>
+                                            @foreach ($teachers as $teacher)
+                                                <option value="{{$teacher->id}}" >{{$teacher->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
