@@ -4,82 +4,156 @@
     <main class="content">
         <div class="container-fluid p-0">
 
-            <h1 class="h3 mb-3">Edit Teacher</h1>
+            <h1 class="h3 mb-3">Edit Product</h1>
 
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">Edit Teacher</h5>
+                            <h5 class="card-title mb-0">Edit Product</h5>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
                                         @foreach ($errors->all() as $error)
-                                            <li class="text-danger">{{ $error }}</li>
+                                            <li class="text-denger">{{ $error }}</li>
                                         @endforeach
                                     </ul>
                                 </div>
                             @endif
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="{{ route('teachers.update', $teacher->id) }}"
-                                enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('shop.store') }}" enctype="multipart/form-data">
                                 @csrf
-                                @method('PUT')
                                 <div class="row">
-                                    <div class="col-12 col-md-6">
+                                    <div class="col-12 col-md-4">
                                         <div class="avatar-upload">
                                             <div class="avatar-edit">
                                                 <input name="image" type='file' id="imageUpload"
-                                                    accept=".png, .jpg, .jpeg" />
+                                                    accept=".png, .jpg, .jpeg"  />
                                                 <label for="imageUpload"></label>
                                             </div>
                                             <div class="avatar-download">
-                                                <a download="teacher-preview.jpg"
-                                                    href="{{ asset('assets/admin/img/preview/teacher-preview.jpg') }}"
+                                                <a download="shop-preview.jpg"
+                                                    href="{{ asset('assets/admin/img/preview/shop-main-preview.jpg') }}"
                                                     title="ImageName"></a>
                                             </div>
                                             <img id="imagePreview" class="avatar-preview"
-                                                src="{{ asset('images/teacher') . '/' . $teacher->image }}" alt="">
+                                                src="{{ asset('images/shop') . '/' . $shop->images[0] }}" alt="">
                                             {{-- <div class="avatar-preview">
-                                            <div id="imagePreview"
-                                                style="background-image: url({{ asset('images/teacher') . '/' . $teacher->image }});">
-                                            </div>
-                                        </div> --}}
+                                        <div id="imagePreview"
+                                            style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
+                                        </div>
+                                    </div> --}}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
-                                        <label class="form-label" for="TeacherName">Teacher Name</label>
-                                        <input type="text" name="name" value="{{ $teacher->name }}"
-                                            class="form-control" id="TeacherName" required placeholder="Teacher Name">
+                                        <label class="form-label" for="ProductName">Product Name</label>
+                                        <input type="text" name="name" value="{{ $shop->name }}"
+                                            class="form-control" id="ProductName" required placeholder="Product Name">
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <label class="form-label" for="inputPosition">Position</label>
-                                        <input type="text" name="position" class="form-control"
-                                            value="{{ $teacher->position }}" id="inputPosition" required
-                                            placeholder="Position">
+                                        <label class="form-label" for="inputPrice">Price</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">₹</span>
+                                            <input type="number" value="{{ $shop->price }}" name="price" id="inputPrice"
+                                                class="form-control" required placeholder="Price">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
                                     </div>
-
                                 </div>
-
+                                <div class="row">
+                                    <div class="col-12 col-md-3">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input name="image1" type='file' id="imageUpload1"
+                                                    accept=".png, .jpg, .jpeg"  />
+                                                <label for="imageUpload1"></label>
+                                            </div>
+                                            <div class="avatar-download">
+                                                <a download="shop-preview.jpg"
+                                                    href="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                    title="ImageName"></a>
+                                            </div>
+                                            <img id="imagePreview1" class="avatar-preview"
+                                                src="{{ asset('images/shop') . '/' . $shop->images[1] }}" alt="">
+                                            {{-- <div class="avatar-preview">
+                                        <div id="imagePreview"
+                                            style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
+                                        </div>
+                                    </div> --}}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input name="image2" type='file' id="imageUpload2"
+                                                    accept=".png, .jpg, .jpeg"  />
+                                                <label for="imageUpload2"></label>
+                                            </div>
+                                            <div class="avatar-download">
+                                                <a download="shop-preview.jpg"
+                                                    href="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                    title="ImageName"></a>
+                                            </div>
+                                            <img id="imagePreview2" class="avatar-preview"
+                                                src="{{ asset('images/shop') . '/' . $shop->images[2] }}" alt="">
+                                            {{-- <div class="avatar-preview">
+                                        <div id="imagePreview"
+                                            style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
+                                        </div>
+                                    </div> --}}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input name="image3" type='file' id="imageUpload3"
+                                                    accept=".png, .jpg, .jpeg"  />
+                                                <label for="imageUpload3"></label>
+                                            </div>
+                                            <div class="avatar-download">
+                                                <a download="shop-preview.jpg"
+                                                    href="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                    title="ImageName"></a>
+                                            </div>
+                                            <img id="imagePreview3" class="avatar-preview"
+                                                src="{{ asset('images/shop') . '/' . $shop->images[3] }}" alt="">
+                                            {{-- <div class="avatar-preview">
+                                        <div id="imagePreview"
+                                            style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
+                                        </div>
+                                    </div> --}}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input name="image4" type='file' id="imageUpload4"
+                                                    accept=".png, .jpg, .jpeg"  />
+                                                <label for="imageUpload4"></label>
+                                            </div>
+                                            <div class="avatar-download">
+                                                <a download="shop-preview.jpg"
+                                                    href="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                    title="ImageName"></a>
+                                            </div>
+                                            <img id="imagePreview4" class="avatar-preview"
+                                                src="{{ asset('images/shop') . '/' . $shop->images[4] }}" alt="">
+                                            {{-- <div class="avatar-preview">
+                                        <div id="imagePreview"
+                                            style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
+                                        </div>
+                                    </div> --}}
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="mb-3">
                                     <label class="col-form-label text-sm-end">Description</label>
-                                    <textarea class="form-control" name="description" placeholder="Description" rows="5" required>{{ $teacher->description }}</textarea>
+                                    <textarea class="form-control" name="description" placeholder="Description" rows="5" required>{{ $shop->description }}</textarea>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label text-sm-end">About</label>
-                                    <textarea class="form-control" name="about" placeholder="About" rows="5" required>{{ $teacher->about }}</textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label text-sm-end">Achievements</label>
-                                    <textarea class="form-control" name="achievements" placeholder="Achievements" rows="5" required>{{ $teacher->achievements }}</textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label text-sm-end">Objective</label>
-                                    <textarea class="form-control" name="objective" placeholder="Objective" rows="5" required>{{ $teacher->objective }}</textarea>
-                                </div>
+
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>

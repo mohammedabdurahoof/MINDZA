@@ -25,7 +25,7 @@
                             <form method="POST" action="{{ route('shop.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-12 col-md-6">
+                                    <div class="col-12 col-md-4">
                                         <div class="avatar-upload">
                                             <div class="avatar-edit">
                                                 <input name="image" type='file' id="imageUpload"
@@ -34,11 +34,11 @@
                                             </div>
                                             <div class="avatar-download">
                                                 <a download="shop-preview.jpg"
-                                                    href="{{ asset('assets/admin/img/preview/shop-preview.jpg') }}"
+                                                    href="{{ asset('assets/admin/img/preview/shop-main-preview.jpg') }}"
                                                     title="ImageName"></a>
                                             </div>
                                             <img id="imagePreview" class="avatar-preview"
-                                                src="{{ asset('assets/admin/img/preview/shop-preview.jpg') }}"
+                                                src="{{ asset('assets/admin/img/preview/shop-main-preview.jpg') }}"
                                                 alt="">
                                             {{-- <div class="avatar-preview">
                                             <div id="imagePreview"
@@ -50,34 +50,115 @@
                                 </div>
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
-                                        <label class="form-label" for="shopName">shop Name</label>
-                                        <input type="text" name="name" class="form-control" id="shopName" required
-                                            placeholder="shop Name">
+                                        <label class="form-label" for="ProductName">Product Name</label>
+                                        <input type="text" name="name" class="form-control" id="ProductName" required
+                                            placeholder="Product Name">
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <label class="form-label" for="inputPosition">Position</label>
-                                        <input type="text" name="position" class="form-control" id="inputPosition"
-                                            required placeholder="Position">
+                                        <label class="form-label" for="inputPrice">Price</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">₹</span>
+                                            <input type="number" value="0" name="price" id="inputPrice"
+                                                class="form-control" required placeholder="Price">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
                                     </div>
-
                                 </div>
-
+                                <div class="row">
+                                    <div class="col-12 col-md-3">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input name="image1" type='file' id="imageUpload1"
+                                                    accept=".png, .jpg, .jpeg" required />
+                                                <label for="imageUpload1"></label>
+                                            </div>
+                                            <div class="avatar-download">
+                                                <a download="shop-preview.jpg"
+                                                    href="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                    title="ImageName"></a>
+                                            </div>
+                                            <img id="imagePreview1" class="avatar-preview"
+                                                src="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                alt="">
+                                            {{-- <div class="avatar-preview">
+                                            <div id="imagePreview"
+                                                style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
+                                            </div>
+                                        </div> --}}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input name="image2" type='file' id="imageUpload2"
+                                                    accept=".png, .jpg, .jpeg" required />
+                                                <label for="imageUpload2"></label>
+                                            </div>
+                                            <div class="avatar-download">
+                                                <a download="shop-preview.jpg"
+                                                    href="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                    title="ImageName"></a>
+                                            </div>
+                                            <img id="imagePreview2" class="avatar-preview"
+                                                src="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                alt="">
+                                            {{-- <div class="avatar-preview">
+                                            <div id="imagePreview"
+                                                style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
+                                            </div>
+                                        </div> --}}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input name="image3" type='file' id="imageUpload3"
+                                                    accept=".png, .jpg, .jpeg" required />
+                                                <label for="imageUpload3"></label>
+                                            </div>
+                                            <div class="avatar-download">
+                                                <a download="shop-preview.jpg"
+                                                    href="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                    title="ImageName"></a>
+                                            </div>
+                                            <img id="imagePreview3" class="avatar-preview"
+                                                src="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                alt="">
+                                            {{-- <div class="avatar-preview">
+                                            <div id="imagePreview"
+                                                style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
+                                            </div>
+                                        </div> --}}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input name="image4" type='file' id="imageUpload4"
+                                                    accept=".png, .jpg, .jpeg" required />
+                                                <label for="imageUpload4"></label>
+                                            </div>
+                                            <div class="avatar-download">
+                                                <a download="shop-preview.jpg"
+                                                    href="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                    title="ImageName"></a>
+                                            </div>
+                                            <img id="imagePreview4" class="avatar-preview"
+                                                src="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
+                                                alt="">
+                                            {{-- <div class="avatar-preview">
+                                            <div id="imagePreview"
+                                                style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
+                                            </div>
+                                        </div> --}}
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="mb-3">
                                     <label class="col-form-label text-sm-end">Description</label>
                                     <textarea class="form-control" name="description" placeholder="Description" rows="5" required></textarea>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label text-sm-end">About</label>
-                                    <textarea class="form-control" name="about" placeholder="About" rows="5" required></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label text-sm-end">Achievements</label>
-                                    <textarea class="form-control" name="achievements" placeholder="Achievements" rows="5" required></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label text-sm-end">Objective</label>
-                                    <textarea class="form-control" name="objective" placeholder="Objective" rows="5" required></textarea>
-                                </div>
+
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>

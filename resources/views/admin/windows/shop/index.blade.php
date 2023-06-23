@@ -32,7 +32,7 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Position</th>
+                                        <th>Price</th>
                                         {{-- <th>shop</th>
                                     <th>Duaration</th>
                                     <th>Price</th> --}}
@@ -44,19 +44,19 @@
                                     @foreach ($shop as $shop)
                                         <tr>
                                             <td>
-                                                <img src="{{ asset('images/shop') . '/' . $shop->image }}" width="48"
+                                                <img src="{{ asset('images/shop') . '/' . $shop->images[0] }}" width="48"
                                                     height="48" class="rounded-circle me-2" alt="image">
                                                 {{ $shop->name }}
                                             </td>
-                                            <td>{{ $shop->position }}</td>
+                                            <td>{{ $shop->price }}</td>
                                             {{-- <td>{{ $shop->shopId }}</td>
                                         <td>{{ $shop->duration }}</td>
                                         <td>{{ $shop->price }}</td> --}}
                                             <td class="table-action">
-                                                <form action="{{ route('shops.destroy', $shop->id) }}" method="POST">
+                                                <form action="{{ route('shop.destroy', $shop->id) }}" method="POST">
 
                                                     <a class="btn btn-primary"
-                                                        href="{{ route('shops.edit', $shop->id) }}"><svg
+                                                        href="{{ route('shop.edit', $shop->id) }}"><svg
                                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
