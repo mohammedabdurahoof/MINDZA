@@ -18,9 +18,14 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
+    public function createAdmin()
+    {
+        return view('auth.su-register');
+    }
+
     public function create()
     {
-        return view('auth.register');
+        return view('auth.register',['name' => 'Register']);
     }
 
     /**
