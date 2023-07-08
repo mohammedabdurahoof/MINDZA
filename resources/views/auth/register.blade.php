@@ -29,7 +29,7 @@
                                 value="Login" />
                         </div>
                     </form> --}}
-                    <form method="post" id="signup-form" class="signup-form" action="{{ route('login') }}">
+                    <form method="post" id="regForm" class="signup-form" action="{{ route('register') }}">
                         @csrf
                         <h2 class="form-title pb-20">Register Now</h2>
 
@@ -41,69 +41,19 @@
                         <!-- One "tab" for each step in the form: -->
                         <div class="tab">
                             <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
+                                <input type="email" class="form-input" name="email" id="email"
+                                    placeholder="Your Email" value="{{ old('email') }}" required />
                             </div>
                             {{-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
                             <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> --}}
                         </div>
-                        <div class="tab">
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                        </div>
-                        <div class="tab">
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                        </div>
-                        <div class="tab">
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                    value="{{ old('email') }}" required />
-                            </div>
-                        </div>
                         <div style="overflow:auto;">
                             <div style="float:right;">
                                 <div class="form-group">
-                                    <input type="submit" name="submit" id="prevBtn" onclick="nextPrev(-1)" class="main-btn register-submit"
-                                        value="Previous" />
-                                        <input type="submit" name="submit" id="nextBtn" onclick="nextPrev(1)" class="main-btn register-submit"
-                                        value="Next" />
+                                    <button type="submit" name="submit" id="prevBtn" onclick="nextPrev(-1)"
+                                        class="main-btn register-submit" value="Previous">Previous</button>
+                                    <button type="submit" name="submit" id="nextBtn" onclick="nextPrev(1)"
+                                        class="main-btn register-submit" value="Next">Next</button>
                                 </div>
                                 {{-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                                 <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button> --}}
