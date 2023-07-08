@@ -16,13 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', function() {
     if (auth()->user()->type == 'super-admin') {
         return redirect('/admin/dashboard');
-    } elseif (condition) {
-        # code...
+    } elseif (auth()->user()->type == 'teacher') {
+        return redirect('/teacher/dashboard');
     } else {
-        # code...
+        return redirect('/student/dashboard');
     }
 })->middleware('auth');
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/user.php';
 require __DIR__ . '/admin.php';
+require __DIR__ . '/teacher.php';

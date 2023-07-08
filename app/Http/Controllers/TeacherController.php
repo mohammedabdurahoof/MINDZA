@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+
 
 class TeacherController extends Controller
 {
@@ -22,7 +26,10 @@ class TeacherController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => ['required', 'string', 'max:255'],
+            'type' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', Rules\Password::defaults()],
             'position' => 'required',
             'description' => 'required',
             'about' => 'required',
@@ -30,10 +37,18 @@ class TeacherController extends Controller
             'objective' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+
+
         // dd($request->post());
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
         request()->image->move(public_path('images/teacher'), $imageName);
         Teacher::create($request->post() + ['image' => $imageName]);
+        User::create([
+            'name' => $request->name,
+            'type' => $request->type,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
         return redirect()->route('teachers.index')->with('success', 'Teacher has been added successfully.');
     }
     public function show(Teacher $teacher)
@@ -63,7 +78,7 @@ class TeacherController extends Controller
             File::delete(public_path('images/teacher/' . $teacher->image));
             request()->image->move(public_path('images/teacher'), $imageName);
             $data['image'] = $imageName;
-            
+
         }
         $teacher->update($data);
         return redirect()->route('teachers.index')

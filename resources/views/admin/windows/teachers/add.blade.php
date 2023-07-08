@@ -53,11 +53,26 @@
                                         <label class="form-label" for="TeacherName">Teacher Name</label>
                                         <input type="text" name="name" class="form-control" id="TeacherName" required
                                             placeholder="Teacher Name">
+                                        <input type="hidden" name="type" class="form-control" value="teacher" required
+                                            placeholder="Teacher Name">
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label" for="inputPosition">Position</label>
                                         <input type="text" name="position" class="form-control" id="inputPosition"
                                             required placeholder="Position">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label" for="TeacherEmail">Teacher Email</label>
+                                        <input type="email" name="email" class="form-control" id="TeacherEmail" required
+                                            placeholder="Teacher Email">
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label" for="inputPassword">Password</label>
+                                        <input type="password" name="password" class="form-control" id="inputPassword"
+                                            required placeholder="Password">
                                     </div>
 
                                 </div>
