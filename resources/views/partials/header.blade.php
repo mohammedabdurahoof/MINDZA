@@ -1,5 +1,5 @@
 <!--====== HEADER PART START ======-->
-    
+
 <header id="header-part">
     <div class="header-top d-none d-lg-block">
         <div class="container">
@@ -7,7 +7,8 @@
                 <div class="col-md-6">
                     <div class="header-contact">
                         <ul>
-                            <li><i class="fa fa-envelope"></i><a href="mailto:kpmhaleem528@gmail.com">kpmhaleem528@gmail.com</a></li>
+                            <li><i class="fa fa-envelope"></i><a
+                                    href="mailto:kpmhaleem528@gmail.com">kpmhaleem528@gmail.com</a></li>
                             <li><i class="fa fa-phone"></i><a href="tel:+918943485194">8943485194</a></li>
                         </ul>
                     </div> <!-- header contact -->
@@ -26,8 +27,12 @@
                         </div> <!-- social -->
                         <div class="login-register">
                             <ul>
-                                <li><a href="/login">Login</a></li>
-                                <li><a href="/register">Register</a></li>
+                                @if (auth()->user())
+                                    <li><a href="/dashboard">{{ Auth::User()->name }}</a></li>
+                                @else
+                                    <li><a href="/login">Login</a></li>
+                                    <li><a href="/register">Register</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div> <!-- header right -->
@@ -35,7 +40,7 @@
             </div> <!-- row -->
         </div> <!-- container -->
     </div> <!-- header top -->
-    
+
     <div class="navigation">
         <div class="container">
             <div class="row">
@@ -44,7 +49,9 @@
                         <a class="navbar-brand" href="/">
                             <img src="{{ asset('assets/images/logo.png') }}" alt="Logo">
                         </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -53,7 +60,7 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="{{ (request()->is('/')) ? 'active' : '' }}" href="/">Home</a>
+                                    <a class="{{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a class="active" href="index.html">Home 01</a></li>
                                         <li><a href="index-2.html">Home 02</a></li>
@@ -61,16 +68,17 @@
                                         <li><a href="index-4.html">Home 04</a></li>
                                     </ul> --}}
                                 </li>
-                                
+
                                 <li class="nav-item">
-                                    <a class="{{ (request()->is('courses')) ? 'active' : '' }}" href="/courses">Courses</a>
+                                    <a class="{{ request()->is('courses') ? 'active' : '' }}"
+                                        href="/courses">Courses</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="courses.html">Courses</a></li>
                                         <li><a href="courses-single.html">Course Single</a></li>
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a class="{{ (request()->is('events')) ? 'active' : '' }}" href="/events">Events</a>
+                                    <a class="{{ request()->is('events') ? 'active' : '' }}" href="/events">Events</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="events.html">Events List 1</a></li>
                                         <li><a href="events-2.html">Events List 2</a></li>
@@ -78,7 +86,8 @@
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a class="{{ (request()->is('teachers*')) ? 'active' : '' }}" href="/teachers">Teachers</a>
+                                    <a class="{{ request()->is('teachers*') ? 'active' : '' }}"
+                                        href="/teachers">Teachers</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-2.html">teachers 2</a></li>
@@ -87,24 +96,29 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="{{ (request()->is('shop*')) ? 'active' : '' }}" href="/shop">Shop</a>
+                                    <a class="{{ request()->is('shop*') ? 'active' : '' }}" href="/shop">Shop</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-2.html">teachers 2</a></li>
                                         <li><a href="teachers-single.html">teacher Single</a></li>
                                     </ul> --}}
                                 </li>
-                                
+
                                 <li class="nav-item">
-                                    <a class="{{ (request()->is('gallery','policy','faq')) ? 'active' : '' }}" href="#">Pages</a>
+                                    <a class="{{ request()->is('gallery', 'policy', 'faq') ? 'active' : '' }}"
+                                        href="#">Pages</a>
                                     <ul class="sub-menu">
-                                        <li><a class="{{ (request()->is('gallery')) ? 'active' : '' }}" href="/gallery">Gallery</a></li>
-                                        <li><a class="{{ (request()->is('policy')) ? 'active' : '' }}" href="/policy">Privacy Policy</a></li>
-                                        <li><a class="{{ (request()->is('faq')) ? 'active' : '' }}" href="/faq">FAQ</a></li>
+                                        <li><a class="{{ request()->is('gallery') ? 'active' : '' }}"
+                                                href="/gallery">Gallery</a></li>
+                                        <li><a class="{{ request()->is('policy') ? 'active' : '' }}"
+                                                href="/policy">Privacy Policy</a></li>
+                                        <li><a class="{{ request()->is('faq') ? 'active' : '' }}"
+                                                href="/faq">FAQ</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="{{ (request()->is('about')) ? 'active' : '' }}" href="/about">About Us</a>
+                                    <a class="{{ request()->is('about') ? 'active' : '' }}" href="/about">About
+                                        Us</a>
                                 </li>
                                 {{-- <li class="nav-item">
                                     <a href="blog.html">Blog</a>
@@ -121,7 +135,8 @@
                                     </ul>
                                 </li> --}}
                                 <li class="nav-item">
-                                    <a class="{{ (request()->is('contact')) ? 'active' : '' }}" href="/contact">Contact</a>
+                                    <a class="{{ request()->is('contact') ? 'active' : '' }}"
+                                        href="/contact">Contact</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="contact.html">Contact Us</a></li>
                                         <li><a href="contact-2.html">Contact Us 2</a></li>

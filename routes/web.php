@@ -13,10 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/image', function() {
-    // $img = Image::make('foo.jpg')->resize(300, 200);
-    // return $img->response('jpg');
-});
+Route::get('/dashboard', function() {
+    if (auth()->user()->type == 'super-admin') {
+        return redirect('/admin/dashboard');
+    } elseif (condition) {
+        # code...
+    } else {
+        # code...
+    }
+})->middleware('auth');
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/user.php';

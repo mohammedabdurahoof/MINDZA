@@ -9,7 +9,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('su-register') }}">
             @csrf
 
             <!-- Name -->
@@ -17,6 +17,7 @@
                 <x-label for="name" :value="__('Name')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <input id="name"  class="block mt-1 w-full" type="hidden" name="type" value='super-admin' required  />
             </div>
 
             <!-- Email Address -->
