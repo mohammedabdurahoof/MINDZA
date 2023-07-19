@@ -24,7 +24,7 @@ class studentController extends Controller
      */
     public function create()
     {
-        //
+        // return redirect('/register');
     }
 
     /**
@@ -35,6 +35,8 @@ class studentController extends Controller
      */
     public function store(Request $request)
     {
+        $value =$request->all();
+        return redirect('/register')->with('value',$value);
         //
     }
 

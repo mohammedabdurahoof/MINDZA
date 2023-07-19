@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Courses;
 use App\Models\Student;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -26,7 +27,8 @@ class RegisteredUserController extends Controller
 
     public function create()
     {
-        return view('auth.register', ['name' => 'Register']);
+        $course = Courses::all();
+        return view('auth.register', ['name' => 'Register','course' =>$course]);
     }
 
     /**
@@ -69,6 +71,7 @@ class RegisteredUserController extends Controller
             'address' => ['required', 'string', 'max:255'],
             'gender' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
+            'course' => ['required', 'string', 'max:255'],
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         

@@ -8,11 +8,13 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Models\Courses;
 use Illuminate\Support\Facades\Route;
 
 
     Route::get('/', function () {
-        return view('windows.home.index');
+        $course = Courses::all();
+        return view('windows.home.index',['course' =>$course]);
         return view('welcome');
     });
 

@@ -6,7 +6,8 @@
         <div class="container">
             <div class="col-md-8 offset-md-2">
                 <div class="signup-content">
-                    <form method="post" id="signup-form" class="signup-form" action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form method="post" id="signup-form" class="signup-form" action="{{ route('register') }}"
+                        enctype="multipart/form-data">
                         @csrf
                         <h2 class="form-title pb-20">Register Now</h2>
                         @if ($errors->any())
@@ -14,7 +15,7 @@
                         @endif
                         <div class="avatar-upload">
                             <div class="avatar-edit">
-                                <input type="file" name="image" required id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg" />
                                 <label for="imageUpload"></label>
                             </div>
                             <div class="avatar-preview">
@@ -25,22 +26,37 @@
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"
-                                value="{{ old('name') }}" required />
+                                value="{{ Session::get('value.name') ? Session::get('value.name') : old('name') }}"
+                                required />
                             <input type="hidden" value="student" name="type">
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
-                                value="{{ old('email') }}" required />
+                                value="{{ Session::get('value.email') ? Session::get('value.email') : old('email') }}"
+                                required />
                         </div>
                         <div class="form-group">
                             <input type="tel" class="form-input" name="phone" id="phone"
-                                placeholder="Your Mobile Number" value="{{ old('phone') }}" required />
+                                placeholder="Your Mobile Number"
+                                value="{{ Session::get('value.phone') ? Session::get('value.phone') : old('phone') }}"
+                                required />
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-input" name="address" id="address"
                                 placeholder="Your Address" value="{{ old('address') }}" required />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="overflow: visible; margin-bottom: 5rem;">
+                            <select class="form-control" name="course" id="exampleFormControlSelect1" required>
+                                <option selected value="">choose a course</option>
+                                @foreach ($course as $course)
+                                    <option value="{{ $course->id }}"
+                                        {{ Session::get('value.course') == $course->id ? 'selected' : '' }}>
+                                        {{ $course->courseName }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class=""></div>
+                        <div class="form-group" style="overflow: visible">
                             <input type="password" class="form-input" name="password" id="password"
                                 placeholder="Password" />
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>

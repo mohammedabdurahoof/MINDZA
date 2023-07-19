@@ -105,21 +105,30 @@
                         <span>Sign up now </span>
                     </div>
                     <div class="main-form">
-                        <form action="#">
+                        <form action="{{ route('student.store') }}" method="POST">
+                            @csrf
                             <div class="single-form">
-                                <input type="text" placeholder="Your name">
+                                <input type="text" placeholder="Your name" required name="name"
+                                    value="{{ old('name') }}">
                             </div>
                             <div class="single-form">
-                                <input type="text" placeholder="Your name">
+                                <input type="email" placeholder="Your Email" required name="email"
+                                    value="{{ old('email') }}">
                             </div>
                             <div class="single-form">
-                                <input type="email" placeholder="Your Mail">
+                                <input type="tel" placeholder="Your Mobile Number" required name="phone"
+                                    value="{{ old('phone') }}">
                             </div>
                             <div class="single-form">
-                                <input type="text" placeholder="Your Phone">
+                                <select class="form-control" name="course" id="exampleFormControlSelect1" required>
+                                    <option selected value="">choose a course</option>
+                                    @foreach ($course as $course)
+                                        <option value="{{ $course->id }}">{{ $course->courseName }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="single-form">
-                                <button class="main-btn" type="button">Get it Now</button>
+                                <button class="main-btn" type="submit">Register Now</button>
                             </div>
                         </form>
                     </div>
