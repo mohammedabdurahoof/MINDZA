@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Models\Courses;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 
 
@@ -59,7 +60,8 @@ use Illuminate\Support\Facades\Route;
     });
 
     Route::get('/gallery', function () {
-        return view('windows.gallery.index', ['name' => 'Gallery']);
+        $gallery = Gallery::all()->reverse();
+        return view('windows.gallery.index', ['name' => 'Gallery','gallery' => $gallery]);
     });
 
     Route::get('/policy', function () {
