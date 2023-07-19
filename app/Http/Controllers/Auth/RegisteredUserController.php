@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Student;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -25,7 +26,7 @@ class RegisteredUserController extends Controller
 
     public function create()
     {
-        return view('auth.register',['name' => 'Register']);
+        return view('auth.register', ['name' => 'Register']);
     }
 
     /**
@@ -56,6 +57,26 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        return redirect(RouteServiceProvider::HOME);
+    }
+
+    public function storeUser(Request $request)
+    {
+        // dd($request);
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
+            'gender' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        
+        $imageName = time() . '.' . request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images/student'), $imageName);
+        Student::create($request->post() + ['image' => $imageName]);
+        
+        $this->store($request);
         return redirect(RouteServiceProvider::HOME);
     }
 }

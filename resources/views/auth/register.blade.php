@@ -6,18 +6,39 @@
         <div class="container">
             <div class="col-md-8 offset-md-2">
                 <div class="signup-content">
-                    {{-- <form method="post" id="signup-form" class="signup-form" action="{{ route('login') }}">
+                    <form method="post" id="signup-form" class="signup-form" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
                         <h2 class="form-title pb-20">Register Now</h2>
-
-                        @if ($errors->has('email'))
-                            <span class="text-danger text-left mb-4">You entered an incorrect username or password. Please
-                                try
-                                again </span>
+                        @if ($errors->any())
+                            <span class="text-danger text-left mb-4">{{ implode('', $errors->all(':message')) }}</span>
                         @endif
+                        <div class="avatar-upload">
+                            <div class="avatar-edit">
+                                <input type="file" name="image" required id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                <label for="imageUpload"></label>
+                            </div>
+                            <div class="avatar-preview">
+                                <div id="imagePreview"
+                                    style="background-image: url({{ asset('assets/images/avatar.jpg') }});">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"
+                                value="{{ old('name') }}" required />
+                            <input type="hidden" value="student" name="type">
+                        </div>
                         <div class="form-group">
                             <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"
                                 value="{{ old('email') }}" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-input" name="phone" id="phone"
+                                placeholder="Your Mobile Number" value="{{ old('phone') }}" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="address" id="address"
+                                placeholder="Your Address" value="{{ old('address') }}" required />
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-input" name="password" id="password"
@@ -25,48 +46,35 @@
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="main-btn register-submit"
-                                value="Login" />
+                            <input type="password" class="form-input" name="password_confirmation"
+                                id="password_confirmation" placeholder="Confirm Password" required />
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
-                    </form> --}}
-                    <form method="post" id="regForm" class="signup-form" action="{{ route('register') }}">
-                        @csrf
-                        <h2 class="form-title pb-20">Register Now</h2>
-
-                        @if ($errors->has('email'))
-                            <span class="text-danger text-left mb-4">You entered an incorrect username or password. Please
-                                try
-                                again </span>
-                        @endif
-                        <!-- One "tab" for each step in the form: -->
-                        <div class="tab">
+                        <h6 class="mb-3">Select your Gender:</h6>
+                        <div class="row justify-content-around">
                             <div class="form-group">
-                                <input type="email" class="form-input" name="email" id="email"
-                                    placeholder="Your Email" value="{{ old('email') }}" required />
+                                <input type="radio" name="gender" id="male" placeholder="Your Gender" value="Male"
+                                    required />
+                                <label for="male"><b>Male</b></label><br>
                             </div>
-                            {{-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
-                            <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> --}}
-                        </div>
-                        <div style="overflow:auto;">
-                            <div style="float:right;">
-                                <div class="form-group">
-                                    <button type="submit" name="submit" id="prevBtn" onclick="nextPrev(-1)"
-                                        class="main-btn register-submit" value="Previous">Previous</button>
-                                    <button type="submit" name="submit" id="nextBtn" onclick="nextPrev(1)"
-                                        class="main-btn register-submit" value="Next">Next</button>
-                                </div>
-                                {{-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button> --}}
+                            <div class="form-group">
+                                <input type="radio" name="gender" id="female" placeholder="Your Gender" value="Female"
+                                    required />
+                                <label for="female"><b>Female</b></label><br>
+                            </div>
+                            <div class="form-group">
+                                <input type="radio" name="gender" id="other" placeholder="Your Gender" value="Other"
+                                    required />
+                                <label for="other"><b>Other</b></label><br>
                             </div>
                         </div>
-                        <!-- Circles which indicates the steps of the form: -->
-                        <div style="text-align:center;margin-top:40px;">
-                            <span class="step"></span>
-                            <span class="step"></span>
-                            <span class="step"></span>
-                            <span class="step"></span>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="main-btn register-submit"
+                                value="Register" />
                         </div>
+
                     </form>
+
                 </div>
             </div>
         </div>
