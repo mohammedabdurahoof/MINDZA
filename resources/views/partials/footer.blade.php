@@ -9,8 +9,9 @@
                          <div class="logo">
                              <a href="/"><img src="{{ asset('assets/images/logo-2.png') }}" alt="Logo"></a>
                          </div>
-                         <p>Gravida nibh vel velit auctor aliquetn quibibendum auci elit cons equat ipsutis sem nibh id
-                             elit. Duis sed odio sit amet nibh vulputate.</p>
+                         <p>Mindza is dedicated to promoting mental well-being and empowering individuals to overcome
+                             challenges, enhance their resilience, and lead more fulfilling lives.
+                         </p>
                          <ul class="mt-20">
                              <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -25,18 +26,16 @@
                              <h6>Sitemap</h6>
                          </div>
                          <ul>
-                             <li><a href="index.html"><i class="fa fa-angle-right"></i>Home</a></li>
-                             <li><a href="about.html"><i class="fa fa-angle-right"></i>About us</a></li>
-                             <li><a href="courses.html"><i class="fa fa-angle-right"></i>Courses</a></li>
-                             <li><a href="blog.html"><i class="fa fa-angle-right"></i>News</a></li>
-                             <li><a href="events.html"><i class="fa fa-angle-right"></i>Event</a></li>
+                             <li><a href="/"><i class="fa fa-angle-right"></i>Home</a></li>
+                             <li><a href="/about"><i class="fa fa-angle-right"></i>About us</a></li>
+                             <li><a href="/courses"><i class="fa fa-angle-right"></i>Courses</a></li>
+                             <li><a href="/events"><i class="fa fa-angle-right"></i>Event</a></li>
                          </ul>
                          <ul>
-                             <li><a href="#"><i class="fa fa-angle-right"></i>Gallery</a></li>
-                             <li><a href="shop.html"><i class="fa fa-angle-right"></i>Shop</a></li>
-                             <li><a href="teachers.html"><i class="fa fa-angle-right"></i>Teachers</a></li>
-                             <li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
-                             <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact</a></li>
+                             <li><a href="/gallery"><i class="fa fa-angle-right"></i>Gallery</a></li>
+                             <li><a href="/shop"><i class="fa fa-angle-right"></i>Shop</a></li>
+                             <li><a href="/teachers"><i class="fa fa-angle-right"></i>Teachers</a></li>
+                             <li><a href="/contact"><i class="fa fa-angle-right"></i>Contact</a></li>
                          </ul>
                      </div> <!-- footer link -->
                  </div>
@@ -46,11 +45,10 @@
                              <h6>Support</h6>
                          </div>
                          <ul>
-                             <li><a href="#"><i class="fa fa-angle-right"></i>FAQS</a></li>
-                             <li><a href="#"><i class="fa fa-angle-right"></i>Privacy</a></li>
-                             <li><a href="#"><i class="fa fa-angle-right"></i>Policy</a></li>
-                             <li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
-                             <li><a href="#"><i class="fa fa-angle-right"></i>Documentation</a></li>
+                             <li><a href="/faq"><i class="fa fa-angle-right"></i>FAQS</a></li>
+                             <li><a href="/policy"><i class="fa fa-angle-right"></i>Privacy</a></li>
+                             <li><a href="/policy"><i class="fa fa-angle-right"></i>Policy</a></li>
+                             <li><a href="/contact"><i class="fa fa-angle-right"></i>Support</a></li>
                          </ul>
                      </div> <!-- support -->
                  </div>
@@ -73,7 +71,7 @@
                                      <i class="fa fa-phone"></i>
                                  </div>
                                  <div class="cont">
-                                     <p>+3 123 456 789</p>
+                                     <p>+91 89434 85194</p>
                                  </div>
                              </li>
                              <li>
@@ -81,7 +79,7 @@
                                      <i class="fa fa-envelope-o"></i>
                                  </div>
                                  <div class="cont">
-                                     <p>info@yourmail.com</p>
+                                     <p>kpmhaleem528@gmail.com</p>
                                  </div>
                              </li>
                          </ul>
@@ -105,7 +103,7 @@
                  </div>
                  <div class="col-md-4">
                      <div class="copyright text-md-right text-center pt-15">
-                         <p>Designed by <span><a href="https://ubuciko.online/" target="_blank" style="color: #ffc600">
+                         <p>Developed by <span><a href="https://ubuciko.online/" target="_blank" style="color: #ffc600">
                                      Ubuciko</a> </span> </p>
                      </div>
                  </div>

@@ -8,11 +8,11 @@
                 <div class="col-lg-4 col-md-8">
                     <div class="teachers-left mt-50">
                         <div class="hero">
-                            <img src="{{ asset('assets/images/teachers/t-1.jpg') }}" alt="Teachers">
+                            <img src="{{ asset('images/teacher') . '/' . $teacher->image }}" alt="Teachers">
                         </div>
                         <div class="name">
-                            <h6>Mark Alen</h6>
-                            <span>Vice Chancellor</span>
+                            <h6>{{ $teacher->name }}</h6>
+                            <span>{{ $teacher->position }}</span>
                         </div>
                         <div class="social">
                             <ul>
@@ -23,8 +23,7 @@
                             </ul>
                         </div>
                         <div class="description">
-                            <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat
-                                ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate..</p>
+                            <p>{{ $teacher->description }}</p>
                         </div>
                     </div>
                     <!-- teachers left -->
@@ -52,26 +51,17 @@
                                 <div class="dashboard-cont">
                                     <div class="single-dashboard pt-40">
                                         <h5>About</h5>
-                                        <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum
-                                            auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh
-                                            vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
-                                            Nam nec tellus .</p>
+                                        <p>{{ $teacher->about }}</p>
                                     </div>
                                     <!-- single dashboard -->
                                     <div class="single-dashboard pt-40">
                                         <h5>Acchivments</h5>
-                                        <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum
-                                            auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh
-                                            vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
-                                            Nam nec tellus .</p>
+                                        <p>{{ $teacher->achievements }}</p>
                                     </div>
                                     <!-- single dashboard -->
                                     <div class="single-dashboard pt-40">
                                         <h5>My Objective</h5>
-                                        <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum
-                                            auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh
-                                            vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
-                                            Nam nec tellus .</p>
+                                        <p>{{ $teacher->objective }}</p>
                                     </div>
                                     <!-- single dashboard -->
                                 </div>
@@ -80,97 +70,57 @@
                             <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
                                 <div class="courses-cont pt-20">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="single-course mt-30">
-                                                <div class="thum">
-                                                    <div class="image">
-                                                        <img src="{{ asset('assets/images/course/cu-2.jpg') }}" alt="Course">
+                                        @foreach ($courses as $course)
+                                            <div class="col-md-6">
+                                                <div class="single-course mt-30">
+                                                    <div class="thum">
+                                                        <div class="image">
+                                                            <img src="{{ asset('images/course') . '/' . $course->image }}"
+                                                                alt="Course">
+                                                        </div>
+                                                        <div class="price">
+                                                            <span>${{ $course->price }}</span>
+                                                        </div>
                                                     </div>
-                                                    <div class="price">
-                                                        <span>$10</span>
+                                                    <div class="cont border">
+                                                        <ul>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                        </ul>
+                                                        <span>(20 Reviews)</span><br>
+                                                        <a href="/courses/{{ $course->id }}">
+                                                            <h4>{{ $course->courseName }}</h4>
+                                                        </a>
+                                                        <div class="course-teacher">
+                                                            <div class="thum">
+                                                                <a href="#"><img
+                                                                        src="{{ asset('images/teacher') . '/' . $teacher->image }}"
+                                                                        alt="teacher"></a>
+                                                            </div>
+                                                            <div class="name">
+                                                                <a href="#">
+                                                                    <h6>{{ $teacher->name }}</h6>
+                                                                </a>
+                                                            </div>
+                                                            <div class="admin">
+                                                                <ul>
+                                                                    <li><a href="#"><i
+                                                                                class="fa fa-user"></i><span>31</span></a>
+                                                                    </li>
+                                                                    <li><a href="#"><i
+                                                                                class="fa fa-heart"></i><span>10</span></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="cont border">
-                                                    <ul>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                    </ul>
-                                                    <span>(20 Reviews)</span>
-                                                    <a href="#">
-                                                        <h4>Learn basic javascript from start for beginner</h4>
-                                                    </a>
-                                                    <div class="course-teacher">
-                                                        <div class="thum">
-                                                            <a href="#"><img src="{{ asset('assets/images/course/teacher/t-2.jpg') }}"
-                                                                    alt="teacher"></a>
-                                                        </div>
-                                                        <div class="name">
-                                                            <a href="#">
-                                                                <h6>Mark anthem</h6>
-                                                            </a>
-                                                        </div>
-                                                        <div class="admin">
-                                                            <ul>
-                                                                <li><a href="#"><i
-                                                                            class="fa fa-user"></i><span>31</span></a></li>
-                                                                <li><a href="#"><i
-                                                                            class="fa fa-heart"></i><span>10</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <!-- single course -->
                                             </div>
-                                            <!-- single course -->
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="single-course mt-30">
-                                                <div class="thum">
-                                                    <div class="image">
-                                                        <img src="{{ asset('assets/images/course/cu-3.jpg') }}" alt="Course">
-                                                    </div>
-                                                    <div class="price">
-                                                        <span>$30</span>
-                                                    </div>
-                                                </div>
-                                                <div class="cont border">
-                                                    <ul>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                    </ul>
-                                                    <span>(20 Reviews)</span>
-                                                    <a href="#">
-                                                        <h4>Learn basic javascript from start for beginner</h4>
-                                                    </a>
-                                                    <div class="course-teacher">
-                                                        <div class="thum">
-                                                            <a href="#"><img src="{{ asset('assets/images/course/teacher/t-2.jpg') }}"
-                                                                    alt="teacher"></a>
-                                                        </div>
-                                                        <div class="name">
-                                                            <a href="#">
-                                                                <h6>Mark anthem</h6>
-                                                            </a>
-                                                        </div>
-                                                        <div class="admin">
-                                                            <ul>
-                                                                <li><a href="#"><i
-                                                                            class="fa fa-user"></i><span>31</span></a></li>
-                                                                <li><a href="#"><i
-                                                                            class="fa fa-heart"></i><span>10</span></a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- single course -->
-                                        </div>
+                                        @endforeach
                                     </div>
                                     <!-- row -->
                                 </div>
@@ -186,7 +136,8 @@
                                             <div class="single-reviews">
                                                 <div class="reviews-author">
                                                     <div class="author-thum">
-                                                        <img src="{{ asset('assets/images/review/r-1.jpg') }}" alt="Reviews">
+                                                        <img src="{{ asset('assets/images/review/r-1.jpg') }}"
+                                                            alt="Reviews">
                                                     </div>
                                                     <div class="author-name">
                                                         <h6>Bobby Aktar</h6>
@@ -215,7 +166,8 @@
                                             <div class="single-reviews">
                                                 <div class="reviews-author">
                                                     <div class="author-thum">
-                                                        <img src="{{ asset('assets/images/review/r-2.jpg') }}" alt="Reviews">
+                                                        <img src="{{ asset('assets/images/review/r-2.jpg') }}"
+                                                            alt="Reviews">
                                                     </div>
                                                     <div class="author-name">
                                                         <h6>Humayun Ahmed</h6>
@@ -244,7 +196,8 @@
                                             <div class="single-reviews">
                                                 <div class="reviews-author">
                                                     <div class="author-thum">
-                                                        <img src="{{ asset('assets/images/review/r-3.jpg') }}" alt="Reviews">
+                                                        <img src="{{ asset('assets/images/review/r-3.jpg') }}"
+                                                            alt="Reviews">
                                                     </div>
                                                     <div class="author-name">
                                                         <h6>Tania Aktar</h6>

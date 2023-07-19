@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Models\Courses;
 use App\Models\Gallery;
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,11 +29,14 @@ use Illuminate\Support\Facades\Route;
     });
 
     Route::get('/teachers', function () {
-        return view('windows.teachers.index', ['name' => 'Teachers']);
+        $teachers =Teacher::all();
+        return view('windows.teachers.index', ['name' => 'Teachers','teachers' =>$teachers]);
     });
 
-    Route::get('/teachers/{id}', function () {
-        return view('windows.teachers.single', ['name' => 'Teachers']);
+    Route::get('/teachers/{id}', function ($id) {
+        $teacher = Teacher::where('id',$id)->first();
+        $courses = Courses::where('teacherId',$id)->get();
+        return view('windows.teachers.single', ['name' => 'Teachers','teacher'=>$teacher, 'courses' => $courses]);
     });
 
     Route::get('/courses', function () {

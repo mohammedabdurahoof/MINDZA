@@ -5,174 +5,31 @@
     <section id="teachers-page" class="pt-90 pb-120 gray-bg">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="single-teacher-2 text-center mt-30">
-                        <div class="teacher-image">
-                            <img src="{{ asset('assets/images/teachers/tm-7.jpg') }}" alt="Teacher">
-                            <div class="teacher-social " style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
+                @foreach ($teachers as $teacher)
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="single-teacher-2 text-center mt-30">
+                            <div class="teacher-image">
+                                <img src="{{ asset('images/teacher') . '/' . $teacher->image }}" alt="Teacher">
+                                <div class="teacher-social "
+                                    style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="teacher-content">
+                                <h6 class="teacher-title"><a href="/teachers/{{ $teacher->id }}">{{ $teacher->name }}</a>
+                                </h6>
+                                <span>{{ $teacher->position }}</span>
                             </div>
                         </div>
-                        <div class="teacher-content">
-                            <h6 class="teacher-title"><a href="/teachers/1">MarkMark Alen</a></h6>
-                            <span>Vice Chancellor</span>
-                        </div>
+                        <!-- single teacher 2 -->
                     </div>
-                    <!-- single teacher 2 -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="single-teacher-2 text-center mt-30">
-                        <div class="teacher-image">
-                            <img src="{{ asset('assets/images/teachers/tm-7.jpg') }}" alt="Teacher">
-                            <div class="teacher-social " style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <h6 class="teacher-title"><a href="#">MarkMark Alen</a></h6>
-                            <span>Vice Chancellor</span>
-                        </div>
-                    </div>
-                    <!-- single teacher 2 -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="single-teacher-2 text-center mt-30">
-                        <div class="teacher-image">
-                            <img src="{{ asset('assets/images/teachers/tm-7.jpg') }}" alt="Teacher">
-                            <div class="teacher-social " style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <h6 class="teacher-title"><a href="#">MarkMark Alen</a></h6>
-                            <span>Vice Chancellor</span>
-                        </div>
-                    </div>
-                    <!-- single teacher 2 -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="single-teacher-2 text-center mt-30">
-                        <div class="teacher-image">
-                            <img src="{{ asset('assets/images/teachers/tm-7.jpg') }}" alt="Teacher">
-                            <div class="teacher-social " style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <h6 class="teacher-title"><a href="#">MarkMark Alen</a></h6>
-                            <span>Vice Chancellor</span>
-                        </div>
-                    </div>
-                    <!-- single teacher 2 -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="single-teacher-2 text-center mt-30">
-                        <div class="teacher-image">
-                            <img src="{{ asset('assets/images/teachers/tm-7.jpg') }}" alt="Teacher">
-                            <div class="teacher-social " style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <h6 class="teacher-title"><a href="#">MarkMark Alen</a></h6>
-                            <span>Vice Chancellor</span>
-                        </div>
-                    </div>
-                    <!-- single teacher 2 -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="single-teacher-2 text-center mt-30">
-                        <div class="teacher-image">
-                            <img src="{{ asset('assets/images/teachers/tm-7.jpg') }}" alt="Teacher">
-                            <div class="teacher-social " style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <h6 class="teacher-title"><a href="#">MarkMark Alen</a></h6>
-                            <span>Vice Chancellor</span>
-                        </div>
-                    </div>
-                    <!-- single teacher 2 -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="single-teacher-2 text-center mt-30">
-                        <div class="teacher-image">
-                            <img src="{{ asset('assets/images/teachers/tm-7.jpg') }}" alt="Teacher">
-                            <div class="teacher-social " style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <h6 class="teacher-title"><a href="#">MarkMark Alen</a></h6>
-                            <span>Vice Chancellor</span>
-                        </div>
-                    </div>
-                    <!-- single teacher 2 -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="single-teacher-2 text-center mt-30">
-                        <div class="teacher-image">
-                            <img src="{{ asset('assets/images/teachers/tm-7.jpg') }}" alt="Teacher">
-                            <div class="teacher-social " style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <h6 class="teacher-title"><a href="#">MarkMark Alen</a></h6>
-                            <span>Vice Chancellor</span>
-                        </div>
-                    </div>
-                    <!-- single teacher 2 -->
-                </div>
+                @endforeach
             </div>
             {{-- <!-- row -->
             <div class="row">
