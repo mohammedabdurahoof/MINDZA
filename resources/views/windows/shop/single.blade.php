@@ -9,53 +9,77 @@
                     <div class="col-lg-6">
                         <div class="shop-left pt-30">
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-image-1" role="tabpanel" aria-labelledby="pills-image-1-tab">
+                                <div class="tab-pane fade show active" id="pills-image-1" role="tabpanel"
+                                    aria-labelledby="pills-image-1-tab">
                                     <div class="shop-image">
-                                        <a href="{{ asset('assets/images/shop-single/ss-1.jpg') }}" class="shop-items"><img src="{{ asset('assets/images/shop-single/ss-1.jpg') }}" alt="Shop"></a>
+                                        <a href="{{ asset('images/shop') . '/' . $product->images[1] }}"
+                                            class="shop-items"><img
+                                                src="{{ asset('images/shop') . '/' . $product->images[1] }}"
+                                                alt="Shop"></a>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-image-2" role="tabpanel" aria-labelledby="pills-image-2-tab">
+                                <div class="tab-pane fade" id="pills-image-2" role="tabpanel"
+                                    aria-labelledby="pills-image-2-tab">
                                     <div class="shop-image">
-                                        <a href="{{ asset('assets/images/shop-single/ss-2.jpg') }}" class="shop-items"><img src="{{ asset('assets/images/shop-single/ss-2.jpg') }}" alt="Shop"></a>
+                                        <a href="{{ asset('images/shop') . '/' . $product->images[2] }}"
+                                            class="shop-items"><img
+                                                src="{{ asset('images/shop') . '/' . $product->images[2] }}"
+                                                alt="Shop"></a>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-image-3" role="tabpanel" aria-labelledby="pills-image-3-tab">
+                                <div class="tab-pane fade" id="pills-image-3" role="tabpanel"
+                                    aria-labelledby="pills-image-3-tab">
                                     <div class="shop-image">
-                                        <a href="{{ asset('assets/images/shop-single/ss-3.jpg') }}" class="shop-items"><img src="{{ asset('assets/images/shop-single/ss-3.jpg') }}" alt="Shop"></a>
+                                        <a href="{{ asset('images/shop') . '/' . $product->images[3] }}"
+                                            class="shop-items"><img
+                                                src="{{ asset('images/shop') . '/' . $product->images[3] }}"
+                                                alt="Shop"></a>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-image-4" role="tabpanel" aria-labelledby="pills-image-4-tab">
+                                <div class="tab-pane fade" id="pills-image-4" role="tabpanel"
+                                    aria-labelledby="pills-image-4-tab">
                                     <div class="shop-image">
-                                        <a href="{{ asset('assets/images/shop-single/ss-1.jpg') }}" class="shop-items"><img src="{{ asset('assets/images/shop-single/ss-1.jpg') }}" alt="Shop"></a>
+                                        <a href="{{ asset('images/shop') . '/' . $product->images[4] }}"
+                                            class="shop-items"><img
+                                                src="{{ asset('images/shop') . '/' . $product->images[4] }}"
+                                                alt="Shop"></a>
                                     </div>
                                 </div>
                             </div>
                             <ul class="nav nav-justified mt-30" id="pills-tab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="active" id="pills-image-1-tab" data-toggle="pill" href="#pills-image-1" role="tab" aria-controls="pills-image-1" aria-selected="true">
+                                    <a class="active" id="pills-image-1-tab" data-toggle="pill" href="#pills-image-1"
+                                        role="tab" aria-controls="pills-image-1" aria-selected="true">
                                         <span class="shop-thum">
-                                            <img src="{{ asset('assets/images/shop-single/ss-s1.jpg') }}" alt="Thum">
+                                            <img src="{{ asset('images/shop') . '/' . $product->images[5] }}"
+                                                alt="Thum">
                                         </span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="pills-image-2-tab" data-toggle="pill" href="#pills-image-2" role="tab" aria-controls="pills-image-2" aria-selected="false">
+                                    <a id="pills-image-2-tab" data-toggle="pill" href="#pills-image-2" role="tab"
+                                        aria-controls="pills-image-2" aria-selected="false">
                                         <span class="shop-thum">
-                                            <img src="{{ asset('assets/images/shop-single/ss-s2.jpg') }}" alt="Thum">
+                                            <img src="{{ asset('images/shop') . '/' . $product->images[6] }}"
+                                                alt="Thum">
                                         </span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="pills-image-3-tab" data-toggle="pill" href="#pills-image-3" role="tab" aria-controls="pills-image-1" aria-selected="false">
+                                    <a id="pills-image-3-tab" data-toggle="pill" href="#pills-image-3" role="tab"
+                                        aria-controls="pills-image-1" aria-selected="false">
                                         <span class="shop-thum">
-                                            <img src="{{ asset('assets/images/shop-single/ss-s3.jpg') }}" alt="Thum">
+                                            <img src="{{ asset('images/shop') . '/' . $product->images[7] }}"
+                                                alt="Thum">
                                         </span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="pills-image-4-tab" data-toggle="pill" href="#pills-image-4" role="tab" aria-controls="pills-image-4" aria-selected="false">
+                                    <a id="pills-image-4-tab" data-toggle="pill" href="#pills-image-4" role="tab"
+                                        aria-controls="pills-image-4" aria-selected="false">
                                         <span class="shop-thum">
-                                            <img src="{{ asset('assets/images/shop-single/ss-s1.jpg') }}" alt="Thum">
+                                            <img src="{{ asset('images/shop') . '/' . $product->images[8] }}"
+                                                alt="Thum">
                                         </span>
                                     </a>
                                 </li>
@@ -65,10 +89,9 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="shop-right pt-30">
-                            <h6>Big Pen </h6>
-                            <span>$50.00</span>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            <h6>{{ $product->name }} </h6>
+                            <span>${{ $product->price }}</span>
+                            <p>{{ $product->description }}</p>
                             <div class="nice-number pt-15">
                                 <input type="number" value="1">
                             </div>
@@ -79,7 +102,7 @@
                     </div>
                 </div>
                 <!-- row -->
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-12">
                         <div class="shop-reviews mt-60">
                             <ul class="nav" id="myTab" role="tablist">
@@ -207,7 +230,7 @@
                         </div>
                         <!-- shop reviews -->
                     </div>
-                </div>
+                </div> --}}
                 <!-- row -->
             </div>
             <!-- shop-details -->
@@ -221,114 +244,40 @@
                 </div>
                 <!-- row -->
                 <div class="row justify-content-center">
-                    <div class="col-lg-3 col-md-6 col-sm-8">
-                        <div class="single-publication mt-30 text-center">
-                            <div class="image">
-                                <img src="{{ asset('assets/images/publication/p-1.jpg') }}" alt="Publication">
-                                <div class="add-cart">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="content pt-20">
-                                <h5 class="book-title"><a href="/shop/1">Stones The Road </a></h5>
-                                <p class="writer-name"><span>By</span> Scott Trench</p>
-                                <div class="price-btn d-flex align-items-center justify-content-between">
-                                    <div class="price pt-20">
-                                        <span class="discount-price">$250</span>
-                                        <span class="normal-price">$200</span>
-                                    </div>
-                                    <div class="button pt-10">
-                                        <a href="#" class="main-btn"><i class="fa fa-cart-plus"></i> Buy Now</a>
+                    @foreach ($products as $product)
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="single-publication mt-30 text-center">
+                                <div class="image">
+                                    <img src="{{ asset('images/shop') . '/' . $product->images[0] }}" alt="Product">
+                                    <div class="add-cart">
+                                        <ul>
+                                            <li><a href="/shop/{{ $product->id }}"><i
+                                                        class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="/shop/{{ $product->id }}"><i class="fa fa-heart-o"></i></a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
+                                <div class="content pt-20">
+                                    <h5 class="book-title"><a href="/shop/{{ $product->id }}">{{ $product->name }}</a>
+                                    </h5>
+                                    {{-- <p class="writer-name"><span>By</span> Scott Trench</p> --}}
+                                    <div class="price-btn d-flex align-items-center justify-content-between">
+                                        <div class="price pt-20">
+                                            {{-- <span class="discount-price">$250</span> --}}
+                                            <span class="normal-price">${{ $product->price }}</span>
+                                        </div>
+                                        <div class="button pt-10">
+                                            <a href="/shop/{{ $product->id }}" class="main-btn"><i
+                                                    class="fa fa-cart-plus"></i> Buy
+                                                Now</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- single publication -->
                         </div>
-                        <!-- single publication -->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-8">
-                        <div class="single-publication mt-30 text-center">
-                            <div class="image">
-                                <img src="{{ asset('assets/images/publication/p-1.jpg') }}" alt="Publication">
-                                <div class="add-cart">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="content pt-20">
-                                <h5 class="book-title"><a href="/shop/1">Stones The Road </a></h5>
-                                <p class="writer-name"><span>By</span> Scott Trench</p>
-                                <div class="price-btn d-flex align-items-center justify-content-between">
-                                    <div class="price pt-20">
-                                        <span class="discount-price">$250</span>
-                                        <span class="normal-price">$200</span>
-                                    </div>
-                                    <div class="button pt-10">
-                                        <a href="#" class="main-btn"><i class="fa fa-cart-plus"></i> Buy Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single publication -->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-8">
-                        <div class="single-publication mt-30 text-center">
-                            <div class="image">
-                                <img src="{{ asset('assets/images/publication/p-1.jpg') }}" alt="Publication">
-                                <div class="add-cart">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="content pt-20">
-                                <h5 class="book-title"><a href="/shop/1">Stones The Road </a></h5>
-                                <p class="writer-name"><span>By</span> Scott Trench</p>
-                                <div class="price-btn d-flex align-items-center justify-content-between">
-                                    <div class="price pt-20">
-                                        <span class="discount-price">$250</span>
-                                        <span class="normal-price">$200</span>
-                                    </div>
-                                    <div class="button pt-10">
-                                        <a href="#" class="main-btn"><i class="fa fa-cart-plus"></i> Buy Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single publication -->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-8">
-                        <div class="single-publication mt-30 text-center">
-                            <div class="image">
-                                <img src="{{ asset('assets/images/publication/p-1.jpg') }}" alt="Publication">
-                                <div class="add-cart">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="content pt-20">
-                                <h5 class="book-title"><a href="/shop/1">Stones The Road </a></h5>
-                                <p class="writer-name"><span>By</span> Scott Trench</p>
-                                <div class="price-btn d-flex align-items-center justify-content-between">
-                                    <div class="price pt-20">
-                                        <span class="discount-price">$250</span>
-                                        <span class="normal-price">$200</span>
-                                    </div>
-                                    <div class="button pt-10">
-                                        <a href="#" class="main-btn"><i class="fa fa-cart-plus"></i> Buy Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single publication -->
-                    </div>
+                    @endforeach
                 </div>
                 <!-- row -->
             </div>
