@@ -6,7 +6,7 @@
 
     <section id="courses-part" class="pt-120 pb-120 gray-bg">
         <div class="container">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-lg-12">
                     <div class="courses-top-search">
                         <ul class="nav float-left" id="myTab" role="tablist">
@@ -33,353 +33,64 @@
                     </div>
                     <!-- courses top search -->
                 </div>
-            </div>
+            </div> --}}
             <!-- row -->
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="courses-grid" role="tabpanel" aria-labelledby="courses-grid-tab">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-course mt-30">
-                                <div class="thum">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/course/cu-1.jpg') }}" alt="Course">
+                        @foreach ($courses as $course)
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-course mt-30">
+                                    <div class="thum">
+                                        <div class="image">
+                                            <img src="{{ asset('images/course') . '/' . $course->image }}" alt="Course">
+                                        </div>
+                                        <div class="price">
+                                            <span>{{$course->price}}</span>
+                                        </div>
                                     </div>
-                                    <div class="price">
-                                        <span>Free</span>
+                                    <div class="cont">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <span>(20 Reviews)</span>
+                                        <a href="courses/{{$course->id}}">
+                                            <h4>{{$course->courseName}}</h4>
+                                        </a>
+                                        <div class="course-teacher">
+                                            <div class="thum">
+                                                <a href="#"><img
+                                                        src="{{ asset('assets/images/course/teacher/t-1.jpg') }}"
+                                                        alt="teacher"></a>
+                                            </div>
+                                            <div class="name">
+                                                <a href="#">
+                                                    <h6>Mark anthem</h6>
+                                                </a>
+                                            </div>
+                                            <div class="admin">
+                                                <ul>
+                                                    <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
+                                                    <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="cont">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                    <span>(20 Reviews)</span>
-                                    <a href="courses/1">
-                                        <h4>Learn basic javascript from start for beginner</h4>
-                                    </a>
-                                    <div class="course-teacher">
-                                        <div class="thum">
-                                            <a href="#"><img src="{{ asset('assets/images/course/teacher/t-1.jpg') }}" alt="teacher"></a>
-                                        </div>
-                                        <div class="name">
-                                            <a href="#">
-                                                <h6>Mark anthem</h6>
-                                            </a>
-                                        </div>
-                                        <div class="admin">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- single course -->
                             </div>
-                            <!-- single course -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-course mt-30">
-                                <div class="thum">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/course/cu-1.jpg') }}" alt="Course">
-                                    </div>
-                                    <div class="price">
-                                        <span>Free</span>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                    <span>(20 Reviews)</span>
-                                    <a href="courses-single.html">
-                                        <h4>Learn basic javascript from start for beginner</h4>
-                                    </a>
-                                    <div class="course-teacher">
-                                        <div class="thum">
-                                            <a href="#"><img src="{{ asset('assets/images/course/teacher/t-1.jpg') }}" alt="teacher"></a>
-                                        </div>
-                                        <div class="name">
-                                            <a href="#">
-                                                <h6>Mark anthem</h6>
-                                            </a>
-                                        </div>
-                                        <div class="admin">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single course -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-course mt-30">
-                                <div class="thum">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/course/cu-1.jpg') }}" alt="Course">
-                                    </div>
-                                    <div class="price">
-                                        <span>Free</span>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                    <span>(20 Reviews)</span>
-                                    <a href="courses-single.html">
-                                        <h4>Learn basic javascript from start for beginner</h4>
-                                    </a>
-                                    <div class="course-teacher">
-                                        <div class="thum">
-                                            <a href="#"><img src="{{ asset('assets/images/course/teacher/t-1.jpg') }}" alt="teacher"></a>
-                                        </div>
-                                        <div class="name">
-                                            <a href="#">
-                                                <h6>Mark anthem</h6>
-                                            </a>
-                                        </div>
-                                        <div class="admin">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single course -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-course mt-30">
-                                <div class="thum">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/course/cu-1.jpg') }}" alt="Course">
-                                    </div>
-                                    <div class="price">
-                                        <span>Free</span>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                    <span>(20 Reviews)</span>
-                                    <a href="courses-single.html">
-                                        <h4>Learn basic javascript from start for beginner</h4>
-                                    </a>
-                                    <div class="course-teacher">
-                                        <div class="thum">
-                                            <a href="#"><img src="{{ asset('assets/images/course/teacher/t-1.jpg') }}" alt="teacher"></a>
-                                        </div>
-                                        <div class="name">
-                                            <a href="#">
-                                                <h6>Mark anthem</h6>
-                                            </a>
-                                        </div>
-                                        <div class="admin">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single course -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-course mt-30">
-                                <div class="thum">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/course/cu-1.jpg') }}" alt="Course">
-                                    </div>
-                                    <div class="price">
-                                        <span>Free</span>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                    <span>(20 Reviews)</span>
-                                    <a href="courses-single.html">
-                                        <h4>Learn basic javascript from start for beginner</h4>
-                                    </a>
-                                    <div class="course-teacher">
-                                        <div class="thum">
-                                            <a href="#"><img src="{{ asset('assets/images/course/teacher/t-1.jpg') }}" alt="teacher"></a>
-                                        </div>
-                                        <div class="name">
-                                            <a href="#">
-                                                <h6>Mark anthem</h6>
-                                            </a>
-                                        </div>
-                                        <div class="admin">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single course -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-course mt-30">
-                                <div class="thum">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/course/cu-1.jpg') }}" alt="Course">
-                                    </div>
-                                    <div class="price">
-                                        <span>Free</span>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                    <span>(20 Reviews)</span>
-                                    <a href="courses-single.html">
-                                        <h4>Learn basic javascript from start for beginner</h4>
-                                    </a>
-                                    <div class="course-teacher">
-                                        <div class="thum">
-                                            <a href="#"><img src="{{ asset('assets/images/course/teacher/t-1.jpg') }}" alt="teacher"></a>
-                                        </div>
-                                        <div class="name">
-                                            <a href="#">
-                                                <h6>Mark anthem</h6>
-                                            </a>
-                                        </div>
-                                        <div class="admin">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single course -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-course mt-30">
-                                <div class="thum">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/course/cu-1.jpg') }}" alt="Course">
-                                    </div>
-                                    <div class="price">
-                                        <span>Free</span>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                    <span>(20 Reviews)</span>
-                                    <a href="courses-single.html">
-                                        <h4>Learn basic javascript from start for beginner</h4>
-                                    </a>
-                                    <div class="course-teacher">
-                                        <div class="thum">
-                                            <a href="#"><img src="{{ asset('assets/images/course/teacher/t-1.jpg') }}" alt="teacher"></a>
-                                        </div>
-                                        <div class="name">
-                                            <a href="#">
-                                                <h6>Mark anthem</h6>
-                                            </a>
-                                        </div>
-                                        <div class="admin">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single course -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-course mt-30">
-                                <div class="thum">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/course/cu-1.jpg') }}" alt="Course">
-                                    </div>
-                                    <div class="price">
-                                        <span>Free</span>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                    <span>(20 Reviews)</span>
-                                    <a href="courses-single.html">
-                                        <h4>Learn basic javascript from start for beginner</h4>
-                                    </a>
-                                    <div class="course-teacher">
-                                        <div class="thum">
-                                            <a href="#"><img src="{{ asset('assets/images/course/teacher/t-1.jpg') }}" alt="teacher"></a>
-                                        </div>
-                                        <div class="name">
-                                            <a href="#">
-                                                <h6>Mark anthem</h6>
-                                            </a>
-                                        </div>
-                                        <div class="admin">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single course -->
-                        </div>
-                    {{-- </div> --}}
+                        @endforeach
+                    </div>
                     <!-- row -->
                 </div>
             </div>
             <!-- tab content -->
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-lg-12">
                     <nav class="courses-pagination mt-50">
                         <ul class="pagination justify-content-center">
@@ -400,7 +111,7 @@
                     </nav>
                     <!-- courses pagination -->
                 </div>
-            </div>
+            </div> --}}
             <!-- row -->
         </div>
         <!-- container -->

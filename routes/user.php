@@ -41,7 +41,8 @@ Route::get('/teachers/{id}', function ($id) {
 });
 
 Route::get('/courses', function () {
-    return view('windows.courses.index', ['name' => 'Courses']);
+    $courses = Courses::all();
+    return view('windows.courses.index', ['name' => 'Courses','courses' => $courses]);
 });
 
 Route::get('/courses/{id}', function () {

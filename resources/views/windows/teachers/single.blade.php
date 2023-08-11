@@ -39,10 +39,10 @@
                                 <a id="courses-tab" data-toggle="tab" href="#courses" role="tab" aria-controls="courses"
                                     aria-selected="false">Courses</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"
                                     aria-selected="false">Reviews</a>
-                            </li>
+                            </li> --}}
                         </ul>
                         <!-- nav -->
                         <div class="tab-content" id="myTabContent">
