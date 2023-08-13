@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Courses;
+use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Shop;
 use App\Models\Teacher;
@@ -11,7 +12,8 @@ Route::get('/', function () {
     $course = Courses::join('teachers', 'courses.teacherId', 'teachers.id')->select('courses.image as courseImage', 'teachers.image as teacherImage', 'courses.id', 'teacherId', 'courseName', 'price', 'name')->get();
     $teachers = Teacher::all();
     $products = Shop::latest()->limit(4)->get();
-    return view('windows.home.index', ['course' => $course, 'teachers' => $teachers, 'products' => $products]);
+    $events = Event::latest()->limit(3)->get();
+    return view('windows.home.index', ['course' => $course, 'teachers' => $teachers, 'products' => $products, 'events' => $events]);
     // return view('welcome');
 });
 
@@ -48,11 +50,13 @@ Route::get('/courses/{id}', function ($id) {
 });
 
 Route::get('/events', function () {
-    return view('windows.events.index', ['name' => 'Events']);
+    $events = Event::all();
+    return view('windows.events.index', ['name' => 'Events', 'events' => $events]);
 });
 
-Route::get('/events/{id}', function () {
-    return view('windows.events.single', ['name' => 'Events']);
+Route::get('/events/{id}', function ($id) {
+    $event = Event::where('id', $id)->first();
+    return view('windows.events.single', ['name' => 'Events', 'event' => $event]);
 });
 
 Route::get('/shop', function () {
