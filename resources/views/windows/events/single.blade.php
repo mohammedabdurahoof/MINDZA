@@ -26,7 +26,7 @@
                                 style="background-image: url({{ asset('assets/images/event/single-event/coundown.jpg') }})">
                                 <div data-countdown="2023/09/01"></div>
                                 <div class="events-coundwon-btn pt-30">
-                                    <a href="#" class="main-btn">Book Your Seat</a>
+                                    <a href="/event-register" class="main-btn">Book Your Seat</a>
                                 </div>
                             </div>
                             <!-- events coundwon -->

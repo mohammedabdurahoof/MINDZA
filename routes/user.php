@@ -2,10 +2,12 @@
 
 use App\Models\Courses;
 use App\Models\Event;
+use App\Models\EventRegister;
 use App\Models\Gallery;
 use App\Models\Shop;
 use App\Models\Teacher;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 
 Route::get('/', function () {
@@ -57,6 +59,30 @@ Route::get('/events', function () {
 Route::get('/events/{id}', function ($id) {
     $event = Event::where('id', $id)->first();
     return view('windows.events.single', ['name' => 'Events', 'event' => $event]);
+});
+
+Route::get('/event-register', function () {
+    $events = Event::all();
+    return view('windows.events.register', ['name' => 'Events', 'events' => $events]);
+});
+
+Route::post('/event-register', function (Request $request) {
+    // dd($request->all());
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'phone' => ['required', 'string', 'max:255'],
+        'address' => ['required', 'string', 'max:255'],
+        'gender' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255'],
+        'event' => ['required', 'string', 'max:255'],
+        'time' => ['required', 'string', 'max:255'],
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    ]);
+    
+    $imageName = time() . '.' . request()->image->getClientOriginalExtension();
+    request()->image->move(public_path('images/event-register'), $imageName);
+    EventRegister::create($request->post() + ['image' => $imageName]);
+    return back()->with('success','successfully registered');
 });
 
 Route::get('/shop', function () {

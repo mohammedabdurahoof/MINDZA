@@ -5488,3 +5488,11 @@ a.loginhere-link:hover {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.show-more{
+  color: white;
+}
+
+.show-more:hover{
+  color: #ffc600;
+}

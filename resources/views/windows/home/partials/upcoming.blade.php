@@ -21,9 +21,9 @@
                                     </div>
                                 </li>
                             @endforeach
-
-
+                            
                         </ul>
+                        <a class="show-more" href="/events">Show more</a> 
                     </div> <!-- event 2 -->
                 </div>
             </div> <!-- row -->
