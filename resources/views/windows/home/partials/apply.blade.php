@@ -11,7 +11,7 @@
                         challenges, enhance their resilience, and lead more fulfilling lives. By blending convenience,
                         expertise, and compassion, Mindza continues to make a positive impact in the realm of online
                         mental health services.<br> </p>
-                    <a href="#" class="main-btn mt-55">Learn More</a>
+                    <a href="/about" class="main-btn mt-55">Learn More</a>
                 </div>
             </div> <!-- about cont -->
             {{-- <div class="col-lg-6">
