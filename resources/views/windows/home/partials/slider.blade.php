@@ -9,8 +9,8 @@
                         <h1 data-animation="fadeInLeft" data-delay="1s">Choose the right theme for education</h1>
                         <p data-animation="fadeInUp" data-delay="1.3s">Donec vitae sapien ut libearo venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt  Sed fringilla mauri amet nibh.</p>
                         <ul>
-                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="#">Read More</a></li>
-                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn" href="#">Get Started</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="/about">Read More</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn" href="/register">Get Started</a></li>
                         </ul>
                     </div>
                 </div>
@@ -26,8 +26,8 @@
                         <h1 data-animation="fadeInLeft" data-delay="1s">Choose the right theme for education</h1>
                         <p data-animation="fadeInUp" data-delay="1.3s">Donec vitae sapien ut libearo venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt  Sed fringilla mauri amet nibh.</p>
                         <ul>
-                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="#">Read More</a></li>
-                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn" href="#">Get Started</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="/about">Read More</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn" href="/register">Get Started</a></li>
                         </ul>
                     </div>
                 </div>
@@ -42,8 +42,8 @@
                         <h1 data-animation="fadeInLeft" data-delay="1s">Choose the right theme for education</h1>
                         <p data-animation="fadeInUp" data-delay="1.3s">Donec vitae sapien ut libearo venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt  Sed fringilla mauri amet nibh.</p>
                         <ul>
-                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="#">Read More</a></li>
-                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn" href="#">Get Started</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="/about">Read More</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn" href="/register">Get Started</a></li>
                         </ul>
                     </div>
                 </div>

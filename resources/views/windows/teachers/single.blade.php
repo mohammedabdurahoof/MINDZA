@@ -79,7 +79,7 @@
                                                                 alt="Course">
                                                         </div>
                                                         <div class="price">
-                                                            <span>${{ $course->price }}</span>
+                                                            <span>₹{{ $course->price }}</span>
                                                         </div>
                                                     </div>
                                                     <div class="cont border">

@@ -57,7 +57,7 @@
                                         <div class="price-btn d-flex align-items-center justify-content-between">
                                             <div class="price pt-20">
                                                 {{-- <span class="discount-price">$250</span> --}}
-                                                <span class="normal-price">${{$product->price}}</span>
+                                                <span class="normal-price">₹{{$product->price}}</span>
                                             </div>
                                             <div class="button pt-10">
                                                 <a href="/shop/{{$product->id}}" class="main-btn"><i class="fa fa-cart-plus"></i> Buy

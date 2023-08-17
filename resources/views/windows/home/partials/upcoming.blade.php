@@ -8,31 +8,22 @@
                             <h3>Upcoming events</h3>
                         </div> <!-- event title -->
                         <ul>
-                            <li>
-                                <div class="single-event">
-                                    <span><i class="fa fa-calendar"></i> 2 December 2018</span>
-                                    <a href="events-single.html"><h4>Campus clean workshop</h4></a>
-                                    <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
-                                    <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="single-event">
-                                    <span><i class="fa fa-calendar"></i> 2 December 2018</span>
-                                    <a href="events-single.html"><h4>Tech Summit</h4></a>
-                                    <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
-                                    <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="single-event">
-                                    <span><i class="fa fa-calendar"></i> 2 December 2018</span>
-                                    <a href="events-single.html"><h4>Environment conference</h4></a>
-                                    <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
-                                    <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
-                                </div>
-                            </li>
-                        </ul> 
+                            @foreach ($events as $event)
+                                <li>
+                                    <div class="single-event">
+                                        {{-- <span><i class="fa fa-calendar"></i> 2 December 2018</span> --}}
+                                        <a href="/events/{{ $event->id }}">
+                                            <h4>{{ $event->name }}</h4>
+                                        </a>
+                                        <span><i class="fa fa-clock-o"></i>{{ $event->startTime }} -
+                                            {{ $event->finishTime }}</span>
+                                        <span><i class="fa fa-map-marker"></i>{{ $event->address }}</span>
+                                    </div>
+                                </li>
+                            @endforeach
+                            
+                        </ul>
+                        <a class="show-more" href="/events">Show more</a> 
                     </div> <!-- event 2 -->
                 </div>
             </div> <!-- row -->
