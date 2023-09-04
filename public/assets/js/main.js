@@ -420,3 +420,9 @@ function readURL(input) {
 $("#imageUpload").change(function() {
   readURL(this);
 });
+
+$("#add-course-form").hide();
+$("#add-course-btn").click(function() {
+$("#add-course-btn").hide();
+$("#add-course-form").show();
+});

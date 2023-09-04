@@ -74,11 +74,11 @@ class RegisteredUserController extends Controller
             'course' => ['required', 'string', 'max:255'],
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
-        
+
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
         request()->image->move(public_path('images/student'), $imageName);
-        Student::create($request->post() + ['image' => $imageName]);
-        
+        Student::create($request->post() + ['image' => $imageName, 'courses' =>[['id'=>$request->course,'status'=>'pending']]]);
+
         $this->store($request);
         return redirect(RouteServiceProvider::HOME);
     }

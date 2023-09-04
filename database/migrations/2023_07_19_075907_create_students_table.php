@@ -21,7 +21,7 @@ class CreateStudentsTable extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('gender');
-            $table->string('course');
+            $table->json('courses');
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ Route::get('/dashboard', function() {
     } elseif (auth()->user()->type == 'teacher') {
         return redirect('/teacher/dashboard');
     } else {
-        return redirect('/student/dashboard');
+        return redirect('/students/dashboard');
     }
 })->middleware('auth');
 
