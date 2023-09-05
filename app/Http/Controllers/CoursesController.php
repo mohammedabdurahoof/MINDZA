@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Courses;
 use App\Models\Teacher;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
@@ -37,9 +38,26 @@ class CoursesController extends Controller
         Courses::create($request->post() + ['image' => $imageName]);
         return redirect()->route('courses.index')->with('success', 'Course has been added successfully.');
     }
+
     public function show(Courses $course)
     {
-        return view('products.show', compact('course'));
+        $students = student::whereJsonContains('courses',  ['id' => strval($course->id)])->get();
+        return view('admin.windows.courses.single', compact('course','students'));
+    }
+
+    public function confrimCouse(Request $request)
+    {
+        $request->validate([
+            'studentId' => 'required',
+            'courseId' => 'required',
+        ]);
+        $student = Student::where("id",$request->studentId)->first();
+        $courses = array_map(function ($value) use($request){
+            return $value['id'] == $request->courseId ? ['id'=>$request->courseId, 'status'=>'confirmed'] : $value;
+        }, $student->courses);
+        $student->update(['courses' => $courses]);
+        return back()
+            ->with('success', 'confirmed');
     }
 
     public function edit(Courses $course)
@@ -76,4 +94,6 @@ class CoursesController extends Controller
         return redirect()->route('courses.index')
             ->with('success', 'Course deleted successfully');
     }
+
+    
 }

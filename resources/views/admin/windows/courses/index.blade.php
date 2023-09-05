@@ -45,7 +45,7 @@
                                             <td>
                                                 <img src="{{ asset('images/course') . '/' . $course->image }}" width="48"
                                                     height="48" class="rounded-circle me-2" alt="image">
-                                                {{ $course->courseName }}
+                                                <a href='{{ route('courses.show', $course->id) }}'>{{ $course->courseName }}<a/>
                                             </td>
                                             <td>{{ $course->category }}</td>
                                             <td>{{ $course->teacherId }}</td>

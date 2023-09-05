@@ -24,9 +24,9 @@ Route::middleware('auth')->prefix('teacher')->group(function () {
         return view('admin.windows.dashboard.index');
     })->name('dashboard');
 
-    Route::resource('courses', CoursesController::class);
-    Route::resource('teachers', TeacherController::class);
-    Route::resource('events', EventController::class);
-    Route::resource('gallery', GalleryController::class);
-    Route::resource('shop', ShopController::class);
+    // Route::resource('courses', CoursesController::class);
+    // Route::resource('teachers', TeacherController::class);
+    // Route::resource('events', EventController::class);
+    // Route::resource('gallery', GalleryController::class);
+    // Route::resource('shop', ShopController::class);
 });

@@ -10,7 +10,7 @@
             </li> --}}
 
             <li class="sidebar-item {{ request()->segment(2) == 'dashboard' ? 'active' : '' }}">
-                <a class="sidebar-link" href="{{ route('dashboard') }}">
+                <a class="sidebar-link" href="/dashboard">
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                 </a>
             </li>
