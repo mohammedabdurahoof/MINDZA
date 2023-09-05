@@ -134,4 +134,18 @@ class studentController extends Controller
         $user->update(['password' => Hash::make($request->password)]);
         return back()->with('success', ' Successfully Password Changed');
     }
+
+    function addNewCourse(Request $request)
+    {
+        $request->validate([
+            'courseId' => ['required'],
+        ]);
+        $email = Auth::user()->email;
+        $student = Student::where('email', $email)->first();
+        $courses =$student->courses;
+        array_push($courses,['id'=>$request->courseId,'status'=>'pending']);
+        // dd($courses);
+        $student->update(['courses' => $courses]);
+        return back()->with('success', ' Successfully Password Changed');
+    }
 }

@@ -3,9 +3,11 @@
         class="main-btn register-submit" value="Add Course" />
        
 </div>
-<form action="" id="add-course-form">
+<form action="{{route('students.addNewCourse')}}" id="add-course-form" method='POST'>
+@csrf
+@method('PUT')
     <div class="form-group" style="overflow: visible; margin-bottom: 5rem;">
-        <select class="form-control" name="course" id="exampleFormControlSelect1"
+        <select class="form-control" name="courseId" id="exampleFormControlSelect1"
             required>
             <option selected value="">choose a course</option>
             @foreach ($courses as $course)

@@ -39,7 +39,6 @@
                 <div class="tab-pane fade show active" id="courses-grid" role="tabpanel" aria-labelledby="courses-grid-tab">
                     <div class="row">
                         @foreach ($courses as $course)
-                    {{$course}}
                             <div class="col-lg-4 col-md-6">
                                 <div class="single-course mt-30">
                                     <div class="thum">

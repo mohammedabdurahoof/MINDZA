@@ -18,4 +18,6 @@ Route::middleware('auth')->prefix('students')->group(function () {
     Route::resource('students', studentController::class);
     Route::get('/dashboard', [studentController::class,'dashboard'])->name('students.dashboard');
     Route::put('/changePassword', [studentController::class,'changePassword'])->name('students.changePassword');
+    Route::put('/addNewCourse', [studentController::class,'addNewCourse'])->name('students.addNewCourse');
+    
 });
