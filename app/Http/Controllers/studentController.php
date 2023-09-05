@@ -92,7 +92,6 @@ class studentController extends Controller
             File::delete(public_path('images/student/' . $student->image));
             request()->image->move(public_path('images/student'), $imageName);
             $data['image'] = $imageName;
-
         }
         $student->update($data);
         return redirect()->route('students.dashboard')
@@ -115,17 +114,14 @@ class studentController extends Controller
     {
         $email = Auth::user()->email;
         $student = Student::where('email', $email)->first();
-        $courses = Courses::all();
-        // $selectedCourse = Student::where('email', $email)->join('courses', 'students.courses[0]->id', 'courses.id')->get();
-        // $re = DB::table('students')
-        //     ->where('email', $email)
-        //     ->Join(
-        //         'courses',
-        //         'courses.id',
-        //         DB::Raw("students.courses->'$[*].id',CAST(courses.id as JSON)")
-        //     )->get();
-        // dd($re);
-        return view('students.windows.dashboard.index', ['name' => 'Student', 'student' => $student, 'courses' => $courses]);
+        $courses = Courses::join('teachers','courses.teacherId','teachers.id')->select('courses.image as courseImage', 'teachers.image as teacherImage', 'courses.id', 'courseName', 'price', 'name')->get();
+        $selectedCourses = collect($student->courses)->map(function ($item, $key) use($courses) {
+            $details =  $courses->where('id', $item['id'])->first();
+            $items = collect($item)->merge($details);
+            return $items;
+          });
+        // dd($selectedCourses);
+        return view('students.windows.dashboard.index', ['name' => 'Student', 'student' => $student, 'courses' => $courses,'selectedCourses'=>$selectedCourses]);
     }
 
     function changePassword(Request $request)
@@ -133,7 +129,6 @@ class studentController extends Controller
         $request->validate([
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
-        $data = $request->all();
         $email = Auth::user()->email;
         $user = User::where('email', $email)->first();
         $user->update(['password' => Hash::make($request->password)]);

@@ -24,7 +24,7 @@
                             </ul>
                         </div>
                         {{-- <div class="description">
-                            <p>{{ $teacher->description }}</p>
+                            <p>{{ $teacher ?? ''->description }}</p>
                 </div> --}}
                     </div>
                     <!-- teachers left -->
@@ -38,7 +38,7 @@
                             </li>
                             <li class="nav-item">
                                 <a id="courses-tab" data-toggle="tab" href="#courses" role="tab" aria-controls="courses"
-                                    aria-selected="false">Courses</a>
+                                    aria-selected="false">Lecture</a>
                             </li>
                             <li class="nav-item">
                                 <a id="reviews-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="reviews"
@@ -57,16 +57,17 @@
                                         <h6>COURSE STATUS</h6>
                                     </div>
                                     <div class="row">
-                                        {{-- @foreach ($courses as $course)
+
+                                        @foreach ($selectedCourses as $course)
                                             <div class="col-md-6">
                                                 <div class="single-course mt-30">
                                                     <div class="thum">
                                                         <div class="image">
-                                                            <img src="{{ asset('images/course') . '/' . $course->image }}"
+                                                            <img src="{{ asset('images/course') . '/' . $course['courseImage'] }}"
                                                                 alt="Course">
                                                         </div>
                                                         <div class="price">
-                                                            <span>₹{{ $course->price }}</span>
+                                                            <span>₹{{ $course['price'] }}</span>
                                                         </div>
                                                     </div>
                                                     <div class="cont border">
@@ -78,18 +79,19 @@
                                                             <li><i class="fa fa-star"></i></li>
                                                         </ul>
                                                         <span>(20 Reviews)</span><br>
-                                                        <a href="/courses/{{ $course->id }}">
-                                                            <h4>{{ $course->courseName }}</h4>
+                                                        <h6 style='color:{{$course['status'] == 'pending' ? 'red' : 'black'}}'>{{$course['status']}}</h6>
+                                                        <a href="/courses/{{ $course['id'] }}">
+                                                            <h4>{{ $course['courseName'] }}</h4>
                                                         </a>
                                                         <div class="course-teacher">
                                                             <div class="thum">
                                                                 <a href="#"><img
-                                                                        src="{{ asset('images/teacher') . '/' . $teacher->image }}"
+                                                                        src="{{ asset('images/teacher') . '/' . $course['teacherImage'] }}"
                                                                         alt="teacher"></a>
                                                             </div>
                                                             <div class="name">
                                                                 <a href="#">
-                                                                    <h6>{{ $teacher->name }}</h6>
+                                                                    <h6>{{ $course['name'] }}</h6>
                                                                 </a>
                                                             </div>
                                                             <div class="admin">
@@ -107,50 +109,12 @@
                                                 </div>
                                                 <!-- single course -->
                                             </div>
-                                        @endforeach --}}
+                                        @endforeach
                                     </div>
-                                    <div class="form-group float-right">
-                                        <input type="submit" name="submit" id="add-course-btn"
-                                            class="main-btn register-submit" value="Add Course" />
-                                    </div>
-
-                                    <form action="" id="add-course-form">
-                                        <div class="form-group" style="overflow: visible; margin-bottom: 5rem;">
-                                            <select class="form-control" name="course" id="exampleFormControlSelect1"
-                                                required>
-                                                <option selected value="">choose a course</option>
-                                                @foreach ($courses as $course)
-                                                    <option value="{{ $course->id }}"
-                                                        {{ Session::get('value.course') == $course->id ? 'selected' : '' }}>
-                                                        {{ $course->courseName }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="form-group float-right mt-3">
-                                            <input type="submit" name="submit" id="submit"
-                                                class="main-btn register-submit" value="Register" />
-                                        </div>
-                                    </form>
-                                    <div style="height: 7.5rem;"></div>
+                                    @include('students.windows.dashboard.partials.add_courses')
                                 </div>
 
-                                {{-- <div class="dashboard-cont">
-                                    <div class="single-dashboard pt-40">
-                                        <h5>About</h5>
-                                        <!-- <p>{{ $teacher->about }}</p> -->
-                    </div>
-                    <!-- single dashboard -->
-                    <div class="single-dashboard pt-40">
-                        <h5>Achievements</h5>
-                        <!-- <p>{{ $teacher->achievements }}</p> -->
-                    </div>
-                    <!-- single dashboard -->
-                    <div class="single-dashboard pt-40">
-                        <h5>My Objective</h5>
-                        <!-- <p>{{ $teacher->objective }}</p> -->
-                    </div>
-                    <!-- single dashboard -->
-                </div> --}}
+                                
                                 <!-- dashboard cont -->
                             </div>
                             <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
@@ -163,9 +127,8 @@
                                             <div class="accordion" id="accordionExample">
                                                 <div class="card">
                                                     <div class="card-header" id="headingOne">
-                                                        <a href="#" data-toggle="collapse"
-                                                            data-target="#collapseOne" aria-expanded="true"
-                                                            aria-controls="collapseOne">
+                                                        <a href="#" data-toggle="collapse" data-target="#collapseOne"
+                                                            aria-expanded="true" aria-controls="collapseOne">
                                                             <ul>
                                                                 <li><i class="fa fa-file-o"></i></li>
                                                                 <li><span class="lecture">Lecture 1.1</span></li>
@@ -572,123 +535,9 @@
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="reviews-tab">
                                 <div class="reviews-cont">
-                                    <div class="title">
-                                        <h6>Edit Student</h6>
-                                    </div>
-                                    <form method="POST" id="signup-form" class="signup-form"
-                                        action="{{ route('students.update', $student->id) }}" enctype="multipart/form-data">
-                                        @csrf
-                                        @method('PUT')
-                                        {{-- <h2 class="form-title pb-20">Register Now</h2> --}}
-                                        @if ($errors->any())
-                                            <span
-                                                class="text-danger text-left mb-4">{{ implode('', $errors->all(':message')) }}</span>
-                                        @endif
-                                        <div class="avatar-upload">
-                                            <div class="avatar-edit">
-                                                <input type="file" name="image" id="imageUpload"
-                                                    accept=".png, .jpg, .jpeg" />
-                                                <label for="imageUpload"></label>
-                                            </div>
-                                            <div class="avatar-preview">
-                                                <div id="imagePreview"
-                                                    style="background-image: url({{ asset('images/student') . '/' . $student->image }});">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 col-md-4">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-input" name="name"
-                                                        id="name" placeholder="Your Name"
-                                                        value="{{ $student->name }}" required />
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-md-8">
-                                                <div class="form-group">
-                                                    <input type="email" class="form-input" name="email"
-                                                        id="email" disabled placeholder="Your Email"
-                                                        value="{{ $student->email }}" required />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-12 col-md-6">
-                                                <div class="form-group">
-                                                    <input type="tel" class="form-input" name="phone"
-                                                        id="phone" placeholder="Your Mobile Number"
-                                                        value="{{ $student->phone }}" required />
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-md-6">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-input" name="address"
-                                                        id="address" placeholder="Your Address"
-                                                        value="{{ $student->address }}" required />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <h6 class="mb-3">Select your Gender:</h6>
-                                        <div class="row justify-content-around">
-                                            <div class="form-group">
-                                                <input type="radio" name="gender" id="male"
-                                                    placeholder="Your Gender"
-                                                    {{ $student->gender == 'Male' ? 'checked' : '' }} value="Male"
-                                                    required />
-                                                <label for="male"><b>Male</b></label><br>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="radio" name="gender" id="female"
-                                                    placeholder="Your Gender"
-                                                    {{ $student->gender == 'Female' ? 'checked' : '' }} value="Female"
-                                                    required />
-                                                <label for="female"><b>Female</b></label><br>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="radio" name="gender" id="other"
-                                                    placeholder="Your Gender" value="Other" required
-                                                    {{ $student->gender == 'Other' ? 'checked' : '' }} />
-
-                                                <label for="other"><b>Other</b></label><br>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="submit" name="submit" id="submit"
-                                                class="main-btn register-submit" value="Edit" />
-                                        </div>
-
-                                    </form>
-
+                                    @include('students.windows.dashboard.partials.profile_edit')
                                     <hr>
-
-                                    <div class="title pt-15 pb-15">
-                                        <h6>Change Password</h6>
-                                    </div>
-                                    <form action="{{ route('students.changePassword') }}" method="post">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="form-group" style="overflow: visible">
-                                            <input type="password" class="form-input" name="password" id="password"
-                                                placeholder="New Password" />
-                                            <span toggle="#password"
-                                                class="zmdi zmdi-eye field-icon toggle-password"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-input" name="password_confirmation"
-                                                id="password_confirmation" placeholder="Confirm Password" required />
-                                            <span toggle="#password"
-                                                class="zmdi zmdi-eye field-icon toggle-password"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="submit" name="submit" id="submit"
-                                                class="main-btn register-submit" value="Change" />
-                                        </div>
-                                    </form>
-
-
-
+                                    @include('students.windows.dashboard.partials.change_password')
                                 </div>
                                 <!-- reviews cont -->
                             </div>
