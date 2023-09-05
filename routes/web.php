@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/dashboard', function() {
+    // dd(auth()->user()->type);
     if (auth()->user()->type == 'super-admin') {
         return redirect('/admin/dashboard');
     } elseif (auth()->user()->type == 'teacher') {

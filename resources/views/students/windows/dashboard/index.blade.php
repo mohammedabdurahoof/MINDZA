@@ -26,6 +26,18 @@
                         {{-- <div class="description">
                             <p>{{ $teacher ?? ''->description }}</p>
                 </div> --}}
+                    <div>
+                    {{-- <input type="submit" 
+        class="main-btn" style ='width:100%'  value="Logout" /> --}}
+        <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="main-btn" style ='width:100%' href="route('logout')"
+                            onclick="event.preventDefault();
+                        this.closest('form').submit();">Log
+                            out</a>
+                    </form>
+                    </div>
+
                     </div>
                     <!-- teachers left -->
                 </div>
