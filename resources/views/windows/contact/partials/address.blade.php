@@ -17,8 +17,8 @@
                     <i class="fa fa-phone"></i>
                 </div>
                 <div class="cont">
-                    <p>+3 123 456 789</p>
-                    <p>+1 222 345 342</p>
+                    <p>+91 99463 33396</p>
+                    {{-- <p>+1 222 345 342</p> --}}
                 </div>
             </div>
             <!-- single address -->
@@ -29,8 +29,8 @@
                     <i class="fa fa-envelope-o"></i>
                 </div>
                 <div class="cont">
-                    <p>info@yourmail.com</p>
-                    <p>help.pixelcurve@gmail.com</p>
+                    <p>mindzaschoolofhappiness@gmail.com</p>
+                    {{-- <p>help.pixelcurve@gmail.com</p> --}}
                 </div>
             </div>
             <!-- single address -->

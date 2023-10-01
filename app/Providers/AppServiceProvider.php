@@ -25,8 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        URL::forceRootUrl('https://improved-fishstick-6pvwp7qr4p725xvw-8000.app.github.dev');
-        URL::forceScheme('https');
+        // URL::forceRootUrl('https://improved-fishstick-6pvwp7qr4p725xvw-8000.app.github.dev');
+        // URL::forceScheme('https');
         Schema::defaultStringLength(191);
     }
 }

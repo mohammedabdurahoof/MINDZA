@@ -15,7 +15,7 @@
                          <ul class="mt-20">
                              <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                             <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
                              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                          </ul>
                      </div> <!-- footer about -->
@@ -46,7 +46,7 @@
                          </div>
                          <ul>
                              <li><a href="/faq"><i class="fa fa-angle-right"></i>FAQS</a></li>
-                             <li><a href="/policy"><i class="fa fa-angle-right"></i>Privacy</a></li>
+                             <li><a href="/login"><i class="fa fa-angle-right"></i>Login</a></li>
                              <li><a href="/policy"><i class="fa fa-angle-right"></i>Policy</a></li>
                              <li><a href="/contact"><i class="fa fa-angle-right"></i>Support</a></li>
                          </ul>
@@ -71,7 +71,7 @@
                                      <i class="fa fa-phone"></i>
                                  </div>
                                  <div class="cont">
-                                     <p>+91 89434 85194</p>
+                                     <p>+91 99463 33396</p>
                                  </div>
                              </li>
                              <li>
@@ -79,7 +79,7 @@
                                      <i class="fa fa-envelope-o"></i>
                                  </div>
                                  <div class="cont">
-                                     <p>kpmhaleem528@gmail.com</p>
+                                     <p>mindzaschoolofhappiness@gmail.com</p>
                                  </div>
                              </li>
                          </ul>

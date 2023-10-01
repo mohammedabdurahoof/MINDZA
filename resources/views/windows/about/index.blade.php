@@ -47,8 +47,13 @@
                         <div class="about-single-items mt-30">
                             <span>01</span>
                             <h4>Why Choose us</h4>
-                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit
-                                sollicitudirem quibibendum auci</p>
+                            <p>Mindza School is led by experienced and certified psychologists who bring a wealth of knowledge to our courses and programs.
+
+                                Institution offers flexible online learning options that fit into your schedule, allowing you to access valuable psychological resources from anywhere.
+                                
+                                The programs are designed to cater to the unique needs and goals of each learner, ensuring personalized support and guidance.
+                                
+                                The School focuses on real-world applications of psychology, equipping you with skills that can be immediately put into practice in your personal and professional life.</p>
                         </div>
                         <!-- about single -->
                     </div>
@@ -56,8 +61,7 @@
                         <div class="about-single-items mt-30">
                             <span>02</span>
                             <h4>Our Mission</h4>
-                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit
-                                sollicitudirem quibibendum auci</p>
+                            <p>Our mission at Mindza is to empower individuals with the knowledge, skills, and insights of psychology to enhance their mental well-being, personal growth, and professional development. We are dedicated to fostering a supportive online community, delivering evidence-based education, and promoting positive change in individuals' lives. Through accessible, flexible learning experiences, we aim to unlock the potential within each mind, fostering resilience, empathy, and a deeper understanding of the human psyche.</p>
                         </div>
                         <!-- about single -->
                     </div>
@@ -65,8 +69,7 @@
                         <div class="about-single-items mt-30">
                             <span>03</span>
                             <h4>Our visions</h4>
-                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit
-                                sollicitudirem quibibendum auci</p>
+                            <p>Our vision at Mindza is to revolutionize the way individuals perceive and engage with psychology. We aspire to create a world where accessible, evidence-based psychological knowledge empowers people to lead healthier, more fulfilling lives. By offering cutting-edge online education and resources, we aim to foster a global community of informed and emotionally resilient individuals who can positively impact themselves and society as a whole.</p>
                         </div>
                         <!-- about single -->
                     </div>

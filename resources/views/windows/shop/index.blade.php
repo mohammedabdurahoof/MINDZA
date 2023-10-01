@@ -60,7 +60,7 @@
                                                 <span class="normal-price">₹{{$product->price}}</span>
                                             </div>
                                             <div class="button pt-10">
-                                                <a href="/shop/{{$product->id}}" class="main-btn"><i class="fa fa-cart-plus"></i> Buy
+                                                <a href="https://wa.me/+919946333396?text=product%20name:%20{{$product->name }}%0Aquantity:%201"></i> Buy
                                                     Now</a>
                                             </div>
                                         </div>

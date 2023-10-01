@@ -8,8 +8,8 @@
                     <div class="header-contact">
                         <ul>
                             <li><i class="fa fa-envelope"></i><a
-                                    href="mailto:kpmhaleem528@gmail.com">kpmhaleem528@gmail.com</a></li>
-                            <li><i class="fa fa-phone"></i><a href="tel:+918943485194">8943485194</a></li>
+                                    href="mailto:mindzaschoolofhappiness@gmail.com">mindzaschoolofhappiness@gmail.com</a></li>
+                            <li><i class="fa fa-phone"></i><a href="tel:+91 99463 33396">+91 99463 33396</a></li>
                         </ul>
                     </div> <!-- header contact -->
                 </div>

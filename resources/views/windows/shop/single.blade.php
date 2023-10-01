@@ -93,10 +93,16 @@
                             <span>${{ $product->price }}</span>
                             <p>{{ $product->description }}</p>
                             <div class="nice-number pt-15">
-                                <input type="number" value="1">
+                                <input id="quantity" type="text" value="1">
                             </div>
                             <div class="add-btn pt-15">
-                                <button type="button" class="main-btn">Add to Cart</button>
+                                <button onclick="placeOrder()"  type="button" class="main-btn">Buy Now</button>
+                            <script>
+                                function placeOrder() {
+                                    var quantity = document.getElementById("quantity").value
+                                    window.location.href = `https://wa.me/+919946333396?text=product%20name:%20{{$product->name }}%0Aquantity:%20${quantity}`
+                                }
+                            </script>
                             </div>
                         </div>
                     </div>
@@ -268,7 +274,7 @@
                                             <span class="normal-price">${{ $product->price }}</span>
                                         </div>
                                         <div class="button pt-10">
-                                            <a href="/shop/{{ $product->id }}" class="main-btn"><i
+                                            <a href="https://wa.me/+919946333396?text=product%20name:%20{{$product->name }}%0Aquantity:%201" class="main-btn"><i
                                                     class="fa fa-cart-plus"></i> Buy
                                                 Now</a>
                                         </div>
