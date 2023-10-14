@@ -19,9 +19,9 @@
                             <span class="follow-us">Follow Us :</span>
                             <ul>
                                 <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="https://youtube.com/@mindzaschoolofhappiness?si=cxjVKBissKWbpumP"><i class="fa fa-youtube"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://instagram.com/my_mindza?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram"></i></a></li>
                                 {{-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> --}}
                             </ul>
                         </div> <!-- social -->

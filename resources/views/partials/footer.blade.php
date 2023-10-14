@@ -15,8 +15,12 @@
                          <ul class="mt-20">
                              <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                             <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                             <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                             <li><a
+                                     href="https://youtube.com/@mindzaschoolofhappiness?si=cxjVKBissKWbpumP
+                                "><i
+                                         class="fa fa-youtube-play"></i></a></li>
+                             <li><a href="https://instagram.com/my_mindza?igshid=MzRlODBiNWFlZA=="><i class="fa
+                                     fa-instagram"></i></a></li>
                          </ul>
                      </div> <!-- footer about -->
                  </div>

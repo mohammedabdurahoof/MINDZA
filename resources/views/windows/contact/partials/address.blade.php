@@ -6,7 +6,7 @@
                     <i class="fa fa-home"></i>
                 </div>
                 <div class="cont">
-                    <p>143 castle road 517 district, kiyev port south Canada</p>
+                    <p>Koppam, Thiruvegappura (PO) 678001 (PIN), Palakkad, Kerala, India</p>
                 </div>
             </div>
             <!-- single address -->

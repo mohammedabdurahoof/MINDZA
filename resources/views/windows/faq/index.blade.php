@@ -24,7 +24,7 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">How do I apply?</span></li>
+                                                    <li><span class="head">What is MINDZA?</span></li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -33,11 +33,10 @@
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>Before you can send us your application, you'll need to pay an
-                                                    application fee of £18 for one course choice, or £24 for up to five
-                                                    course choices. If you are applying for a course(s) that starts in 2020,
-                                                    the application fee is £20 if you’re applying to just one course, or £25
-                                                    for multiple courses and for late applications sent after 30 June 2020.
+                                                <p>Mindza School of Happiness is an online platform dedicated to providing
+                                                    high-quality psychology education and resources. We offer a range of
+                                                    courses, articles, and tools to help individuals better understand and
+                                                    apply psychology in their lives.
                                                 </p>
                                             </div>
                                         </div>
@@ -50,7 +49,8 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">What are entry requirements?</span></li>
+                                                    <li><span class="head">Who can benefit from your institution?</span>
+                                                    </li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -59,11 +59,11 @@
                                         <div id="collapseTow" class="collapse" aria-labelledby="headingTow"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>It is a long established fact that a reader will be distracted by the
-                                                    readable content of a page when looking at its layout. The point of
-                                                    using Lorem Ipsum is that it has a more-or-less normal distribution
-                                                    of letters, as opposed to using 'Content here, content here', making it
-                                                    look like readable English.</p>
+                                                <p>Our resources are designed to benefit a wide audience, including
+                                                    students, professionals, and anyone interested in psychology. Whether
+                                                    you're pursuing a career in psychology or simply seeking personal
+                                                    growth, our offerings can be tailored to meet your needs.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +76,8 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">How do I get a reference?</span></li>
+                                                    <li><span class="head">Are your courses accredited or
+                                                            certified?</span></li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -84,11 +85,10 @@
                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>It is a long established fact that a reader will be distracted by the
-                                                    readable content of a page when looking at its layout. The point of
-                                                    using Lorem Ipsum is that it has a more-or-less normal distribution
-                                                    of letters, as opposed to using 'Content here, content here', making it
-                                                    look like readable English.</p>
+                                                <p>Yes, our courses are developed and led by experienced and certified
+                                                    psychologists. Upon successful completion of our accredited programs,
+                                                    you will receive a certification that can be valuable for your career or
+                                                    personal development.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +101,9 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">What are entry requirements?</span></li>
+                                                    <li><span class="head"> Can I access the content from anywhere in the
+                                                            world?
+                                                        </span></li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -109,11 +111,10 @@
                                         <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>It is a long established fact that a reader will be distracted by the
-                                                    readable content of a page when looking at its layout. The point of
-                                                    using Lorem Ipsum is that it has a more-or-less normal distribution
-                                                    of letters, as opposed to using 'Content here, content here', making it
-                                                    look like readable English.</p>
+                                                <p> Absolutely! Our online platform allows learners from around the world to
+                                                    access our courses and resources at their convenience. All you need is
+                                                    an internet connection.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -125,8 +126,8 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">What should I include in my personal
-                                                            statement?</span></li>
+                                                    <li><span class="head"> How flexible are your online courses?</span>
+                                                    </li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -134,11 +135,10 @@
                                         <div id="collapseFore" class="collapse" aria-labelledby="headingFore"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>It is a long established fact that a reader will be distracted by the
-                                                    readable content of a page when looking at its layout. The point of
-                                                    using Lorem Ipsum is that it has a more-or-less normal distribution
-                                                    of letters, as opposed to using 'Content here, content here', making it
-                                                    look like readable English.</p>
+                                                <p>Our courses are designed with flexibility in mind. You can study at your
+                                                    own pace and choose the schedule that suits you best. We understand that
+                                                    our learners have diverse commitments and strive to accommodate them.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -151,8 +151,8 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">What will happen when I’ve sent my
-                                                            application?</span></li>
+                                                    <li><span class="head">Is there a community or support system for
+                                                            learners?</span></li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -160,11 +160,10 @@
                                         <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                                    since the 1500s, when an unknown printer took a galley of type and
-                                                    scrambled it to make a type specimen book. It has survived not only five
-                                                    centuries,.</p>
+                                                <p>Yes, we have a vibrant online community where learners can engage in
+                                                    discussions, share experiences, and network with others who share their
+                                                    interests. Additionally, our support team is readily available to assist
+                                                    with any questions or concerns.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -203,8 +202,8 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">Can I get a free trial before I
-                                                            purchase?</span></li>
+                                                    <li><span class="head">What makes your institution unique in the
+                                                            field of psychology education?</span></li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -212,11 +211,86 @@
                                         <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                                    since the 1500s, when an unknown printer took a galley of type and
-                                                    scrambled it to make a type specimen book. It has survived not only five
-                                                    centuries,.</p>
+                                                <p>We stand out through our commitment to evidence-based learning,
+                                                    personalized support, and practical applications of psychology. Our
+                                                    courses are regularly updated to reflect the latest research and
+                                                    developments in the field.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingEight">
+                                            <a href="#" data-toggle="collapse" class="collapsed"
+                                                data-target="#collapseEight" aria-expanded="false"
+                                                aria-controls="collapseEight">
+                                                <ul>
+                                                    <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
+                                                    </li>
+                                                    <li><span class="head">How can I get started with your
+                                                            institution?</span>
+                                                    </li>
+                                                    <li></li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Getting started is easy! Simply visit our website, browse our course
+                                                    offerings, and enroll in the program that aligns with your goals. You
+                                                    can start learning and growing right away.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingNine">
+                                            <a href="#" data-toggle="collapse" class="collapsed"
+                                                data-target="#collapseNine" aria-expanded="false"
+                                                aria-controls="collapseNine">
+                                                <ul>
+                                                    <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
+                                                    </li>
+                                                    <li><span class="head">Do you offer financial assistance or
+                                                            scholarships?</span>
+                                                    </li>
+                                                    <li></li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p> We understand the importance of accessibility. While we may not offer
+                                                    scholarships directly, we do provide flexible payment options and
+                                                    occasionally run promotions to make our courses more accessible to a
+                                                    wider audience.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingTen">
+                                            <a href="#" data-toggle="collapse" class="collapsed"
+                                                data-target="#collapseTen" aria-expanded="false"
+                                                aria-controls="collapseTen">
+                                                <ul>
+                                                    <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
+                                                    </li>
+                                                    <li><span class="head"> How can I contact your institution for
+                                                            further inquiries?</span>
+                                                    </li>
+                                                    <li></li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div id="collapseTen" class="collapse" aria-labelledby="headingTen"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>You can reach out to our dedicated support team through our website's
+                                                    contact page or email us at [your contact email]. We're here to assist
+                                                    you with any questions or assistance you may need.</p>
                                             </div>
                                         </div>
                                     </div>
