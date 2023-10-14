@@ -19,5 +19,6 @@ Route::middleware('auth')->prefix('teacher')->group(function () {
     Route::get('/dashboard', [TeacherController::class,'dashboard'])->name('teacher.dashboard');
     Route::put('/changePassword', [TeacherController::class,'changePassword'])->name('teacher.changePassword');
     Route::post('/addLecture', [TeacherController::class,'addLecture'])->name('teacher.addLecture');
+    Route::get('/lecture/{id}', [TeacherController::class,'getLecture'])->name('teacher.lecture');
     
 });

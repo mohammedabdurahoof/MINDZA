@@ -61,6 +61,7 @@ class TeacherController extends Controller
 
     public function edit(Teacher $teacher)
     {
+        // dd($teacher);
         return view('admin.windows.teachers.edit', compact('teacher'));
     }
     public function update(Request $request, Teacher $teacher)
@@ -98,6 +99,7 @@ class TeacherController extends Controller
     {
         $email = Auth::user()->email;
         $teacher = Teacher::where('email', $email)->first();
+
         // $courses = Courses::join('teachers','courses.teacherId','teachers.id')->select('courses.image as courseImage', 'teachers.image as teacherImage', 'courses.id', 'courseName', 'price', 'name')->get();
         $selectedCourses = Courses::where('teacherId', $teacher->id)->join('teachers', 'courses.teacherId', 'teachers.id')->select('courses.image as courseImage', 'teachers.image as teacherImage', 'courses.id', 'courseName', 'price', 'name')->get();
         // dd($selectedCourses);
@@ -121,6 +123,7 @@ class TeacherController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
+            'courseId' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'video' => 'mimes:mp4,mov,ogg,qt'
         ]);
@@ -136,8 +139,17 @@ class TeacherController extends Controller
             request()->video->move(public_path('video/lecture'),$videoName);
             $data['video'] = $videoName;
         }
-        // dd($data);
         Lecture::create($data);
         return redirect()->back()->with('success', 'Lecture has been added successfully.');
+    }
+
+    public function getLecture(Request $request)
+    {   
+        $course = Courses::where('id',$request->id)->first();
+        $email = Auth::user()->email;
+        $teacher = Teacher::where('email', $email)->first();
+        $lectures= Lecture::where('courseId',$course->id)->get();
+        // dd($course);
+        return view('Teacher.windows.lecutre.index',['name'=>'Lectures', 'lectures' => $lectures, 'teacher' => $teacher, 'course'=>$course]);
     }
 }

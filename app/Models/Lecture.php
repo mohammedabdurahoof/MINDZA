@@ -12,6 +12,7 @@ class Lecture extends Model
     protected $fillable = [
         'name',
         'link',
+        'courseId',
         'description',
         'image',
         'video'

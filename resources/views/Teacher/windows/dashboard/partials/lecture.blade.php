@@ -1,7 +1,6 @@
 @foreach ($selectedCourses as $course)
-    
     <div class="row">
-        <div class="curriculum-cont">
+        <div class="curriculum-cont" style="width: 100%;">
             <div class="title d-flex justify-content-between mb-3 align-items-center">
                 <h6>{{ $course->courseName }}</h6>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -26,6 +25,7 @@
                                             class="text-danger text-left mb-4">{{ implode('', $errors->all(':message')) }}</span>
                                     @endif
                                     <div class="form-group">
+                                        <input type="hidden" value="{{ $course->id }}" name="courseId">
                                         <label for="recipient-name" class="col-form-label">Lecture Name</label>
                                         <input type="text" class="form-control" id="recipient-name" required
                                             name="name" placeholder="Enter Lecture Name">
@@ -96,8 +96,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary"
                                         onClick="this.form.submit(); this.disabled=true; this.value='Sending…'; ">Add
                                         Lecture</button>

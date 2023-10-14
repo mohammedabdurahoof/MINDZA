@@ -4,6 +4,23 @@
     @include('partials.page_banner')
     <section id="teachers-single" class="pt-70 pb-120 gray-bg">
         <div class="container">
+            @if ($errors->any())
+                <div class=" mt-3 alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ implode('', $errors->all(':message')) }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
+            @if ($message = Session::get('success'))
+                <div class=" mt-3 alert alert-success alert-dismissible fade show" role="alert">
+                    {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-8">
                     <div class="teachers-left mt-50">
@@ -48,10 +65,10 @@
                                 <a class="active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab"
                                     aria-controls="dashboard" aria-selected="true">Dashboard</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a id="courses-tab" data-toggle="tab" href="#courses" role="tab" aria-controls="courses"
                                     aria-selected="false">Lecture</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a id="reviews-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="reviews"
                                     aria-selected="false">Profile</a>
@@ -65,23 +82,7 @@
 
                                     <h6 class="pt-3">Hi! welcome</h6>
                                     <h4 class="pt-1" style="color: #315377">{{ $teacher->name }}</h4>
-                                    @if ($errors->any())
-                                        <div class=" mt-3 alert alert-danger alert-dismissible fade show" role="alert">
-                                            {{ implode('', $errors->all(':message')) }}
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                    @endif
 
-                                    @if ($message = Session::get('success'))
-                                    <div class=" mt-3 alert alert-success alert-dismissible fade show" role="alert">
-                                        {{ $message }}
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    @endif
                                     <div class="title pt-3">
                                         <h6>YOUR COURSE </h6>
                                     </div>
@@ -111,7 +112,7 @@
                                                         {{-- <h6
                                                             style='color:{{ $course['status'] == 'pending' ? 'red' : 'black' }}'>
                                                             {{ $course['status'] }}</h6> --}}
-                                                        <a href="/courses/{{ $course['id'] }}">
+                                                        <a href="{{route('teacher.lecture',$course->id)}}">
                                                             <h4>{{ $course['courseName'] }}</h4>
                                                         </a>
                                                         <div class="course-teacher">
@@ -147,7 +148,7 @@
 
                                 <!-- dashboard cont -->
                             </div>
-                            <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                            {{-- <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
                                 <div class="courses-cont pt-20">
 
                                     @include('Teacher.windows.dashboard.partials.lecture')
@@ -155,7 +156,7 @@
                                     <!-- row -->
                                 </div>
                                 <!-- courses cont -->
-                            </div>
+                            </div> --}}
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="reviews-tab">
                                 <div class="reviews-cont">
                                     @include('Teacher.windows.dashboard.partials.profile_edit')
