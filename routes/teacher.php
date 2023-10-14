@@ -18,6 +18,6 @@ Route::middleware('auth')->prefix('teacher')->group(function () {
     Route::resource('teacher', TeacherController::class);
     Route::get('/dashboard', [TeacherController::class,'dashboard'])->name('teacher.dashboard');
     Route::put('/changePassword', [TeacherController::class,'changePassword'])->name('teacher.changePassword');
-    Route::put('/addNewCourse', [TeacherController::class,'addNewCourse'])->name('teacher.addNewCourse');
+    Route::post('/addLecture', [TeacherController::class,'addLecture'])->name('teacher.addLecture');
     
 });

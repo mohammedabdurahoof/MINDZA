@@ -5496,3 +5496,13 @@ a.loginhere-link:hover {
 .show-more:hover{
   color: #ffc600;
 }
+
+.no-border-radius{
+  border-radius: 0 !important;
+}
+
+.alert{
+  position: fixed;
+    bottom: 0;
+    right: 0;
+}
