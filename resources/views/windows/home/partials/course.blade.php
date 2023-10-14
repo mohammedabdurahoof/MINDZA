@@ -17,7 +17,7 @@
                                 <img src="{{ asset('images/course') . '/' . $courses->courseImage }}" alt="Course">
                             </div>
                             <div class="price">
-                                <span>₹{{ $courses->price }}</span>
+                                <span>{{ $courses->price == 0 ? 'Free' : '₹'.$courses->price }}</span>
                             </div>
                         </div>
                         <div class="cont">

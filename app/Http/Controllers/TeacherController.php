@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Courses;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 
@@ -81,7 +83,7 @@ class TeacherController extends Controller
 
         }
         $teacher->update($data);
-        return redirect()->route('teachers.index')
+        return redirect()->back()
             ->with('success', 'Teacher updated successfully');
     }
     public function destroy(Teacher $teacher)
@@ -90,5 +92,26 @@ class TeacherController extends Controller
         $teacher->delete();
         return redirect()->route('teachers.index')
             ->with('success', 'Teacher deleted successfully');
+    }
+
+    function dashboard()
+    {
+        $email = Auth::user()->email;
+        $teacher = Teacher::where('email', $email)->first();
+        // $courses = Courses::join('teachers','courses.teacherId','teachers.id')->select('courses.image as courseImage', 'teachers.image as teacherImage', 'courses.id', 'courseName', 'price', 'name')->get();
+        $selectedCourses = Courses::where('teacherId',$teacher->id)->join('teachers','courses.teacherId','teachers.id')->select('courses.image as courseImage', 'teachers.image as teacherImage', 'courses.id', 'courseName', 'price', 'name')->get();
+        // dd($selectedCourses);
+        return view('Teacher.windows.dashboard.index', ['name' => 'Teacher', 'teacher' => $teacher,'selectedCourses'=>$selectedCourses]);
+    }
+
+    function changePassword(Request $request)
+    {
+        $request->validate([
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+        $email = Auth::user()->email;
+        $user = User::where('email', $email)->first();
+        $user->update(['password' => Hash::make($request->password)]);
+        return back()->with('success', ' Successfully Password Changed');
     }
 }

@@ -16,6 +16,7 @@ class Teacher extends Model
         'about',
         'achievements',
         'objective',
-        'image'
+        'image',
+        'email'
     ];
 }
