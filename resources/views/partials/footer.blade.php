@@ -13,7 +13,7 @@
                              challenges, enhance their resilience, and lead more fulfilling lives.
                          </p>
                          <ul class="mt-20">
-                             <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                             <li><a href="https://www.facebook.com/mindza.shool.of.happiness"><i class="fa fa-facebook-f"></i></a></li>
                              <li><a href="https://wa.me/+919946333396"><i class="fa fa-whatsapp"></i></a></li>
                              <li><a
                                      href="https://youtube.com/@mindzaschoolofhappiness?si=cxjVKBissKWbpumP
