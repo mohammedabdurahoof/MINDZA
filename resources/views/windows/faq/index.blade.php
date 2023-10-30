@@ -24,7 +24,7 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">How do I apply?</span></li>
+                                                    <li><span class="head">What is MINDZA?</span></li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -33,11 +33,7 @@
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>Before you can send us your application, you'll need to pay an
-                                                    application fee of £18 for one course choice, or £24 for up to five
-                                                    course choices. If you are applying for a course(s) that starts in 2020,
-                                                    the application fee is £20 if you’re applying to just one course, or £25
-                                                    for multiple courses and for late applications sent after 30 June 2020.
+                                                <p>Mindza School of Happiness is an online platform dedicated to providing high-quality psychology education and resources. We offer a range of courses, articles, and tools to help individuals better understand and apply psychology in their lives.
                                                 </p>
                                             </div>
                                         </div>
@@ -50,7 +46,7 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">What are entry requirements?</span></li>
+                                                    <li><span class="head">Who can benefit from your institution?</span></li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -59,11 +55,7 @@
                                         <div id="collapseTow" class="collapse" aria-labelledby="headingTow"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>It is a long established fact that a reader will be distracted by the
-                                                    readable content of a page when looking at its layout. The point of
-                                                    using Lorem Ipsum is that it has a more-or-less normal distribution
-                                                    of letters, as opposed to using 'Content here, content here', making it
-                                                    look like readable English.</p>
+                                                <p>Our resources are designed to benefit a wide audience, including students, professionals, and anyone interested in psychology. Whether you're pursuing a career in psychology or simply seeking personal growth, our offerings can be tailored to meet your needs.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +68,7 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">How do I get a reference?</span></li>
+                                                    <li><span class="head">Are your courses accredited or certified?</span></li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -84,11 +76,7 @@
                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>It is a long established fact that a reader will be distracted by the
-                                                    readable content of a page when looking at its layout. The point of
-                                                    using Lorem Ipsum is that it has a more-or-less normal distribution
-                                                    of letters, as opposed to using 'Content here, content here', making it
-                                                    look like readable English.</p>
+                                                <p>Yes, our courses are developed and led by experienced and certified psychologists. Upon successful completion of our accredited programs, you will receive a certification that can be valuable for your career or personal development.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +89,7 @@
                                                 <ul>
                                                     <li><i class="fa fa-question-circle" aria-hidden="true"></i></i>
                                                     </li>
-                                                    <li><span class="head">What are entry requirements?</span></li>
+                                                    <li><span class="head">Can I access the content from anywhere in the world?</span></li>
                                                     <li></li>
                                                 </ul>
                                             </a>
@@ -109,11 +97,7 @@
                                         <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
                                             data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <p>It is a long established fact that a reader will be distracted by the
-                                                    readable content of a page when looking at its layout. The point of
-                                                    using Lorem Ipsum is that it has a more-or-less normal distribution
-                                                    of letters, as opposed to using 'Content here, content here', making it
-                                                    look like readable English.</p>
+                                                <p>Absolutely! Our online platform allows learners from around the world to access our courses and resources at their convenience. All you need is an internet connection.</p>
                                             </div>
                                         </div>
                                     </div>
