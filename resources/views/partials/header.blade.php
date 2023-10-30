@@ -18,11 +18,10 @@
                         <div class="social d-flex">
                             <span class="follow-us">Follow Us :</span>
                             <ul>
-                                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                {{-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> --}}
+                                <li><a href="https://www.facebook.com/mindza.shool.of.happiness"><i class="fa fa-facebook-f"></i></a></li>
+                                <li><a href="https://youtube.com/@mindzaschoolofhappiness?si=cxjVKBissKWbpumP"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="https://wa.me/+919946333396"><i class="fa fa-whatsapp"></i></a></li>
+                                <li><a href="https://instagram.com/my_mindza?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram"></i></a></li>
                             </ul>
                         </div> <!-- social -->
                         <div class="login-register">

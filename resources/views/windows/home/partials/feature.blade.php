@@ -18,8 +18,9 @@
                                     <img src="{{ asset('assets/images/all-icon/f-1.png') }}" alt="icon">
                                 </div>
                                 <div class="cont">
-                                    <h4>Global Certificate</h4>
-                                    <p>Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
+                                    <h4>Personalized Learning Paths</h4>
+                                    <p>Create a feature that allows learners to customize their learning experience by selecting courses and resources that align with their specific interests and goals.
+                                    </p>
                                 </div>
                             </div> <!-- single feature -->
                         </li>
@@ -29,9 +30,9 @@
                                     <img src="{{ asset('assets/images/all-icon/f-2.png') }}" alt="icon">
                                 </div>
                                 <div class="cont">
-                                    <h4>Alumni Support</h4>
-                                    <p>Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
-                                </div>
+                                    <h4>Certification Programs</h4>
+                                    <p>Develop accredited certification programs that learners can complete to demonstrate their expertise in specific areas of psychology.</p>
+                                 </div>
                             </div> <!-- single feature -->
                         </li>
                         <li>
@@ -40,8 +41,8 @@
                                     <img src="{{ asset('assets/images/all-icon/f-3.png') }}" alt="icon">
                                 </div>
                                 <div class="cont">
-                                    <h4>Books & Library</h4>
-                                    <p>Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
+                                    <h4>One-on-One Coaching</h4>
+                                    <p>Offer one-on-one coaching or counseling sessions with qualified psychologists for learners who seek personalized guidance and support.</p>
                                 </div>
                             </div> <!-- single feature -->
                         </li>

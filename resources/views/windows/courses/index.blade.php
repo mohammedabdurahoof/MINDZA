@@ -47,7 +47,7 @@
                                                 alt="Course">
                                         </div>
                                         <div class="price">
-                                            <span>₹{{ $course->price }}</span>
+                                            <span>{{ $course->price == 0 ? 'Free' : '₹'.$course->price }}</span>
                                         </div>
                                     </div>
                                     <div class="cont">

@@ -18,6 +18,7 @@ class CreateTeachersTable extends Migration
             $table->string('name');
             $table->string('image');
             $table->string('position');
+            $table->string('email');
             $table->longText('description');
             $table->longText('about');
             $table->longText('achievements');
