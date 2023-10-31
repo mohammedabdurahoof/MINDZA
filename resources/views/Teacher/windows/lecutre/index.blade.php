@@ -48,7 +48,7 @@
         class="main-btn" style ='width:100%'  value="Logout" /> --}}
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <a class="main-btn" style ='width:100%' href="route('logout')"
+                                <a class="main-btn" style='width:100%' href="route('logout')"
                                     onclick="event.preventDefault();
                         this.closest('form').submit();">Log
                                     out</a>
@@ -65,124 +65,14 @@
                         <div class="card p-5">
                             <div class="row">
                                 <div class="curriculum-cont" style="width: 100%;">
+                                    <a class="mb-3" href="/teacher/dashboard">Dashboard</a>
                                     <div class="title d-flex justify-content-between mb-3 align-items-center">
                                         <h6>{{ $course->courseName }}</h6>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModalCenter">
+                                        <a type="button" class="main-btn"
+                                            href="{{ route('lecture.create', ['id' => $course->id]) }}">
                                             Add Lecture
-                                        </button>
-                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLongTitle">Add Lecture</h5>
-                                                        <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <form action="{{ route('teacher.addLecture') }}" method='POST'
-                                                        enctype="multipart/form-data">
-                                                        @csrf
-                                                        <div class="modal-body">
-                                                            @if ($errors->any())
-                                                                <span
-                                                                    class="text-danger text-left mb-4">{{ implode('', $errors->all(':message')) }}</span>
-                                                            @endif
-                                                            <div class="form-group">
-                                                                <input type="hidden" value="{{ $course->id }}"
-                                                                    name="courseId">
-                                                                <label for="recipient-name" class="col-form-label">Lecture
-                                                                    Name</label>
-                                                                <input type="text" class="form-control"
-                                                                    id="recipient-name" required name="name"
-                                                                    placeholder="Enter Lecture Name">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="message-text"
-                                                                    class="col-form-label">Description</label>
-                                                                <textarea class="form-control" id="message-text" required placeholder="Enter Description" name="description"></textarea>
-                                                            </div>
+                                        </a>
 
-                                                            <div class="form-group">
-                                                                <label for="recipient-name"
-                                                                    class="col-form-label">Link</label>
-                                                                <input type="text" class="form-control"
-                                                                    id="recipient-name" name="link"
-                                                                    placeholder="Enter Link">
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="recipient-name"
-                                                                    class="col-form-label">Image</label>
-
-                                                                <div class="avatar-upload" style="margin: 0">
-                                                                    <div class="avatar-edit">
-                                                                        <input name="image" type='file'
-                                                                            id="imageUpload1" accept=".png, .jpg, .jpeg" />
-                                                                        <label for="imageUpload1"></label>
-                                                                    </div>
-                                                                    <div class="avatar-download">
-                                                                        <a download="shop-preview.jpg"
-                                                                            href="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
-                                                                            title="ImageName"></a>
-                                                                    </div>
-                                                                    <img id="imagePreview1"
-                                                                        class="avatar-preview no-border-radius"
-                                                                        src="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
-                                                                        alt="">
-                                                                    {{-- <div class="avatar-preview">
-                                                                <div id="imagePreview"
-                                                                    style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
-                                                                </div>
-                                                            </div> --}}
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="recipient-name"
-                                                                    class="col-form-label">Video</label>
-
-                                                                <div class="avatar-upload" style="margin: 0">
-                                                                    <div class="avatar-edit">
-                                                                        <input name="video" type='file'
-                                                                            id="imageUpload2" accept="video/*" />
-                                                                        <label for="imageUpload2"></label>
-                                                                    </div>
-                                                                    <div class="avatar-download">
-                                                                        <a download="shop-preview.jpg"
-                                                                            href="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
-                                                                            title="ImageName"></a>
-                                                                    </div>
-                                                                    <video id="imagePreview2" width="320"
-                                                                        height="240" controls>
-                                                                        <source id="" src="movie.mp4"
-                                                                            type="video/mp4">
-                                                                        Your browser does not support the video tag.
-                                                                    </video>
-                                                                    {{-- <img id="imagePreview2" class="avatar-preview no-border-radius"
-                                                                        src="{{ asset('assets/admin/img/preview/shop-sub-preview.jpg') }}"
-                                                                        alt=""> --}}
-                                                                    {{-- <div class="avatar-preview">
-                                                                <div id="imagePreview"
-                                                                    style="background-image: url({{ asset('assets/admin/img/preview/shop-preview.jpg') }});">
-                                                                </div>
-                                                            </div> --}}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-primary"
-                                                                onClick="this.form.submit(); this.disabled=true; this.value='Sending…'; ">Add
-                                                                Lecture</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="accordion" id="accordionExample">
                                         @foreach ($lectures as $lecture)
@@ -197,9 +87,11 @@
                                                                     {{ $loop->index + 1 }}</span>
                                                             </li>
                                                             <li><span class="head">{{ $lecture->name }}</span></li>
-                                                            <li><span class="time d-none d-md-block"><i
-                                                                        class="fa fa-clock-o"></i> <span>
-                                                                        00.30.00</span></span>
+                                                            <li>
+                                                                <span class="time d-none d-md-block">
+
+                                                                </span>
+
                                                             </li>
                                                         </ul>
                                                     </a>
@@ -218,14 +110,15 @@
                                                         <div class="row">
                                                             @if ($lecture->image)
                                                                 <div class="col-md-6">
-                                                                    <img style="width: 100%" src="{{ asset('images/lecture') . '/' . $lecture->image }}"
+                                                                    <img style="width: 100%"
+                                                                        src="{{ asset('images/lecture') . '/' . $lecture->image }}"
                                                                         alt="">
                                                                 </div>
                                                             @endif
                                                             @if ($lecture->video)
                                                                 <div class="col-md-6">
-                                                                    <video id="imagePreview2" width="auto"
-                                                                        height="auto" controls style="width: 100%">
+                                                                    <video id="imagePreview2" width="auto" height="auto"
+                                                                        controls style="width: 100%">
                                                                         <source id=""
                                                                             src="{{ asset('video/lecture') . '/' . $lecture->video }}"
                                                                             type="video/mp4">
@@ -233,6 +126,37 @@
                                                                     </video>
                                                                 </div>
                                                             @endif
+                                                        </div>
+
+                                                        <div class="row justify-content-end">
+                                                            <form action="{{ route('lecture.destroy', $lecture->id) }}"
+                                                                method="POST">
+
+                                                                <a class="btn btn-primary"
+                                                                    href="{{ route('lecture.edit', $lecture->id) }}"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                                        stroke="currentColor" stroke-width="2"
+                                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                                        class="feather feather-edit-2 align-middle">
+                                                                        <path
+                                                                            d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+                                                                        </path>
+                                                                    </svg></a>
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                                        stroke="currentColor" stroke-width="2"
+                                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                                        class="feather feather-trash align-middle">
+                                                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                                                        <path
+                                                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                                        </path>
+                                                                    </svg></button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -1,9 +1,9 @@
-<section id="video-feature" class="bg_cover pt-60 pb-110" style="background-image: url({{ asset('assets/images/bg.jpg') }})">
+<section id="video-feature" class="bg_cover pt-60 pb-110" style="background-image: url({{ asset('assets/images/facilities-image.jpg') }})">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 order-last order-lg-first">
                 <div class="video text-lg-left text-center pt-50">
-                    <a class="Video-popup" href="https://www.youtube.com/watch?v=YiCMD825jw4"><i class="fa fa-play"></i></a>
+                    {{-- <a class="Video-popup" href="https://www.youtube.com/watch?v=YiCMD825jw4"><i class="fa fa-play"></i></a> --}}
                 </div> <!-- row -->
             </div>
             <div class="col-lg-5 offset-lg-1 order-first order-lg-last">

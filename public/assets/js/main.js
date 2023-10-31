@@ -408,52 +408,65 @@ $(function () {
 // register form js
 function readURL(input) {
   if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function(e) {
-          $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-          $('#imagePreview').hide();
-          $('#imagePreview').fadeIn(650);
-      }
-      reader.readAsDataURL(input.files[0]);
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+      $('#imagePreview').hide();
+      $('#imagePreview').fadeIn(650);
+    }
+    reader.readAsDataURL(input.files[0]);
   }
 }
-$("#imageUpload").change(function() {
+$("#imageUpload").change(function () {
   readURL(this);
 });
 
 $("#add-course-form").hide();
-$("#add-course-btn").click(function() {
-$("#add-course-btn").hide();
-$("#add-course-form").show();
+$("#add-course-btn").click(function () {
+  $("#add-course-btn").hide();
+  $("#add-course-form").show();
 });
 
 
 function readURL1(input) {
   if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function(e) {
-          $('#imagePreview1').attr('src', e.target.result);
-          $('#imagePreview1').hide();
-          $('#imagePreview1').fadeIn(650);
-      }
-      reader.readAsDataURL(input.files[0]);
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#imagePreview1').attr('src', e.target.result);
+      $('#imagePreview1').hide();
+      $('#imagePreview1').fadeIn(650);
+    }
+    reader.readAsDataURL(input.files[0]);
   }
 }
-$("#imageUpload1").change(function() {
+$("#imageUpload1").change(function () {
   readURL1(this);
 });
 
 function readURL2(input) {
   if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function(e) {
-          $('#imagePreview2').attr('src', e.target.result);
-          $('#imagePreview2').hide();
-          $('#imagePreview2').fadeIn(650);
-      }
-      reader.readAsDataURL(input.files[0]);
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#imagePreview2').attr('src', e.target.result);
+      $('#imagePreview2').hide();
+      $('#imagePreview2').fadeIn(650);
+    }
+    reader.readAsDataURL(input.files[0]);
   }
 }
-$("#imageUpload2").change(function() {
+$("#imageUpload2").change(function () {
   readURL2(this);
 });
+
+
+function editClick(id) {
+  fetch(`http://127.0.0.1:8000/lecture/${id}/edit`).then((res)=>console.log(res))
+}
+
+function deleteClick(id) {
+  var form = document.getElementById("delete-form");
+
+  document.getElementById("svg-id").addEventListener("click", function () {
+    form.submit();
+  });
+}

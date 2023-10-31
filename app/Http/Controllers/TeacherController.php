@@ -120,27 +120,7 @@ class TeacherController extends Controller
     public function addLecture(Request $request)
     {
         // dd($request);
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'courseId' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'video' => 'mimes:mp4,mov,ogg,qt'
-        ]);
-        $data = $request->post();
-        if (request()->image) {
-            $imageName = time() . '.' . request()->image->getClientOriginalExtension();
-            request()->image->move(public_path('images/lecture'), $imageName);
-            $data['image'] = $imageName;
-        }
-
-        if ($request->video) {
-            $videoName = time() . '.' . request()->video->getClientOriginalExtension();
-            request()->video->move(public_path('video/lecture'),$videoName);
-            $data['video'] = $videoName;
-        }
-        Lecture::create($data);
-        return redirect()->back()->with('success', 'Lecture has been added successfully.');
+        
     }
 
     public function getLecture(Request $request)

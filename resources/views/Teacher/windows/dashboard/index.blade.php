@@ -112,7 +112,7 @@
                                                         {{-- <h6
                                                             style='color:{{ $course['status'] == 'pending' ? 'red' : 'black' }}'>
                                                             {{ $course['status'] }}</h6> --}}
-                                                        <a href="{{route('teacher.lecture',$course->id)}}">
+                                                        <a href="{{route('teacher.lecture',$course['id'])}}">
                                                             <h4>{{ $course['courseName'] }}</h4>
                                                         </a>
                                                         <div class="course-teacher">
