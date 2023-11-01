@@ -6,8 +6,8 @@
 /storage/*.key
 /vendor
 .env
-.zip
-.rar
+*.zip
+*.rar
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
@@ -17,3 +17,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+*.psd
