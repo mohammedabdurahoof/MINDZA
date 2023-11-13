@@ -16,17 +16,19 @@
                         @if ($errors->any())
                             <span class="text-danger text-left mb-4">{{ implode('', $errors->all(':message')) }}</span>
                         @endif
-                        <div class="avatar-upload">
-                            <div class="avatar-edit">
-                                <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg" />
-                                <label for="imageUpload"></label>
-                            </div>
-                            <div class="avatar-preview">
-                                <div id="imagePreview"
-                                    style="background-image: url({{ asset('assets/images/avatar.jpg') }});">
+                        @if ($event->photo)
+                            <div class="avatar-upload">
+                                <div class="avatar-edit">
+                                    <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                    <label for="imageUpload"></label>
+                                </div>
+                                <div class="avatar-preview">
+                                    <div id="imagePreview"
+                                        style="background-image: url({{ asset('assets/images/avatar.jpg') }});">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="form-group">
                             <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"
                                 value="{{ old('name') }}" required />
@@ -43,21 +45,14 @@
                             <input type="text" class="form-input" name="address" id="address"
                                 placeholder="Your Address" value="{{ old('address') }}" required />
                         </div>
-                        <div class="form-group" style="overflow: visible; margin-bottom: 5rem;">
-                            <select class="form-control" name="event" id="exampleFormControlSelect1" required>
-                                <option selected value="">choose a event</option>
-                                @foreach ($events as $event)
-                                    <option value="{{ $event->id }}">
-                                        {{ $event->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class=""></div>
-                        <div class="form-group">
-                            <h6 class="mb-3">Choose your available time:</h6>
-                            <input type="time" class="form-input" name="time" id="name"
-                                placeholder="Choose your available time" value="{{ old('time') }}" required />
-                        </div>
+                        <input type="hidden" name="event" value="{{$event->id}}">
+                        @if ($event->available_time)
+                            <div class="form-group">
+                                <h6 class="mb-3">Choose your available time:</h6>
+                                <input type="time" class="form-input" name="time" id="name"
+                                    placeholder="Choose your available time" value="{{ old('time') }}" required />
+                            </div>
+                        @endif
                         <h6 class="mb-3">Select your Gender:</h6>
                         <div class="row justify-content-around">
                             <div class="form-group">

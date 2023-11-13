@@ -15,7 +15,11 @@ class Event extends Model
         'startTime',
         'finishTime',
         'place',
-        'address',
+        'link',
+        'registration',
+        'countdown',
+        'available_time',
+        'photo',
         'image'
     ];
 }

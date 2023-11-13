@@ -5489,21 +5489,35 @@ a.loginhere-link:hover {
   background-position: center;
 }
 
-.show-more{
+.show-more {
   color: white;
 }
 
-.show-more:hover{
+.show-more:hover {
   color: #ffc600;
 }
 
-.no-border-radius{
+.no-border-radius {
   border-radius: 0 !important;
 }
 
-.alert{
+.alert {
   position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 1000;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.text-limit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.link-light {
+  color: #f8f9fa;
 }

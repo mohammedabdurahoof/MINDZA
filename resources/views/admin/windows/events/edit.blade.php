@@ -56,9 +56,9 @@
                                             value="{{ $event->name }}" required placeholder="Event Name">
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <label class="form-label" for="inputAddress">Address</label>
-                                        <input type="text" name="address" class="form-control" id="inputAddress" required
-                                            value="{{ $event->address }}" placeholder="Address">
+                                        <label class="form-label" for="inputAddress">Link</label>
+                                        <input type="text" name="link" class="form-control" value="{{ $event->link }}" id="inputAddress" required
+                                            placeholder="Link">
                                     </div>
 
                                 </div>
@@ -87,6 +87,28 @@
                                                 value="{{ $event->finishTime }}" class="form-control" required
                                                 placeholder="Finish Time">
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 col-md-3">
+                                        <input type="checkbox" {{ $event->registration ? 'checked' : '' }}
+                                            name="registration" value={{ true }} id="registration">
+                                        <label for="registration">Registration</label>
+                                    </div>
+                                    <div class="mb-3 col-md-3">
+                                        <input type="checkbox" {{ $event->countdown ? 'checked' : '' }} name="countdown"
+                                            value={{ true }} id="countdown">
+                                        <label for="countdown">Countdown</label>
+                                    </div>
+                                    <div class="mb-3 col-md-3">
+                                        <input type="checkbox" {{ $event->available_time ? 'checked' : '' }}
+                                            name="available_time" value={{ true }} id="availabletime">
+                                        <label for="availabletime">Available Time</label>
+                                    </div>
+                                    <div class="mb-3 col-md-3">
+                                        <input type="checkbox" {{ $event->photo ? 'checked' : '' }} name="photo"
+                                            value={{ true }} id="photo">
+                                        <label for="photo">Photo</label>
                                     </div>
                                 </div>
                                 <div class="mb-3">

@@ -46,7 +46,7 @@
                                             <td>
                                                 <img src="{{ asset('images/events') . '/' . $event->image }}" width="48"
                                                     height="48" class="rounded-circle me-2" alt="image">
-                                                {{ $event->name }}
+                                                    <a href='{{ route('events.show', $event->id) }}'>{{ $event->name }}</a>
                                             </td>
                                             <td>{{ $event->date }}</td>
                                             <td>{{ $event->startTime }}</td>

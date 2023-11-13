@@ -55,9 +55,9 @@
                                             required placeholder="Event Name">
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <label class="form-label" for="inputAddress">Address</label>
-                                        <input type="text" name="address" class="form-control" id="inputAddress" required
-                                            placeholder="Address">
+                                        <label class="form-label" for="inputAddress">Link</label>
+                                        <input type="text" name="link" class="form-control" id="inputAddress" required
+                                            placeholder="Link">
                                     </div>
 
                                 </div>
@@ -85,6 +85,24 @@
                                             <input type="time" value="0" name="finishTime" id="inputFinishTime"
                                                 class="form-control" required placeholder="Finish Time">
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 col-md-3">
+                                        <input type="checkbox" name="registration" value={{true}} id="registration">
+                                        <label for="registration">Registration</label>
+                                    </div>
+                                    <div class="mb-3 col-md-3">
+                                        <input type="checkbox" name="countdown" value={{true}} id="countdown">
+                                        <label for="countdown">Countdown</label>
+                                    </div>
+                                    <div class="mb-3 col-md-3">
+                                        <input type="checkbox" name="available_time" value={{true}} id="availabletime">
+                                        <label for="availabletime">Available Time</label>
+                                    </div>
+                                    <div class="mb-3 col-md-3">
+                                        <input type="checkbox" name="photo" value={{true}} id="photo">
+                                        <label for="photo">Photo</label>
                                     </div>
                                 </div>
                                 <div class="mb-3">

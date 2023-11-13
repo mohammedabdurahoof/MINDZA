@@ -16,13 +16,13 @@ class CreateEventRegistersTable extends Migration
         Schema::create('event_registers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('email');
             $table->string('phone');
             $table->string('address');
             $table->string('gender');
             $table->string('event');
-            $table->time('time');
+            $table->time('time')->nullable();
             $table->timestamps();
         });
     }

@@ -16,10 +16,10 @@
                         </div>
                         <div class="social">
                             <ul>
-                                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
+                                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
                             </ul>
                         </div>
                         <div class="description">

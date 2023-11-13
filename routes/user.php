@@ -61,9 +61,9 @@ Route::get('/events/{id}', function ($id) {
     return view('windows.events.single', ['name' => 'Events', 'event' => $event]);
 });
 
-Route::get('/event-register', function () {
-    $events = Event::all();
-    return view('windows.events.register', ['name' => 'Events', 'events' => $events]);
+Route::get('/event-register/{id}', function ($id) {
+    $event = Event::where('id', $id)->first();
+    return view('windows.events.register', ['name' => 'Events', 'event' => $event]);
 });
 
 Route::post('/event-register', function (Request $request) {
@@ -75,14 +75,16 @@ Route::post('/event-register', function (Request $request) {
         'gender' => ['required', 'string', 'max:255'],
         'email' => ['required', 'string', 'email', 'max:255'],
         'event' => ['required', 'string', 'max:255'],
-        'time' => ['required', 'string', 'max:255'],
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        'time' => ['string', 'max:255'],
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
     ]);
-    
-    $imageName = time() . '.' . request()->image->getClientOriginalExtension();
-    request()->image->move(public_path('images/event-register'), $imageName);
+    $imageName = null;
+    if (request()->image) {
+        $imageName = time() . '.' . request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images/event-register'), $imageName);
+    }
     EventRegister::create($request->post() + ['image' => $imageName]);
-    return back()->with('success','successfully registered');
+    return back()->with('success', 'successfully registered');
 });
 
 Route::get('/shop', function () {

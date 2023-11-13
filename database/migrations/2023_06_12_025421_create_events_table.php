@@ -22,11 +22,14 @@ class CreateEventsTable extends Migration
             $table->time('startTime');
             $table->time('finishTime');
             $table->string('place');
-            $table->string('address');
+            $table->string('link')->nullable();
+            $table->boolean('registration')->default(false);
+            $table->boolean('countdown')->default(false);
+            $table->boolean('available_time')->default(false);
+            $table->boolean('photo')->default(false);
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

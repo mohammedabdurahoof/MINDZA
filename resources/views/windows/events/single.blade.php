@@ -14,7 +14,7 @@
                             {{-- <a href="#"><span><i class="fa fa-calendar"></i> 2 December 2018</span></a> --}}
                             <a href="#"><span><i class="fa fa-clock-o"></i> {{ $event->startTime }} -
                                     {{ $event->finishTime }}</span></a>
-                            <a href="#"><span><i class="fa fa-map-marker"></i> {{ $event->address }}</span></a>
+                            <a href="#"><span><i class="fa fa-map-marker"></i> {{ $event->place }}</span></a>
                             <img src="{{ asset('images/events') . '/' . $event->image }}" alt="Event">
                             <p>{{ $event->description }}</p>
                         </div>
@@ -22,16 +22,36 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="events-right">
-                            <div class="events-coundwon bg_cover" data-overlay="8"
-                                style="background-image: url({{ asset('assets/images/event/single-event/coundown.jpg') }})">
-                                <div data-countdown="2023/09/01"></div>
-                                <div class="events-coundwon-btn pt-30">
-                                    <a href="/event-register" class="main-btn">Book Your Seat</a>
+                            @if ($event->registration || $event->countdown)
+                                <div class="events-coundwon bg_cover" data-overlay="8"
+                                    style="background-image: url({{ asset('assets/images/event/single-event/coundown.jpg') }})">
+                                    @if ($event->countdown)
+                                        <div data-countdown="{{ $event->date }}"></div>
+                                    @endif
+                                    @if ($event->registration)
+                                        <div class="events-coundwon-btn pt-30">
+                                            <a href="/event-register/{{$event->id}}" class="main-btn">Book Your Seat </a>
+                                        </div>
+                                    @endif
                                 </div>
-                            </div>
+                            @endif
                             <!-- events coundwon -->
                             <div class="events-address mt-30">
                                 <ul>
+                                    @if ($event->link)
+                                        <li>
+                                            <div class="single-address">
+                                                <div class="icon">
+                                                    <i class="fa fa-link"></i>
+                                                </div>
+                                                <div class="cont">
+                                                    <h6>Link</h6>
+                                                    <span><a href="{{$event->link }}">{{ $event->link }}</a></span>
+                                                </div>
+                                            </div>
+                                            <!-- single address -->
+                                        </li>
+                                    @endif
                                     <li>
                                         <div class="single-address">
                                             <div class="icon">
@@ -39,7 +59,7 @@
                                             </div>
                                             <div class="cont">
                                                 <h6>Start Time</h6>
-                                                <span>{{$event->startTime}}</span>
+                                                <span>{{ $event->startTime }}</span>
                                             </div>
                                         </div>
                                         <!-- single address -->
@@ -51,7 +71,7 @@
                                             </div>
                                             <div class="cont">
                                                 <h6>Finish Time</h6>
-                                                <span>{{$event->finishTime}}</span>
+                                                <span>{{ $event->finishTime }}</span>
                                             </div>
                                         </div>
                                         <!-- single address -->
@@ -63,7 +83,7 @@
                                             </div>
                                             <div class="cont">
                                                 <h6>Address</h6>
-                                                <span>{{$event->address}}</span>
+                                                <span>{{ $event->place }}</span>
                                             </div>
                                         </div>
                                         <!-- single address -->
