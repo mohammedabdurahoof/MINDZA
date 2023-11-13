@@ -45,7 +45,7 @@ class CoursesController extends Controller
         return view('admin.windows.courses.single', compact('course','students'));
     }
 
-    public function confrimCouse(Request $request)
+    public function confirmCourse(Request $request)
     {
         $request->validate([
             'studentId' => 'required',

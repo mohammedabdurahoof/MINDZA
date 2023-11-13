@@ -42,6 +42,11 @@
                     <i class="align-middle" data-feather="image"></i> <span class="align-middle">Gallery</span>
                 </a>
             </li>
+            <li class="sidebar-item {{ request()->segment(2) == 'banner' ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('banner.index') }}">
+                    <i class="align-middle" data-feather="bookmark"></i> <span class="align-middle">Banner</span>
+                </a>
+            </li>
 
 
         </ul>

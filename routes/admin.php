@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
@@ -29,8 +30,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('events', EventController::class);
     Route::resource('gallery', GalleryController::class);
     Route::resource('shop', ShopController::class);
+    Route::resource('banner', BannerController::class);
 
-    Route::post('/confrimCouse', [CoursesController::class,'confrimCouse'])->name('courses.cofrim');
+    Route::post('/confirmCourse', [CoursesController::class,'confirmCourse'])->name('courses.cofrim');
 
     
 });

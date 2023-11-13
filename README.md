@@ -20,7 +20,7 @@ Overall, Mindza is a place where individuals can come to develop a greater sense
 
 ## View website
 
-[Mindza](#)
+[Mindza](https://mindza.in/)
 
 ## Developed & Designed by
 
