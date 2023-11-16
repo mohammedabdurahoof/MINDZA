@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Banner;
 use App\Models\Courses;
 use App\Models\Event;
 use App\Models\EventRegister;
@@ -15,7 +16,8 @@ Route::get('/', function () {
     $teachers = Teacher::all();
     $products = Shop::latest()->limit(4)->get();
     $events = Event::latest()->limit(3)->get();
-    return view('windows.home.index', ['course' => $course, 'teachers' => $teachers, 'products' => $products, 'events' => $events]);
+    $banner = Banner::latest()->get();
+    return view('windows.home.index', ['course' => $course, 'teachers' => $teachers, 'products' => $products, 'events' => $events, 'banners' => $banner]);
     // return view('welcome');
 });
 

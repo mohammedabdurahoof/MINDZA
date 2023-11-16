@@ -15,7 +15,7 @@
             <div class="teachers mt-20">
                 <div class="row">
                     @foreach ($teachers as $teacher)
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-6 col-lg-3">
                             <div class="single-teachers mt-30 text-center">
                                 <div class="image">
                                     <img src="{{ asset('images/teacher') . '/' . $teacher->image }}" alt="Teachers">

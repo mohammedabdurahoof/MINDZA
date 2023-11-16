@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 @foreach ($teachers as $teacher)
-                    <div class="col-lg-3 col-md-6 col-sm-8">
+                    <div class="col-md-3 col-6">
                         <div class="single-teacher-2 text-center mt-30">
                             <div class="teacher-image">
                                 <img src="{{ asset('images/teacher') . '/' . $teacher->image }}" alt="Teacher">
