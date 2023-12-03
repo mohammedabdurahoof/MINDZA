@@ -17,6 +17,9 @@ class Teacher extends Model
         'achievements',
         'objective',
         'image',
-        'email'
+        'email',
+        'facebook',
+        'instagram',
+        'whatsapp',
     ];
 }

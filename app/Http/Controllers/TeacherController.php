@@ -117,6 +117,16 @@ class TeacherController extends Controller
         return back()->with('success', ' Successfully Password Changed');
     }
 
+    function socialMediaLink(Teacher $teacher, Request $request) {
+        $request->validate([
+            'facebook' => 'string',
+            'instagram' => 'string',
+            'whatsapp' => 'string',
+        ]);
+        $teacher->update($request->all());
+        return back();
+    }
+
     public function addLecture(Request $request)
     {
         // dd($request);

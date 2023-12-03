@@ -19,6 +19,9 @@ class CreateTeachersTable extends Migration
             $table->string('image');
             $table->string('position');
             $table->string('email');
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('whatsapp')->nullable();
             $table->longText('description');
             $table->longText('about');
             $table->longText('achievements');

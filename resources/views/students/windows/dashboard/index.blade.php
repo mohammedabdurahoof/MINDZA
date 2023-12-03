@@ -15,28 +15,28 @@
                             <span>{{ $student->phone }}</span>
                             <span>{{ $student->email }}</span>
                         </div>
-                        <div class="social">
+                        {{-- <div class="social">
                             <ul>
                                 <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
                                 <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
                             </ul>
-                        </div>
+                        </div> --}}
                         {{-- <div class="description">
                             <p>{{ $teacher ?? ''->description }}</p>
                 </div> --}}
-                    <div>
-                    {{-- <input type="submit" 
+                        <div>
+                            {{-- <input type="submit" 
         class="main-btn" style ='width:100%'  value="Logout" /> --}}
-        <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <a class="main-btn" style ='width:100%' href="route('logout')"
-                            onclick="event.preventDefault();
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a class="main-btn" style ='width:100%' href="route('logout')"
+                                    onclick="event.preventDefault();
                         this.closest('form').submit();">Log
-                            out</a>
-                    </form>
-                    </div>
+                                    out</a>
+                            </form>
+                        </div>
 
                     </div>
                     <!-- teachers left -->
@@ -47,10 +47,6 @@
                             <li class="nav-item">
                                 <a class="active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab"
                                     aria-controls="dashboard" aria-selected="true">Dashboard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a id="courses-tab" data-toggle="tab" href="#courses" role="tab" aria-controls="courses"
-                                    aria-selected="false">Lecture</a>
                             </li>
                             <li class="nav-item">
                                 <a id="reviews-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="reviews"
@@ -91,8 +87,10 @@
                                                             <li><i class="fa fa-star"></i></li>
                                                         </ul>
                                                         <span>(20 Reviews)</span><br>
-                                                        <h6 style='color:{{$course['status'] == 'pending' ? 'red' : 'black'}}'>{{$course['status']}}</h6>
-                                                        <a href="/courses/{{ $course['id'] }}">
+                                                        <h6
+                                                            style='color:{{ $course['status'] == 'pending' ? 'red' : 'black' }}'>
+                                                            {{ $course['status'] }}</h6>
+                                                        <a href="{{ route('students.lecture', $course['id']) }}">
                                                             <h4>{{ $course['courseName'] }}</h4>
                                                         </a>
                                                         <div class="course-teacher">
@@ -126,425 +124,10 @@
                                     @include('students.windows.dashboard.partials.add_courses')
                                 </div>
 
-                                
+
                                 <!-- dashboard cont -->
                             </div>
-                            <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
-                                <div class="courses-cont pt-20">
-                                    <div class="row">
-                                        <div class="curriculum-cont">
-                                            <div class="title">
-                                                <h6>Learn basic javascript Lecture Started</h6>
-                                            </div>
-                                            <div class="accordion" id="accordionExample">
-                                                <div class="card">
-                                                    <div class="card-header" id="headingOne">
-                                                        <a href="#" data-toggle="collapse" data-target="#collapseOne"
-                                                            aria-expanded="true" aria-controls="collapseOne">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.1</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
 
-                                                    <div id="collapseOne" class="collapse show"
-                                                        aria-labelledby="headingOne" data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingTow">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseTow" aria-expanded="true"
-                                                            aria-controls="collapseTow">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.2</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-
-                                                    <div id="collapseTow" class="collapse" aria-labelledby="headingTow"
-                                                        data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingThree">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseThree" aria-expanded="false"
-                                                            aria-controls="collapseThree">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.3</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-                                                    <div id="collapseThree" class="collapse"
-                                                        aria-labelledby="headingThree" data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingFore">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseFore" aria-expanded="false"
-                                                            aria-controls="collapseFore">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.4</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-                                                    <div id="collapseFore" class="collapse" aria-labelledby="headingFore"
-                                                        data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingFive">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseFive" aria-expanded="false"
-                                                            aria-controls="collapseFive">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.5</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-                                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
-                                                        data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingSix">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseSix" aria-expanded="false"
-                                                            aria-controls="collapseSix">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.6</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-                                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
-                                                        data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingSeven">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseSeven" aria-expanded="false"
-                                                            aria-controls="collapseSeven">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.7</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-                                                    <div id="collapseSeven" class="collapse"
-                                                        aria-labelledby="headingSeven" data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="curriculum-cont">
-                                            <div class="title">
-                                                <h6>Learn basic javascript Lecture Started</h6>
-                                            </div>
-                                            <div class="accordion" id="accordionExample">
-                                                <div class="card">
-                                                    <div class="card-header" id="headingOne">
-                                                        <a href="#" data-toggle="collapse"
-                                                            data-target="#collapseOne" aria-expanded="true"
-                                                            aria-controls="collapseOne">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.1</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-
-                                                    <div id="collapseOne" class="collapse show"
-                                                        aria-labelledby="headingOne" data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingTow">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseTow" aria-expanded="true"
-                                                            aria-controls="collapseTow">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.2</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-
-                                                    <div id="collapseTow" class="collapse" aria-labelledby="headingTow"
-                                                        data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingThree">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseThree" aria-expanded="false"
-                                                            aria-controls="collapseThree">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.3</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-                                                    <div id="collapseThree" class="collapse"
-                                                        aria-labelledby="headingThree" data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingFore">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseFore" aria-expanded="false"
-                                                            aria-controls="collapseFore">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.4</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-                                                    <div id="collapseFore" class="collapse" aria-labelledby="headingFore"
-                                                        data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingFive">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseFive" aria-expanded="false"
-                                                            aria-controls="collapseFive">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.5</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-                                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
-                                                        data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingSix">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseSix" aria-expanded="false"
-                                                            aria-controls="collapseSix">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.6</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-                                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
-                                                        data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="card-header" id="headingSeven">
-                                                        <a href="#" data-toggle="collapse" class="collapsed"
-                                                            data-target="#collapseSeven" aria-expanded="false"
-                                                            aria-controls="collapseSeven">
-                                                            <ul>
-                                                                <li><i class="fa fa-file-o"></i></li>
-                                                                <li><span class="lecture">Lecture 1.7</span></li>
-                                                                <li><span class="head">What is javascript</span></li>
-                                                                <li><span class="time d-none d-md-block"><i
-                                                                            class="fa fa-clock-o"></i> <span>
-                                                                            00.30.00</span></span>
-                                                                </li>
-                                                            </ul>
-                                                        </a>
-                                                    </div>
-                                                    <div id="collapseSeven" class="collapse"
-                                                        aria-labelledby="headingSeven" data-parent="#accordionExample">
-                                                        <div class="card-body">
-                                                            <p>Ut quis scelerisque risus, et viverra nisi. Phasellus
-                                                                ultricies
-                                                                luctus augue, eget maximus felis laoreet quis.
-                                                                Maecenasbibendum
-                                                                tempor eros.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- curriculum cont -->
-                                    </div>
-                                    <!-- row -->
-                                </div>
-                                <!-- courses cont -->
-                            </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="reviews-tab">
                                 <div class="reviews-cont">
                                     @include('students.windows.dashboard.partials.profile_edit')

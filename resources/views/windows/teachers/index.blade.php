@@ -13,10 +13,11 @@
                                 <div class="teacher-social "
                                     style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                                        <li><a href="{{ $teacher->facebook }}"><i class="fa fa-facebook-f"></i></a></li>
+                                        <li><a href="{{ $teacher->instagram }}"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="mailto:{{ $teacher->email }}"><i class="fa fa-envelope-o"></i></a></li>
+                                        <li><a href="https://wa.me/+91{{ $teacher->whatsapp }}"><i
+                                                    class="fa fa-whatsapp"></i></a></li>
                                         {{-- <li><a href="#"><i class="fa fa-instagram"></i></a></li> --}}
                                     </ul>
                                 </div>

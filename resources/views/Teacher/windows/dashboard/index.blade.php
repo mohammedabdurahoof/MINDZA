@@ -161,6 +161,8 @@
                                 <div class="reviews-cont">
                                     @include('Teacher.windows.dashboard.partials.profile_edit')
                                     <hr>
+                                    @include('Teacher.windows.dashboard.partials.social_media_link')
+                                    <hr>
                                     @include('Teacher.windows.dashboard.partials.change_password')
                                 </div>
                                 <!-- reviews cont -->

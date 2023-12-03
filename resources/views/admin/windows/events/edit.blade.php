@@ -50,28 +50,33 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="mb-3 col-md-6">
+                                    <div class="mb-3 col-md-4">
                                         <label class="form-label" for="inputEventeName">Event Name</label>
                                         <input type="text" name="name" class="form-control" id="inputEventeName"
                                             value="{{ $event->name }}" required placeholder="Event Name">
                                     </div>
-                                    <div class="mb-3 col-md-6">
+                                    <div class="mb-3 col-md-4">
                                         <label class="form-label" for="inputAddress">Link</label>
-                                        <input type="text" name="link" class="form-control" value="{{ $event->link }}" id="inputAddress" required
-                                            placeholder="Link">
+                                        <input type="text" name="link" class="form-control"
+                                            value="{{ $event->link }}" id="inputAddress"  placeholder="Link">
+                                    </div>
+                                    <div class="mb-3 col-md-4">
+                                        <label class="form-label" for="inputPlace">Place</label>
+                                        <input type="text" name="place" class="form-control" id="inputPlace" required
+                                            value="{{ $event->place }}" placeholder="Place">
                                     </div>
 
                                 </div>
                                 <div class="row">
                                     <div class="mb-3 col-md-3">
-                                        <label class="form-label" for="inputPlace">Place</label>
-                                        <input type="text" name="place" class="form-control" id="inputPlace" required
-                                            value="{{ $event->place }}" placeholder="Place">
+                                        <label class="form-label" for="inputsDate">Start Date</label>
+                                        <input type="date" name="startDate" class="form-control" id="inputsDate" required
+                                            value="{{ $event->startDate }}" placeholder="Start Date">
                                     </div>
                                     <div class="mb-3 col-md-3">
-                                        <label class="form-label" for="inputDate">Date</label>
-                                        <input type="date" name="date" class="form-control" id="inputDate" required
-                                            value="{{ $event->date }}" placeholder="Date">
+                                        <label class="form-label" for="inputfDate">Finish Date</label>
+                                        <input type="date" name="finishDate" class="form-control" id="inputfDate"
+                                            value="{{ $event->finishDate }}" placeholder="FinishDate">
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label class="form-label" for="inputStartTime">Start Time</label>

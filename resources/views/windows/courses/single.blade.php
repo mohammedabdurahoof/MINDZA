@@ -84,7 +84,7 @@
                                             <p>{{ $course->courseSummery }}</p>
                                         </div>
                                         <div class="single-description pt-40">
-                                            <h6>Requrements</h6>
+                                            <h6>Requirements</h6>
                                             <p>{{ $course->requirements }}</p>
                                         </div>
                                     </div>

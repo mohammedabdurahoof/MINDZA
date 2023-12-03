@@ -15,7 +15,7 @@
                             </div>
                             <div class="event-cont">
                                 {{-- <span><i class="fa fa-calendar"></i> 2 December 2018</span> --}}
-                                <a href="events/1">
+                                <a href="events/{{$event->id}}">
                                     <h4>{{$event->name}}</h4>
                                 </a>
                                 <span><i class="fa fa-clock-o"></i> {{$event->startTime}} - {{$event->finishTime}}</span>

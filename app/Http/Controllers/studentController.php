@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Courses;
+use App\Models\Lecture;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -114,14 +115,14 @@ class studentController extends Controller
     {
         $email = Auth::user()->email;
         $student = Student::where('email', $email)->first();
-        $courses = Courses::join('teachers','courses.teacherId','teachers.id')->select('courses.image as courseImage', 'teachers.image as teacherImage', 'courses.id', 'courseName', 'price', 'name')->get();
-        $selectedCourses = collect($student->courses)->map(function ($item, $key) use($courses) {
+        $courses = Courses::join('teachers', 'courses.teacherId', 'teachers.id')->select('courses.image as courseImage', 'teachers.image as teacherImage', 'courses.id', 'courseName', 'price', 'name')->get();
+        $selectedCourses = collect($student->courses)->map(function ($item, $key) use ($courses) {
             $details =  $courses->where('id', $item['id'])->first();
             $items = collect($item)->merge($details);
             return $items;
-          });
+        });
         // dd($selectedCourses);
-        return view('students.windows.dashboard.index', ['name' => 'Student', 'student' => $student, 'courses' => $courses,'selectedCourses'=>$selectedCourses]);
+        return view('students.windows.dashboard.index', ['name' => 'Student', 'student' => $student, 'courses' => $courses, 'selectedCourses' => $selectedCourses]);
     }
 
     function changePassword(Request $request)
@@ -142,10 +143,27 @@ class studentController extends Controller
         ]);
         $email = Auth::user()->email;
         $student = Student::where('email', $email)->first();
-        $courses =$student->courses;
-        array_push($courses,['id'=>$request->courseId,'status'=>'pending']);
+        $courses = $student->courses;
+        array_push($courses, ['id' => $request->courseId, 'status' => 'pending']);
         // dd($courses);
         $student->update(['courses' => $courses]);
         return back()->with('success', ' Successfully Password Changed');
+    }
+
+    public function getLecture(Request $request)
+    {
+        $course = Courses::where('id', $request->id)->first();
+        $email = Auth::user()->email;
+        $student = Student::where('email', $email)->first();
+        $lectures = Lecture::where('courseId', $course->id)->get();
+        $courses = array_map(function ($value) use ($request) {
+            return $value['id'] == $request->id ? $value : '';
+        }, $student->courses);
+        if ($courses[0]['status'] == 'pending') {
+            // dd($value);
+            return back();
+        } else {
+            return view('students.windows.lecutre.index', ['name' => 'Lectures', 'lectures' => $lectures, 'student' => $student, 'course' => $course]);
+        }
     }
 }

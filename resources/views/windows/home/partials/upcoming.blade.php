@@ -17,7 +17,7 @@
                                         </a>
                                         <span><i class="fa fa-clock-o"></i>{{ $event->startTime }} -
                                             {{ $event->finishTime }}</span>
-                                        <span><i class="fa fa-map-marker"></i>{{ $event->address }}</span>
+                                        <span><i class="fa fa-map-marker"></i>{{ $event->place }}</span>
                                     </div>
                                 </li>
                             @endforeach

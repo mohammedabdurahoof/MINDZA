@@ -1,6 +1,6 @@
 <!--====== TEACHERS PART START ======-->
 
-<section id="teachers-part" class="pt-70 pb-120">
+<section id="teachers-part" class="pt-70 pb-120  gray-bg">
     <div class="container">
         <div class="row">
             {{-- <div class="col-lg-5"> --}}
@@ -15,18 +15,28 @@
             <div class="teachers mt-20">
                 <div class="row">
                     @foreach ($teachers as $teacher)
-                        <div class="col-6 col-lg-3">
-                            <div class="single-teachers mt-30 text-center">
-                                <div class="image">
-                                    <img src="{{ asset('images/teacher') . '/' . $teacher->image }}" alt="Teachers">
+                        <div class="col-md-3 col-6">
+                            <div class="single-teacher-2 text-center mt-30">
+                                <div class="teacher-image">
+                                    <img src="{{ asset('images/teacher') . '/' . $teacher->image }}" alt="Teacher">
+                                    <div class="teacher-social "
+                                        style="background-image: url({{ asset('assets/images/teachers/hover.png') }})">
+                                        <ul>
+                                            <li><a href="{{$teacher->facebook}}"><i class="fa fa-facebook-f"></i></a></li>
+                                            <li><a href="{{$teacher->instagram}}"><i class="fa fa-instagram"></i></a></li>
+                                            <li><a href="mailto:{{$teacher->email}}"><i class="fa fa-envelope-o"></i></a></li>
+                                            <li><a href="https://wa.me/+91{{$teacher->whatsapp}}"><i class="fa fa-whatsapp"></i></a></li>
+                                            {{-- <li><a href="#"><i class="fa fa-instagram"></i></a></li> --}}
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="cont">
-                                    <a href="/teachers/{{ $teacher->id }}">
-                                        <h6>{{ $teacher->name }}</h6>
-                                    </a>
+                                <div class="teacher-content">
+                                    <h6 class="teacher-title"><a href="/teachers/{{ $teacher->id }}">{{ $teacher->name }}</a>
+                                    </h6>
                                     <span>{{ $teacher->position }}</span>
                                 </div>
-                            </div> <!-- single teachers -->
+                            </div>
+                            <!-- single teacher 2 -->
                         </div>
                     @endforeach
 

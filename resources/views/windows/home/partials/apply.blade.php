@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-5">
                 <div class="section-title mt-50">
-                    <h5>About us</h5>
+                    {{-- <h5>About us</h5> --}}
                     <h2>Welcome to Mindza </h2>
                 </div> <!-- section title -->
                 <div class="about-cont">

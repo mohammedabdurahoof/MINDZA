@@ -14,6 +14,8 @@
                             {{-- <a href="#"><span><i class="fa fa-calendar"></i> 2 December 2018</span></a> --}}
                             <a href="#"><span><i class="fa fa-clock-o"></i> {{ $event->startTime }} -
                                     {{ $event->finishTime }}</span></a>
+                            <a href="#"><span><i class="fa fa-calendar"></i> {{ $event->startDate }}
+                                    {{ $event->finishDate ? '- ' . $event->finishDate : '' }}</span></a>
                             <a href="#"><span><i class="fa fa-map-marker"></i> {{ $event->place }}</span></a>
                             <img src="{{ asset('images/events') . '/' . $event->image }}" alt="Event">
                             <p>{{ $event->description }}</p>
@@ -30,7 +32,8 @@
                                     @endif
                                     @if ($event->registration)
                                         <div class="events-coundwon-btn pt-30">
-                                            <a href="/event-register/{{$event->id}}" class="main-btn">Book Your Seat </a>
+                                            <a href="/event-register/{{ $event->id }}" class="main-btn">Book Your Seat
+                                            </a>
                                         </div>
                                     @endif
                                 </div>
@@ -46,7 +49,7 @@
                                                 </div>
                                                 <div class="cont">
                                                     <h6>Link</h6>
-                                                    <span><a href="{{$event->link }}">{{ $event->link }}</a></span>
+                                                    <span><a href="{{ $event->link }}">{{ $event->link }}</a></span>
                                                 </div>
                                             </div>
                                             <!-- single address -->
@@ -72,6 +75,20 @@
                                             <div class="cont">
                                                 <h6>Finish Time</h6>
                                                 <span>{{ $event->finishTime }}</span>
+                                            </div>
+                                        </div>
+                                        <!-- single address -->
+                                    </li>
+
+                                    <li>
+                                        <div class="single-address">
+                                            <div class="icon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                            <div class="cont">
+                                                <h6>Date</h6>
+                                                <span>{{ $event->startDate }}
+                                                    {{ $event->finishDate ? '- ' . $event->finishDate : '' }}</span>
                                             </div>
                                         </div>
                                         <!-- single address -->

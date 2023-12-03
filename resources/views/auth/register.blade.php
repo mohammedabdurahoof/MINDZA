@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="main-btn register-submit"
+                            <input type="submit" onclick="var e=this;setTimeout(function(){e.disabled=true;},0);return true;" name="submit" id="submit" class="main-btn register-submit"
                                 value="Register" />
                         </div>
 
